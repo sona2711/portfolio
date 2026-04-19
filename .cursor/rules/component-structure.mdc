@@ -1,0 +1,34 @@
+---
+alwaysApply: true
+---
+# Component Structure
+
+- Each component must be in its own folder named after the component.
+- The component entry file must be `index.tsx`.
+- Keep styles in a `styles.module.css` file.
+- Keep constants in a `consts` file.
+- Keep helpers in a `utils` file.
+- Keep component types in a `types` file.
+- Declare components as named exports using arrow functions.
+- Type component props explicitly (no implicit `any` props).
+
+## Component Declaration Style
+
+```tsx
+import type { ButtonProps } from './types';
+
+export const Button = (props: ButtonProps) => {
+  return <button>{props.children}</button>;
+};
+```
+
+## Expected Example
+
+```text
+MyComponent/
+  index.tsx
+  styles.module.css
+  consts.ts
+  utils.ts
+  types.ts
+```

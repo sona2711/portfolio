@@ -1,0 +1,24 @@
+---
+alwaysApply: true
+---
+# Portfolio Project Standards
+
+## Stack and style
+- Use TypeScript for all app logic and React functional components.
+- Keep components and pages simple, readable, and focused on one responsibility.
+- Prefer existing project patterns before introducing new abstractions.
+
+## UI and layout
+- Maintain the existing clean, minimal portfolio style unless explicitly asked to redesign.
+- Prefer Ant Design components where possible instead of pure HTML tags.
+- Keep semantic HTML structure and accessible labels, headings, and link text.
+- Ensure responsive behavior for mobile and desktop when changing layout.
+
+## Code quality
+- Favor small helper functions over repeated JSX or duplicated logic.
+- Do not add dependencies unless they are clearly needed for the request.
+
+## Safety checks before finishing
+- Run or suggest relevant checks for changed code (build, lint, or type-check).
+- Keep edits scoped to the request; do not refactor unrelated parts.
+- Preserve existing user content and routes unless the request says otherwise.

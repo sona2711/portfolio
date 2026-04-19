@@ -1,0 +1,25 @@
+---
+description: Enforce centralized routing structure and file locations
+globs: src/**/*.{ts,tsx}
+alwaysApply: true
+---
+
+# Routing Structure
+
+- All routing logic must be placed inside `src/app/router/`.
+- Do not define routes inside `App.tsx` or inside page components.
+- Use a dedicated `routes.ts` file for route configuration.
+- Use `index.tsx` for router setup and router provider wiring.
+- Use lazy loading for route components via `React.lazy`.
+- Wrap lazy-loaded routes with `Suspense` and provide a clear loading fallback.
+- Keep one route object per page/feature and compose routes in `routes.ts`.
+- Prefer route-level code splitting to reduce initial bundle size.
+- Handle unknown routes with a dedicated `NotFound` route.
+
+## Expected Router Files
+
+```text
+src/app/router/
+  index.tsx
+  routes.ts
+```

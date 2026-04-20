@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Routing Structure
 
-- All routing logic must be placed inside `src/app/router/`.
+- All routing logic must be placed inside `src/router/`.
 - Do not define routes inside `App.tsx` or inside page components.
 - Use a dedicated `routes.ts` file for route configuration.
 - Use `index.tsx` for router setup and router provider wiring.
@@ -19,7 +19,7 @@ alwaysApply: true
 ## Expected Router Files
 
 ```text
-src/app/router/
+src/router/
   index.tsx
   routes.ts
 ```

@@ -1,0 +1,32 @@
+---
+alwaysApply: true
+---
+# Pages as Composition Layers
+
+- Pages must act as composition and orchestration layers only.
+
+## Structure
+
+- Each page must be in its own folder inside `src/pages/`, named after the page.
+- The entry file must be `index.tsx`.
+- Add `consts.ts`, `utils.ts`, and `types.ts` only when needed.
+
+```text
+pages/
+  PageName/
+    index.tsx
+    styles.module.css
+    consts.ts
+    utils.ts
+    types.ts
+```
+
+## Rules
+
+- Build pages by composing components only.
+- Do not implement UI directly in pages (no raw HTML or UI library components).
+- Move all UI, markup, and styles into components.
+- Pages should handle data flow, state, and layout composition only.
+- Keep pages clean, minimal, and free of complex JSX.
+- Declare pages as named exports using arrow functions.
+- Type props explicitly (no `any`).

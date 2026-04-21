@@ -18,6 +18,18 @@ alwaysApply: true
 - Favor small helper functions over repeated JSX or duplicated logic.
 - Do not add dependencies unless they are clearly needed for the request.
 
+## TypeScript and lint strictness
+- Enforce strict TypeScript for all changes.
+- Do not use `any`; prefer exact types or `unknown` with narrowing.
+- Do not ignore type errors or add type-bypass workarounds.
+- Do not use `eslint-disable` comments, including single-line and file-level variants.
+- Fix lint and type issues properly instead of suppressing checks.
+
+## Styling constraints
+- Do not use inline styles in JSX (for example `style={{ ... }}`).
+- Place styling in dedicated style files.
+- Keep visual rules outside component render logic.
+
 ## Safety checks before finishing
 - Run or suggest relevant checks for changed code (build, lint, or type-check).
 - Keep edits scoped to the request; do not refactor unrelated parts.

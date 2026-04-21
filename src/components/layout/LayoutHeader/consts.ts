@@ -7,4 +7,4 @@ export const NAV_ITEMS: NavItem[] = [
   { key: '/contact', label: 'Contact' },
 ]
 
-export const BRAND_NAME = 'Your Name'
+export const BRAND_NAME = 'Sona Mkrtchyan'

@@ -1,8 +1,0 @@
----
-alwaysApply: true
----
-# No Inline Styles
-
-- Do not use inline styles in JSX (for example `style={{ ... }}`).
-- Place styling in dedicated style files.
-- Keep visual rules outside component render logic.

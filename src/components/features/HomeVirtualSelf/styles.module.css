@@ -1,0 +1,36 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.videoCard {
+  height: 260px;
+  background: linear-gradient(150deg, #2f2e31 0%, #65605b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playIcon {
+  font-size: 42px;
+  color: #e7a73d;
+}
+
+.chatCard {
+  border-radius: 0 !important;
+  border-color: #ecebe6 !important;
+}
+
+.chatBubble {
+  background: #f2eee1;
+  border: 1px solid #e2dac7;
+  padding: 10px 12px;
+  color: #6e6657;
+}
+
+.chatBubbleAccent {
+  background: #c89337;
+  color: #fff;
+  padding: 10px 12px;
+}

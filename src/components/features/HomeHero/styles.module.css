@@ -1,0 +1,73 @@
+.section {
+  background: #f8f8f5;
+  border: 1px solid #ecebe6;
+  padding: 40px;
+}
+
+.tag {
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: #f0efe8;
+  color: #8e8979;
+  letter-spacing: 0.08em;
+}
+
+.textBlock {
+  width: 100%;
+}
+
+.title {
+  margin: 0 !important;
+  font-size: 56px !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9f9888;
+  font-size: 12px;
+}
+
+.description {
+  margin: 0 !important;
+  max-width: 500px;
+  color: #4b463d;
+}
+
+.darkButton {
+  background: #24201a !important;
+  border-color: #24201a !important;
+  border-radius: 0 !important;
+}
+
+.lightButton {
+  border-radius: 0 !important;
+  border-color: #d8d4c9 !important;
+  color: #4f493d !important;
+}
+
+.portraitCard {
+  position: relative;
+  height: 320px;
+  border: 1px solid #ddd8ca;
+  background: #efe4cc;
+  overflow: hidden;
+}
+
+.portraitGlow {
+  position: absolute;
+  inset: 24px;
+  background: radial-gradient(circle at 40% 30%, #fef4de 0%, #cb9f56 60%, #2e2a24 100%);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 26px;
+  }
+
+  .title {
+    font-size: 42px !important;
+  }
+}

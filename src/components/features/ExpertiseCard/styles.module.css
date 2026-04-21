@@ -1,0 +1,15 @@
+.card {
+  border-radius: 0 !important;
+  height: 100%;
+  border-color: #ecebe6 !important;
+  background: #fafaf8 !important;
+}
+
+.title {
+  margin: 0 !important;
+}
+
+.description {
+  margin: 0 !important;
+  color: #655f52;
+}

@@ -1,0 +1,28 @@
+.card {
+  border-radius: 0 !important;
+  border-color: #ecebe6 !important;
+}
+
+.previewDark {
+  height: 250px;
+  background: linear-gradient(150deg, #081019 10%, #1c2c3f 100%);
+}
+
+.previewAccent {
+  height: 250px;
+  background: linear-gradient(160deg, #f57b2b 0%, #f0aa3a 80%);
+}
+
+.title {
+  margin: 0 !important;
+}
+
+.description {
+  margin: 0 !important;
+  color: #655f52;
+}
+
+.linkButton {
+  padding: 0 !important;
+  color: #111 !important;
+}

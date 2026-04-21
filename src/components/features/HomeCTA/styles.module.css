@@ -1,0 +1,26 @@
+.section {
+  background: linear-gradient(90deg, #efab3a 0%, #dfa039 100%);
+  padding: 44px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.title {
+  margin: 0 !important;
+  max-width: 560px;
+}
+
+.button {
+  border-radius: 0 !important;
+  background: #1d1b17 !important;
+  border-color: #1d1b17 !important;
+}
+
+@media (max-width: 768px) {
+  .section {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

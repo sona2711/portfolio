@@ -3,23 +3,121 @@
   align-items: center;
   justify-content: space-between;
   padding-inline: 24px;
+  height: 58px;
+  line-height: 58px;
+  background: #f5f4f1;
   position: sticky;
   top: 0;
   z-index: 10;
+  border-bottom: 1px solid #d9d6cf;
+}
+
+.brandBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 300px;
+}
+
+.brandHint {
+  color: #b9b3a8;
+  font-size: 9px;
+  line-height: 1;
+  margin-bottom: -3px;
 }
 
 .brandText {
   color: inherit;
-  font-size: 16px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .brandLink {
-  color: inherit;
+  color: #2a2824;
 }
 
 .menu {
-  flex: 1;
-  min-width: 0;
+  flex: 0 0 auto;
+  min-width: max-content;
   justify-content: flex-end;
   border: none;
+  background: transparent;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: 18px;
+}
+
+.menu :global(.ant-menu-overflow) {
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.menu :global(.ant-menu-item) {
+  padding-inline: 0 !important;
+  margin-inline: 0 !important;
+  height: 58px !important;
+  line-height: 58px !important;
+  border-bottom: none !important;
+  color: #69645b !important;
+  font-size: 14px !important;
+  font-weight: 500;
+}
+
+.menu :global(.ant-menu-item-selected) {
+  background: transparent !important;
+  color: #9d6d1d !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid #b78632 !important;
+}
+
+.menu :global(.ant-menu-item::after) {
+  display: none !important;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconButton {
+  color: #6f6a60 !important;
+  font-size: 15px;
+}
+
+.ctaButton {
+  border-radius: 8px !important;
+  background: linear-gradient(180deg, #dba84d 0%, #bb8127 100%) !important;
+  border-color: #b87f27 !important;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 14px;
+  padding-inline: 20px !important;
+  height: 34px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-inline: 10px;
+  }
+
+  .brandBlock {
+    display: none;
+  }
+
+  .menu :global(.ant-menu-overflow) {
+    gap: 12px;
+  }
+
+  .menu :global(.ant-menu-item) {
+    font-size: 12px !important;
+  }
+
+  .iconButton {
+    display: none;
+  }
 }

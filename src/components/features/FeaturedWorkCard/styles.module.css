@@ -1,28 +1,59 @@
 .card {
-  border-radius: 0 !important;
+  border-radius: 8px !important;
   border-color: #ecebe6 !important;
+  background: transparent !important;
+}
+
+.card :global(.ant-card-body) {
+  padding: 0 !important;
 }
 
 .previewDark {
-  height: 250px;
+  height: 320px;
   background: linear-gradient(150deg, #081019 10%, #1c2c3f 100%);
 }
 
 .previewAccent {
-  height: 250px;
+  height: 320px;
   background: linear-gradient(160deg, #f57b2b 0%, #f0aa3a 80%);
 }
 
 .title {
   margin: 0 !important;
+  font-size: 42px !important;
+  line-height: 1 !important;
 }
 
 .description {
   margin: 0 !important;
   color: #655f52;
+  font-size: 13px;
+  max-width: 280px;
 }
 
 .linkButton {
   padding: 0 !important;
   color: #111 !important;
+  text-transform: uppercase;
+  font-size: 11px !important;
+  letter-spacing: 0.06em;
+}
+
+.textFirst {
+  order: -1;
+}
+
+@media (max-width: 768px) {
+  .previewDark,
+  .previewAccent {
+    height: 240px;
+  }
+
+  .title {
+    font-size: 30px !important;
+  }
+
+  .textFirst {
+    order: initial;
+  }
 }

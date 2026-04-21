@@ -1,10 +1,11 @@
 import type { NavItem } from './types'
 
 export const NAV_ITEMS: NavItem[] = [
-  { key: '/', label: 'Home' },
+  { key: '/projects', label: 'Work' },
+  { key: '/', label: 'Process' },
   { key: '/about', label: 'About' },
-  { key: '/projects', label: 'Projects' },
   { key: '/contact', label: 'Contact' },
 ]
 
 export const BRAND_NAME = 'Sona Mkrtchyan'
+export const HEADER_CTA_LABEL = 'Hire Me'

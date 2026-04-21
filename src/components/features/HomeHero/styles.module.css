@@ -1,15 +1,16 @@
 .section {
-  background: #f8f8f5;
-  border: 1px solid #ecebe6;
-  padding: 40px;
+  padding: 10px 0 16px;
 }
 
 .tag {
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: #f0efe8;
-  color: #8e8979;
-  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #9d6d1d;
+  letter-spacing: 0.14em;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .textBlock {
@@ -18,56 +19,114 @@
 
 .title {
   margin: 0 !important;
-  font-size: 56px !important;
-  line-height: 1.04 !important;
+  font-size: 84px !important;
+  line-height: 0.96 !important;
   letter-spacing: -0.02em;
-}
-
-.role {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #9f9888;
-  font-size: 12px;
+  color: #2c2f31 !important;
 }
 
 .description {
   margin: 0 !important;
   max-width: 500px;
-  color: #4b463d;
+  color: #55524a;
+  font-size: 38px;
+  line-height: 1.25;
 }
 
 .darkButton {
-  background: #24201a !important;
-  border-color: #24201a !important;
-  border-radius: 0 !important;
+  background: #2f3032 !important;
+  border-color: #2f3032 !important;
+  border-radius: 8px !important;
+  color: #f2f2f2 !important;
+  font-size: 28px;
+  font-weight: 600;
+  height: 76px;
+  padding-inline: 42px !important;
 }
 
 .lightButton {
   border-radius: 0 !important;
-  border-color: #d8d4c9 !important;
-  color: #4f493d !important;
+  border-color: transparent !important;
+  color: #2c2f31 !important;
+  font-size: 30px;
+  font-weight: 600;
+  height: 76px;
+  padding-inline: 0 !important;
+}
+
+.lightButton::after {
+  content: '';
+  display: inline-block;
+  width: 38px;
+  height: 2px;
+  background: #b78632;
+  margin-left: 14px;
+  vertical-align: middle;
+}
+
+.portraitWrap {
+  position: relative;
 }
 
 .portraitCard {
   position: relative;
-  height: 320px;
-  border: 1px solid #ddd8ca;
-  background: #efe4cc;
+  height: 500px;
+  border: 1px solid #d8d2c3;
+  background: #111;
   overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgb(0 0 0 / 13%);
 }
 
-.portraitGlow {
+.portraitImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+}
+
+.floatingAction {
   position: absolute;
-  inset: 24px;
-  background: radial-gradient(circle at 40% 30%, #fef4de 0%, #cb9f56 60%, #2e2a24 100%);
+  left: -20px;
+  bottom: -20px;
+  width: 68px;
+  height: 68px;
+  border-radius: 8px;
+  border: none;
+  background: #e2a53f;
+  color: #3f3321;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 26px;
+    padding: 8px 0 0;
   }
 
   .title {
-    font-size: 42px !important;
+    font-size: 54px !important;
+  }
+
+  .description {
+    font-size: 24px;
+  }
+
+  .darkButton,
+  .lightButton {
+    height: 54px;
+    font-size: 22px;
+  }
+
+  .portraitCard {
+    height: 320px;
+  }
+
+  .floatingAction {
+    width: 56px;
+    height: 56px;
+    left: 10px;
+    bottom: -12px;
   }
 }

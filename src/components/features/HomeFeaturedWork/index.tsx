@@ -1,17 +1,25 @@
-import { Space } from 'antd'
+import { Space, Typography } from 'antd'
+import { FeaturedWorkCard } from '../../_shared/FeaturedWorkCard'
 import { SectionHeader } from '../../_shared/SectionHeader'
-import { FeaturedWorkCard } from '../FeaturedWorkCard'
+import { FEATURED_WORK_LINK_LABEL, FEATURED_WORK_SUBTITLE } from './consts'
 import styles from './styles.module.css'
 import type { HomeFeaturedWorkProps } from './types'
 
 export const HomeFeaturedWork = ({ items }: HomeFeaturedWorkProps) => {
   return (
     <section className={styles.section}>
-      <SectionHeader title="Featured Work" />
-      <Space direction="vertical" size={20} className={styles.projectStack}>
-        {items.map((item) => (
-          <FeaturedWorkCard key={item.title} item={item} />
-        ))}
+      <div className={styles.headerRow}>
+        <div>
+          <SectionHeader title="Featured Work" />
+          <Typography.Paragraph className={styles.subtitle}>
+            {FEATURED_WORK_SUBTITLE}
+          </Typography.Paragraph>
+        </div>
+        <Typography.Link className={styles.allProjectsLink}>{FEATURED_WORK_LINK_LABEL}</Typography.Link>
+      </div>
+      <Space orientation="vertical" size={20} className={styles.projectStack}>
+        <FeaturedWorkCard key={items[0].title} item={items[0]} imageDirection="right" />
+        <FeaturedWorkCard key={items[1].title} item={items[1]} imageDirection="left" />
       </Space>
     </section>
   )

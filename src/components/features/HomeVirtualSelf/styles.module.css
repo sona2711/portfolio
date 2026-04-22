@@ -1,43 +1,210 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
 }
 
-.videoCard {
-  height: 300px;
-  background: linear-gradient(150deg, #2f2e31 0%, #65605b 100%);
+.sectionSubtitle {
+  margin: 0 0 14px !important;
+  color: #66635c;
+  font-size: 13px;
+}
+
+.videoWrap {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #d6d4cd;
+  overflow: hidden;
+  background: #222;
+}
+
+.video {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .playIcon {
   font-size: 42px;
-  color: #e7a73d;
+  color: #c18a30;
+}
+
+.videoFooter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: linear-gradient(to top, rgb(0 0 0 / 58%) 0%, rgb(0 0 0 / 0%) 100%);
+}
+
+.videoState {
+  color: #f1eee8 !important;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.videoState::before {
+  content: '●';
+  margin-right: 7px;
+  color: #e45146;
+}
+
+.videoTime {
+  color: #d6d3cd !important;
+  font-size: 11px;
+}
+
+.videoMeta {
+  margin-top: 14px;
+}
+
+.videoTitle {
+  margin: 0 !important;
+  font-size: 20px !important;
+  line-height: 1.1 !important;
+}
+
+.videoSubtitle {
+  margin: 4px 0 0 !important;
+  color: #5f5b52;
+  font-size: 14px;
 }
 
 .chatCard {
   border-radius: 8px !important;
-  border-color: #ecebe6 !important;
-  background: #faf8f0 !important;
+  border-color: #e4e1d8 !important;
+  background: #f8f8f5 !important;
+  height: 100%;
+  max-height: 474px;
 }
 
 .chatCard :global(.ant-card-body) {
+  padding: 0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #efe2c6;
+  padding: 12px 14px;
+}
+
+.chatIconWrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #e2a53f;
+  color: #503a15;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatTitle {
+  display: block;
+  color: #2d2d2b !important;
+}
+
+.chatStatus {
+  display: block;
+  color: #6a5f47;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.chatBody {
+  width: 100%;
   padding: 14px !important;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .chatBubble {
-  background: #f5f1e5;
-  border: 1px solid #e2dac7;
-  padding: 10px 11px;
+  background: #ecece9;
+  border: 1px solid #e1ddd2;
+  padding: 11px 12px;
   color: #6e6657;
   font-size: 12px;
+  border-radius: 8px;
 }
 
 .chatBubbleAccent {
-  background: #c89337;
+  background: #b27a1d;
   color: #fff;
-  padding: 10px 11px;
+  padding: 11px 12px;
   font-size: 12px;
+  border-radius: 8px;
+  margin-left: auto;
+  max-width: 82%;
+}
+
+.chatInput {
+  border-top: 1px solid #e6e3db;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-top: auto;
+}
+
+.chatInputField {
+  flex: 1;
+  min-width: 0;
+}
+
+.chatInputField :global(.ant-input) {
+  background: #f3f2ee;
+  border-radius: 6px;
+  color: #2d2d2b;
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+.chatInputField :global(.ant-input::placeholder) {
+  color: #99968f;
+}
+
+.sendButton {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  background: #b27a1d;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .video {
+    height: 240px;
+  }
+
+  .videoTitle {
+    font-size: 24px !important;
+  }
+
+  .chatCard {
+    max-height: 420px;
+  }
 }

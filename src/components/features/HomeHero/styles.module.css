@@ -19,7 +19,7 @@
 
 .title {
   margin: 0 !important;
-  font-size: 84px !important;
+  font-size: 98px !important;
   line-height: 0.96 !important;
   letter-spacing: -0.02em;
   color: #2c2f31 !important;
@@ -29,7 +29,7 @@
   margin: 0 !important;
   max-width: 500px;
   color: #55524a;
-  font-size: 38px;
+  font-size: 24px;
   line-height: 1.25;
 }
 
@@ -38,24 +38,25 @@
   border-color: #2f3032 !important;
   border-radius: 8px !important;
   color: #f2f2f2 !important;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 600;
-  height: 76px;
+  height: 48px;
   padding-inline: 42px !important;
 }
 
 .lightButton {
-  border-radius: 0 !important;
-  border-color: transparent !important;
+  border: none;
   color: #2c2f31 !important;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: 600;
-  height: 76px;
-  padding-inline: 0 !important;
+  height: 48px;
+  padding-inline: 42px !important;
+  outline: none !important;
+  background: transparent !important;
 }
 
 .lightButton::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 38px;
   height: 2px;
@@ -64,23 +65,36 @@
   vertical-align: middle;
 }
 
-.portraitWrap {
-  position: relative;
-}
-
 .portraitCard {
   position: relative;
-  height: 500px;
+  height: clamp(280px, 52vw, 450px);
+  max-height: 520px;
   border: 1px solid #d8d2c3;
   background: #111;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 20px 30px rgb(0 0 0 / 13%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portraitImageWrap {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
 .portraitImage {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center center;
   display: block;
@@ -97,7 +111,6 @@
   background: #e2a53f;
   color: #3f3321;
   font-size: 20px;
-  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -120,13 +133,17 @@
   }
 
   .portraitCard {
-    height: 320px;
+    height: clamp(260px, 70vw, 340px);
+  }
+
+  .portraitImageWrap {
+    padding: 10px;
   }
 
   .floatingAction {
     width: 56px;
     height: 56px;
-    left: 10px;
+    left: 20px;
     bottom: -12px;
   }
 }

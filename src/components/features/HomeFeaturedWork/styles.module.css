@@ -4,6 +4,37 @@
   gap: 24px;
 }
 
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.subtitle {
+  margin: 4px 0 0 !important;
+  color: #66635c;
+  font-size: 14px;
+}
+
+.allProjectsLink {
+  margin-top: 12px;
+  color: #9d6d1d !important;
+  font-weight: 600;
+  text-transform: none;
+}
+
 .projectStack {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .headerRow {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .allProjectsLink {
+    margin-top: 0;
+  }
 }

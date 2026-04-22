@@ -1,0 +1,41 @@
+.card {
+  border-radius: 8px !important;
+  height: 100%;
+  min-height: 208px;
+  border-color: #e8e6df !important;
+  background: #f8f8f6 !important;
+  box-shadow: none !important;
+}
+
+.card :global(.ant-card-body) {
+  padding: 22px 20px 18px !important;
+}
+
+.iconBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #e3a740;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #5d471f;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.title {
+  margin: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.35 !important;
+  color: #2d2f31 !important;
+  letter-spacing: 0;
+  margin-bottom: 14px !important;
+}
+
+.description {
+  margin: 0 !important;
+  color: #66645d;
+  font-size: 12px;
+  line-height: 1.42;
+}

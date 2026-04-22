@@ -1,8 +1,5 @@
+import type { FeaturedWorkItem } from '../../_shared/FeaturedWorkCard/types'
+
 export type HomeFeaturedWorkProps = {
-  items: {
-    title: string
-    description: string
-    ctaLabel: string
-    previewVariant: 'dark' | 'accent'
-  }[]
+  items: FeaturedWorkItem[]
 }

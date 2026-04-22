@@ -58,7 +58,7 @@
 
 .menu :global(.ant-menu-item) {
   padding-inline: 0 !important;
-  margin-inline: 0 !important;
+  margin-inline: 12px !important;
   height: 58px !important;
   line-height: 58px !important;
   border-bottom: none !important;

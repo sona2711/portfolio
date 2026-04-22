@@ -1,18 +1,18 @@
-import { LoginOutlined } from '@ant-design/icons'
-import { Button, Col, Row, Space, Tag, Typography } from 'antd'
-import sonaImage from '../../../assets/Sona.png'
+import { CodeOutlined } from '@ant-design/icons'
+import { Button, Col, Flex, Row, Space, Tag, Typography } from 'antd'
+import sonaImage from '../../../assets/images/Sona.png'
 import { HERO_DESCRIPTION, HERO_LABEL, HERO_NAME } from './consts'
 import styles from './styles.module.css'
 
 export const HomeHero = () => {
   return (
     <section className={styles.section}>
-      <Tag bordered={false} className={styles.tag}>
+      <Tag variant="filled" className={styles.tag}>
         {HERO_LABEL}
       </Tag>
-      <Row gutter={[64, 40]} align="middle">
+      <Row gutter={[64, 64]} align="middle">
         <Col xs={24} md={14}>
-          <Space direction="vertical" size={22} className={styles.textBlock}>
+          <Space orientation="vertical" size={40} className={styles.textBlock}>
             <Typography.Title level={1} className={styles.title}>
               {HERO_NAME}
             </Typography.Title>
@@ -21,19 +21,19 @@ export const HomeHero = () => {
               <Button type="primary" className={styles.darkButton}>
                 View Work
               </Button>
-              <Button className={styles.lightButton}>Hire Me</Button>
+              <Button type="text" className={styles.lightButton}>Hire Me</Button>
             </Space>
           </Space>
         </Col>
         <Col xs={24} md={10} lg={8}>
-          <div className={styles.portraitWrap}>
             <div className={styles.portraitCard}>
-            <img src={sonaImage} alt={HERO_NAME} className={styles.portraitImage} />
+              <div className={styles.portraitImageWrap}>
+                <img src={sonaImage} alt={HERO_NAME} className={styles.portraitImage} />
+              </div>
             </div>
-            <button type="button" className={styles.floatingAction} aria-label="Open profile">
-              <LoginOutlined />
-            </button>
-          </div>
+            <Flex align="center" justify='center' className={styles.floatingAction}>
+            <CodeOutlined />
+            </Flex>
         </Col>
       </Row>
     </section>

@@ -5,6 +5,7 @@ export const NAV_ITEMS: NavItem[] = [
   { key: '/', label: 'Process' },
   { key: '/about', label: 'About' },
   { key: '/contact', label: 'Contact' },
+  { key: '/admin', label: 'Admin' },
 ]
 
 export const BRAND_NAME = 'Sona Mkrtchyan'

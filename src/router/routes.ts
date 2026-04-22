@@ -14,6 +14,9 @@ const ProjectsPage = lazy(() =>
 const ContactPage = lazy(() =>
   import('@/pages/ContactPage').then((module) => ({ default: module.ContactPage })),
 )
+const AiInterfacePage = lazy(() =>
+  import('@/pages/AiInterfacePage').then((module) => ({ default: module.AiInterfacePage })),
+)
 
 export const routes: RouteObject[] = [
   {
@@ -24,6 +27,7 @@ export const routes: RouteObject[] = [
       { path: 'about', element: createElement(AboutPage) },
       { path: 'projects', element: createElement(ProjectsPage) },
       { path: 'contact', element: createElement(ContactPage) },
+      { path: 'admin', element: createElement(AiInterfacePage) },
     ],
   },
 ]

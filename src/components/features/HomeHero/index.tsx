@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { CodeOutlined } from '@ant-design/icons'
 import { Button, Col, Flex, Row, Space, Tag, Typography } from 'antd'
 import sonaImage from '../../../assets/images/Sona.png'
@@ -5,6 +6,7 @@ import { HERO_DESCRIPTION, HERO_LABEL, HERO_NAME } from './consts'
 import styles from './styles.module.css'
 
 export const HomeHero = () => {
+  const navigate = useNavigate()
   return (
     <section className={styles.section}>
       <Tag variant="filled" className={styles.tag}>
@@ -18,10 +20,10 @@ export const HomeHero = () => {
             </Typography.Title>
             <Typography.Paragraph className={styles.description}>{HERO_DESCRIPTION}</Typography.Paragraph>
             <Space size={24} wrap>
-              <Button type="primary" className={styles.darkButton}>
+              <Button type="primary" className={styles.darkButton} onClick={() => navigate('/projects')}>
                 View Work
               </Button>
-              <Button type="text" className={styles.lightButton}>Hire Me</Button>
+              <Button type="text" className={styles.lightButton} onClick={() => navigate('/contact')}>Hire Me</Button>
             </Space>
           </Space>
         </Col>

@@ -35,13 +35,19 @@
 
 .darkButton {
   background: #2f3032 !important;
-  border-color: #2f3032 !important;
+  border: none !important;
   border-radius: 8px !important;
   color: #f2f2f2 !important;
   font-size: 18px;
   font-weight: 600;
   height: 48px;
   padding-inline: 42px !important;
+
+  &:hover {
+    outline: none !important;
+    background: #e2a53f !important;
+    transition: background 0.3s ease-in-out;
+  }
 }
 
 .lightButton {
@@ -51,8 +57,13 @@
   font-weight: 600;
   height: 48px;
   padding-inline: 42px !important;
-  outline: none !important;
   background: transparent !important;
+
+  &:hover {
+    outline: none !important;
+    background: #e2a53f !important;
+    transition: background 0.3s ease-in-out;
+  }
 }
 
 .lightButton::after {
@@ -102,7 +113,7 @@
 
 .floatingAction {
   position: absolute;
-  left: -20px;
+  left: 0px;
   bottom: -20px;
   width: 68px;
   height: 68px;

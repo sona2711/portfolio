@@ -1,0 +1,279 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a2824;
+  line-height: 1.3;
+}
+
+.shell {
+  min-height: 420px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.shell:global(.ant-layout) {
+  min-height: 420px;
+  min-width: 0;
+}
+
+.shell:global(.ant-layout.ant-layout-has-sider) {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.shell:global(.ant-layout:not(.ant-layout-has-sider)) {
+  flex-direction: column;
+}
+
+.sider {
+  background: #f5f5f5 !important;
+  border-inline-end: none !important;
+}
+
+.sider:global(.ant-layout-sider) {
+  flex: 0 0 260px !important;
+  max-width: 260px !important;
+  min-width: 0 !important;
+}
+
+.menu {
+  padding: 16px 10px;
+  border: none;
+  background: transparent !important;
+}
+
+.menu :global(.ant-menu-item) {
+  width: calc(100% - 16px) !important;
+  margin-inline: 8px !important;
+  margin-block: 4px !important;
+  height: auto !important;
+  min-height: 44px;
+  line-height: 1.35 !important;
+  padding-block: 10px !important;
+  padding-inline: 14px !important;
+  border-radius: 9px !important;
+  color: #4a4740 !important;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: normal !important;
+}
+
+.menu :global(.ant-menu-item-selected) {
+  background: transparent !important;
+  color:#d8942a !important;
+}
+
+.menu :global(.ant-menu-item-selected::after) {
+  display: none !important;
+}
+
+.menu :global(.ant-menu-item:not(.ant-menu-item-selected):hover) {
+  background: rgba(0, 0, 0, 0.04) !important;
+  color: #2a2824 !important;
+}
+
+.menu :global(.ant-menu-item-selected:hover) {
+  background: transparent !important;
+  color:#d8942a !important;
+  text-decoration: underline;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #e8e8e8;
+  min-width: 0;
+}
+
+.mobileNavLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3a3834;
+}
+
+.navSelect {
+  width: 100%;
+  min-width: 0;
+}
+
+.navSelect :global(.ant-select-selector) {
+  border-radius: 9px !important;
+}
+
+.main {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  background: #fff;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.main:global(.ant-layout-content) {
+  min-width: 0;
+}
+
+.fieldGroup {
+  min-width: 0;
+}
+
+.sectionLabel {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3a3834;
+}
+
+.promptField {
+  border-radius: 9px !important;
+  border-color: #e0e0e0 !important;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 140px !important;
+  max-width: 100%;
+}
+
+.promptField :global(textarea.ant-input) {
+  min-height: 140px;
+  max-width: 100%;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.sendButton {
+  flex: 1 1 140px;
+  min-width: 0;
+  height: 44px !important;
+  border-radius: 9px !important;
+  background: #e8a038 !important;
+  border-color: #e8a038 !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sendButton:hover {
+  background: #d8942a !important;
+  border-color: #d8942a !important;
+  color: #fff !important;
+}
+
+.resetButton {
+  flex: 1 1 140px;
+  min-width: 0;
+  height: 44px !important;
+  border-radius: 9px !important;
+  background: #ecebe8 !important;
+  border-color: #e0e0e0 !important;
+  color: #3a3834 !important;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.resetButton:hover {
+  background: #e2e0dc !important;
+  border-color: #d5d3cd !important;
+  color: #2a2824 !important;
+}
+
+.responseBox {
+  min-height: 160px;
+  padding: 16px 18px;
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
+  border-radius: 9px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #3a3834;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.responsePlaceholder {
+  color: #a8a29a;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .sider:global(.ant-layout-sider) {
+    flex: 0 0 220px !important;
+    max-width: 220px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .shell {
+    min-height: 360px;
+  }
+
+  .shell:global(.ant-layout) {
+    min-height: 360px;
+  }
+
+  .main {
+    padding: 20px 16px 24px;
+    gap: 18px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shell {
+    border-radius: 8px;
+    min-height: 0;
+  }
+
+  .shell:global(.ant-layout) {
+    min-height: 0;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .sendButton,
+  .resetButton {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .promptField {
+    min-height: 120px !important;
+  }
+
+  .promptField :global(textarea.ant-input) {
+    min-height: 120px;
+  }
+
+  .responseBox {
+    min-height: 140px;
+  }
+}

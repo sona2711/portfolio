@@ -25,7 +25,6 @@ export const LayoutHeader = () => {
         items={NAV_ITEMS}
         onClick={({ key }) => navigate(String(key))}
         className={styles.menu}
-        disabledOverflow
       />
       <div className={styles.actions}>
         <Button type="text" className={styles.iconButton} aria-label="Theme">

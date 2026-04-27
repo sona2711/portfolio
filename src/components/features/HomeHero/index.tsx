@@ -2,11 +2,15 @@ import { useNavigate } from "react-router-dom";
 import { CodeOutlined } from "@ant-design/icons";
 import { Button, Col, Flex, Row, Space, Tag, Typography } from "antd";
 import sonaImage from "../../../assets/images/Sona.png";
+import { useCVContent } from "@/hooks/useCVContent";
 import { HERO_DESCRIPTION, HERO_LABEL, HERO_NAME } from "./consts";
 import styles from "./styles.module.css";
 
 export const HomeHero = () => {
   const navigate = useNavigate();
+  const { sections } = useCVContent();
+  const heroDescription = sections.summary.trim() || HERO_DESCRIPTION;
+
   return (
     <section className={styles.section}>
       <Tag variant="filled" className={styles.tag}>
@@ -19,7 +23,7 @@ export const HomeHero = () => {
               {HERO_NAME}
             </Typography.Title>
             <Typography.Paragraph className={styles.description}>
-              {HERO_DESCRIPTION}
+              {heroDescription}
             </Typography.Paragraph>
             <Space size={24} wrap>
               <Button

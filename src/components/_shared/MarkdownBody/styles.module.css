@@ -1,0 +1,122 @@
+.prose {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #3a3834;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.prose :global(:first-child) {
+  margin-top: 0;
+}
+
+.prose :global(:last-child) {
+  margin-bottom: 0;
+}
+
+.prose :global(h1),
+.prose :global(h2),
+.prose :global(h3),
+.prose :global(h4) {
+  margin: 1.1em 0 0.45em;
+  font-weight: 700;
+  color: #2a2824;
+  line-height: 1.3;
+}
+
+.prose :global(h1) {
+  font-size: 1.35em;
+}
+
+.prose :global(h2) {
+  font-size: 1.2em;
+}
+
+.prose :global(h3),
+.prose :global(h4) {
+  font-size: 1.05em;
+}
+
+.prose :global(p) {
+  margin: 0.65em 0;
+}
+
+.prose :global(ul),
+.prose :global(ol) {
+  margin: 0.65em 0;
+  padding-left: 1.35em;
+}
+
+.prose :global(li) {
+  margin: 0.25em 0;
+}
+
+.prose :global(blockquote) {
+  margin: 0.75em 0;
+  padding: 0.35em 0 0.35em 0.9em;
+  border-left: 3px solid #e8a038;
+  color: #5f5a52;
+  background: rgba(232, 160, 56, 0.08);
+  border-radius: 0 6px 6px 0;
+}
+
+.prose :global(a) {
+  color: #c77d12;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose :global(a:hover) {
+  color: #a66a0f;
+}
+
+.prose :global(code) {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: 0.9em;
+  padding: 0.12em 0.35em;
+  background: #ecebe8;
+  border-radius: 4px;
+}
+
+.prose :global(pre) {
+  margin: 0.75em 0;
+  padding: 12px 14px;
+  background: #2a2824;
+  color: #f5f4f1;
+  border-radius: 8px;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.prose :global(pre code) {
+  padding: 0;
+  background: transparent;
+  font-size: 0.85em;
+  color: inherit;
+}
+
+.prose :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  font-size: 0.95em;
+}
+
+.prose :global(th),
+.prose :global(td) {
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.prose :global(th) {
+  background: #ecebe8;
+  font-weight: 600;
+}
+
+.prose :global(hr) {
+  margin: 1em 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}

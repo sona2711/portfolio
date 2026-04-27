@@ -1,4 +1,4 @@
 export type VirtualChatMessage = {
-  text: string
-  variant: 'neutral' | 'accent'
-}
+  text: string;
+  variant: "neutral" | "accent";
+};

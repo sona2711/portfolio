@@ -1,6 +1,10 @@
-import { PlayCircleOutlined, SendOutlined, ToolOutlined } from '@ant-design/icons'
-import { Card, Col, Input, Row, Space, Typography } from 'antd'
-import { SectionHeader } from '../../_shared/SectionHeader'
+import {
+  PlayCircleOutlined,
+  SendOutlined,
+  ToolOutlined,
+} from "@ant-design/icons";
+import { Card, Col, Input, Row, Space, Typography } from "antd";
+import { SectionHeader } from "../../_shared/SectionHeader";
 import {
   CHAT_INPUT_PLACEHOLDER,
   CHAT_MESSAGES,
@@ -10,8 +14,8 @@ import {
   VIDEO_SUBTITLE,
   VIDEO_TIMER,
   VIDEO_TITLE,
-} from './consts'
-import styles from './styles.module.css'
+} from "./consts";
+import styles from "./styles.module.css";
 
 export const HomeVirtualSelf = () => {
   return (
@@ -30,15 +34,21 @@ export const HomeVirtualSelf = () => {
               <PlayCircleOutlined className={styles.playIcon} />
             </div>
             <div className={styles.videoFooter}>
-              <Typography.Text className={styles.videoState}>AI SYNTHESIS ACTIVE</Typography.Text>
-              <Typography.Text className={styles.videoTime}>{VIDEO_TIMER}</Typography.Text>
+              <Typography.Text className={styles.videoState}>
+                AI SYNTHESIS ACTIVE
+              </Typography.Text>
+              <Typography.Text className={styles.videoTime}>
+                {VIDEO_TIMER}
+              </Typography.Text>
             </div>
           </div>
           <div className={styles.videoMeta}>
             <Typography.Paragraph className={styles.videoTitle}>
               {VIDEO_TITLE}
             </Typography.Paragraph>
-            <Typography.Paragraph className={styles.videoSubtitle}>{VIDEO_SUBTITLE}</Typography.Paragraph>
+            <Typography.Paragraph className={styles.videoSubtitle}>
+              {VIDEO_SUBTITLE}
+            </Typography.Paragraph>
           </div>
         </Col>
         <Col xs={24} md={10}>
@@ -51,14 +61,20 @@ export const HomeVirtualSelf = () => {
                 <Typography.Text strong className={styles.chatTitle}>
                   {CHAT_TITLE}
                 </Typography.Text>
-                <Typography.Text className={styles.chatStatus}>{CHAT_STATUS}</Typography.Text>
+                <Typography.Text className={styles.chatStatus}>
+                  {CHAT_STATUS}
+                </Typography.Text>
               </div>
             </div>
             <Space orientation="vertical" size={12} className={styles.chatBody}>
               {CHAT_MESSAGES.map((message) => (
                 <div
                   key={message.text}
-                  className={message.variant === 'accent' ? styles.chatBubbleAccent : styles.chatBubble}
+                  className={
+                    message.variant === "accent"
+                      ? styles.chatBubbleAccent
+                      : styles.chatBubble
+                  }
                 >
                   {message.text}
                 </div>
@@ -71,7 +87,11 @@ export const HomeVirtualSelf = () => {
                 className={styles.chatInputField}
                 aria-label="Message"
               />
-              <button type="button" className={styles.sendButton} aria-label="Send message">
+              <button
+                type="button"
+                className={styles.sendButton}
+                aria-label="Send message"
+              >
                 <SendOutlined />
               </button>
             </div>
@@ -79,5 +99,5 @@ export const HomeVirtualSelf = () => {
         </Col>
       </Row>
     </section>
-  )
-}
+  );
+};

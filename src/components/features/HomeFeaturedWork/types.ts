@@ -1,5 +1,5 @@
-import type { FeaturedWorkItem } from '../../_shared/FeaturedWorkCard/types'
+import type { FeaturedWorkItem } from "../../_shared/FeaturedWorkCard/types";
 
 export type HomeFeaturedWorkProps = {
-  items: FeaturedWorkItem[]
-}
+  items: FeaturedWorkItem[];
+};

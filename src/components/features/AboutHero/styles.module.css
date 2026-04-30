@@ -1,0 +1,134 @@
+.section {
+  padding: 10px 0 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.label {
+  color: #9d6d1d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.heading {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  color: #2c2f31 !important;
+  font-size: 84px !important;
+  font-weight: 700 !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  color: #e2a53f;
+}
+
+.description {
+  margin: 0 !important;
+  max-width: 620px;
+  padding: 18px 20px;
+  border-radius: 4px;
+  background: var(--app-surface);
+  color: #55524a;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.visualBlock {
+  position: relative;
+}
+
+.imageFrame {
+  width: 100%;
+  max-height: 450px;
+  height: 100%;
+  border: 1px solid #d8d2c3;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 30px var(--app-accent-border);
+  background: #111;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: contain;
+  display: block;
+}
+
+.actions {
+  position: absolute;
+  left: 18px;
+  bottom: -18px;
+  display: flex;
+  gap: 10px;
+}
+
+.actionPrimary,
+.actionSecondary {
+  height: 50px !important;
+  width: 50px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border: 0 !important;
+}
+
+.actionPrimary {
+  background: #e2a53f !important;
+  color: #3f3321 !important;
+}
+
+.actionSecondary {
+  background: #ede8dd !important;
+  color: #3f3321 !important;
+}
+
+@media (max-width: 992px) {
+  .heading {
+    font-size: 62px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 6px 0 18px;
+  }
+
+  .content {
+    gap: 16px;
+  }
+
+  .heading {
+    font-size: 52px !important;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .imageFrame,
+  .image {
+    min-height: 300px;
+  }
+
+  .actions {
+    left: 14px;
+    bottom: -14px;
+  }
+
+  .actionPrimary,
+  .actionSecondary {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}

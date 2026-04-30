@@ -1,5 +1,5 @@
 .footer {
-  background: #e5e4e1;
+  background: var(--app-footer-bg);
   padding: 36px 24px 40px !important;
 }
 
@@ -23,7 +23,7 @@
 .brand {
   display: block;
   margin: 0;
-  color: #2c2f31;
+  color: var(--app-text);
   font-size: 15px;
   font-weight: 700;
   line-height: 1.2;
@@ -34,7 +34,7 @@
 .tagline {
   display: block;
   margin: 0;
-  color: #6f6a60;
+  color: var(--app-text-muted);
   font-size: 13px;
   font-weight: 400;
   line-height: 1.45;
@@ -50,14 +50,14 @@
 }
 
 .footerLink {
-  color: #6f6a60 !important;
+  color: var(--app-text-muted) !important;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.01em;
 }
 
 .footerLink:hover {
-  color: #2c2f31 !important;
+  color: var(--app-text) !important;
 }
 
 @media (max-width: 768px) {

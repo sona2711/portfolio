@@ -6,11 +6,11 @@
   padding-inline: 24px;
   height: 58px;
   line-height: 58px;
-  background: #f5f4f1;
+  background: var(--app-surface);
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid #d9d6cf;
+  border-bottom: 1px solid var(--app-border);
   min-width: 0;
 }
 
@@ -45,7 +45,7 @@
 
 .brandLink {
   display: block;
-  color: #2a2824;
+  color: var(--app-text);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -84,7 +84,7 @@
   height: 58px !important;
   line-height: 58px !important;
   border-bottom: none !important;
-  color: #69645b !important;
+  color: var(--app-text-muted) !important;
   font-size: 14px !important;
   font-weight: 500;
   flex-shrink: 0;
@@ -92,9 +92,9 @@
 
 .menu :global(.ant-menu-item-selected) {
   background: transparent !important;
-  color: #9d6d1d !important;
+  color: var(--app-accent) !important;
   border-radius: 0 !important;
-  border-bottom: 1px solid #b78632 !important;
+  border-bottom: 1px solid var(--app-accent-border) !important;
 }
 
 .menu :global(.ant-menu-item::after) {
@@ -110,15 +110,15 @@
 }
 
 .iconButton {
-  color: #6f6a60 !important;
+  color: var(--app-text-muted) !important;
   font-size: 15px;
 }
 
 .ctaButton {
   border-radius: 8px !important;
-  background: linear-gradient(180deg, #dba84d 0%, #bb8127 100%) !important;
-  border-color: #b87f27 !important;
-  color: #fff !important;
+  background: var(--app-accent-gradient) !important;
+  border-color: var(--app-accent-border) !important;
+  color: var(--app-accent-contrast) !important;
   font-weight: 700;
   font-size: 14px;
   padding-inline: 20px !important;

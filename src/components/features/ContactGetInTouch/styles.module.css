@@ -1,0 +1,38 @@
+.section {
+  padding: 8px 0 16px;
+}
+
+.title {
+  margin: 0 !important;
+  color: #2f2f2f !important;
+  font-size: 72px !important;
+  line-height: 1.06 !important;
+}
+
+.description {
+  margin: 8px 0 24px !important;
+  max-width: 620px;
+  color: #66625a;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.contentGrid {
+  margin-top: 8px;
+}
+
+@media (max-width: 992px) {
+  .title {
+    font-size: 56px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 42px !important;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}

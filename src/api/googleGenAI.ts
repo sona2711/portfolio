@@ -13,6 +13,7 @@ const RETRY_DELAY_MS = 1200;
 const MARKDOWN_INSTRUCTION =
   "Return the answer in clean Markdown format. Use headings, bullet points, and code fences when appropriate.";
 
+// Builds the Gemini generateContent endpoint and validates required env vars.
 const buildGeminiUrl = (): string => {
   if (!apiKey) {
     throw new Error("Missing VITE_GOOGLE_API_KEY");
@@ -25,11 +26,13 @@ const buildGeminiUrl = (): string => {
   return `${apiBaseUrl}/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
 };
 
+// Delays execution for a short interval before retrying failed requests.
 const wait = (delayMs: number) =>
   new Promise<void>((resolve) => {
     setTimeout(resolve, delayMs);
   });
 
+// Converts axios/Gemini errors into a readable message for the UI.
 const parseGeminiError = (error: unknown): string => {
   if (!axios.isAxiosError(error)) {
     return error instanceof Error ? error.message : "Failed to generate text";
@@ -51,18 +54,22 @@ type GenerateTextOptions = {
   asMarkdown?: boolean;
 };
 
-const requestGeminiText = async (
+// Sends the prompt to Gemini and defaults to Markdown output unless opted out.
+const requestGeminiText = (
   prompt: string,
   options?: GenerateTextOptions,
-) =>
-  axios.post<GeminiGenerateContentResponse>(
+): Promise<GeminiGenerateContentResponse> => {
+  const asMarkdown = options?.asMarkdown ?? true;
+
+  return axios
+    .post<GeminiGenerateContentResponse>(
     buildGeminiUrl(),
     {
       contents: [
         {
           parts: [
             {
-              text: options?.asMarkdown
+              text: asMarkdown
                 ? `${MARKDOWN_INSTRUCTION}\n\nUser prompt:\n${prompt}`
                 : prompt,
             },
@@ -73,16 +80,18 @@ const requestGeminiText = async (
     {
       timeout: 15000,
     },
-  );
+    )
+    .then((response) => response.data);
+};
 
+// Public API: gets generated text, retries on throttling/service-unavailable, and normalizes errors.
 export const generateText = async (
   prompt: string,
   options?: GenerateTextOptions,
 ): Promise<string> => {
   try {
     const response = await requestGeminiText(prompt, options);
-
-    const text = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const text = response?.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!text) {
       throw new Error("Empty response from Gemini API");
@@ -100,7 +109,7 @@ export const generateText = async (
       try {
         const retryResponse = await requestGeminiText(prompt, options);
         const retryText =
-          retryResponse.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+          retryResponse?.candidates?.[0]?.content?.parts?.[0]?.text;
 
         if (retryText) {
           return retryText;

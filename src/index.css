@@ -5,6 +5,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --app-bg: #f5f4f1;
+  --app-surface: #f5f4f1;
+  --app-footer-bg: #e5e4e1;
+  --app-border: #d9d6cf;
+  --app-text: #2c2f31;
+  --app-text-muted: #6f6a60;
+  --app-accent: #9d6d1d;
+  --app-accent-border: #b78632;
+  --app-accent-gradient: linear-gradient(180deg, #dba84d 0%, #bb8127 100%);
+  --app-accent-contrast: #fff;
+}
+
 html,
 body,
 #root {
@@ -13,4 +26,78 @@ body,
 
 body {
   margin: 0;
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+body[data-theme="dark"] {
+  --app-bg: #111418;
+  --app-surface: #171b21;
+  --app-footer-bg: #14181d;
+  --app-border: #161718;
+  --app-text: #eef1f6;
+  --app-text-muted: #fafcff;
+  --app-accent: #f0b249;
+  --app-accent-border: #b8862f;
+  --app-accent-gradient: linear-gradient(180deg, #e3af4b 0%, #bd8128 100%);
+  --app-accent-contrast: #111418;
+}
+
+body[data-theme="dark"] #root {
+  background: var(--app-bg);
+}
+
+body[data-theme="dark"] :where(.ant-layout, .ant-layout-content, .ant-layout-header, .ant-layout-footer) {
+  background: var(--app-surface) !important;
+  color: var(--app-text) !important;
+}
+
+body[data-theme="dark"] :where([class*="section"], [class*="wrapper"], [class*="Card"], [class*="card"]) {
+  border-color: var(--app-border) !important;
+}
+
+body[data-theme="dark"] :where(
+    [class*="title"],
+    [class*="Title"],
+    [class*="heading"],
+    [class*="brand"],
+    h1,
+    h2,
+    h3,
+    h4,
+    h5
+  ) {
+  color: var(--app-text) !important;
+}
+
+body[data-theme="dark"] :where([class*="description"], [class*="subtitle"], p, .ant-typography) {
+  color: var(--app-text-muted) !important;
+}
+
+body[data-theme="dark"] :where(input, textarea, .ant-input, .ant-input-outlined) {
+  background: #1d222a !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+body[data-theme="dark"] :where(input::placeholder, textarea::placeholder) {
+  color: #1c1c1d !important;
+}
+
+body[data-theme="dark"] :where(.ant-card){
+  color: var(--app-text) !important;
+  background: var(--app-surface) !important;
+  border-color: var(--app-accent-border) !important;
+}
+
+body[data-theme="dark"] :where(.ant-card-body){
+  color: var(--app-text) !important;
+}
+
+body[data-theme="dark"] :where(.ant-card-meta-title){
+  color: var(--app-text) !important;
+}
+
+body[data-theme="dark"] :where(.ant-card-meta-description){
+  color: var(--app-text-muted) !important;
 }

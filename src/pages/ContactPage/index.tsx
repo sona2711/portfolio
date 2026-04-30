@@ -1,4 +1,10 @@
-// import styles from './styles.module.css'
+import { ContactGetInTouch } from "../../components/features/ContactGetInTouch";
+import styles from "./styles.module.css";
 
 export const ContactPage = () => {
-  return <div>ContactPage</div>}
+  return (
+    <div className={styles.wrapper}>
+      <ContactGetInTouch />
+    </div>
+  );
+};

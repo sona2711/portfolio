@@ -1,0 +1,148 @@
+.section {
+  padding: 10px 0 24px;
+}
+
+.educationCard,
+.experienceCard {
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #ece8dd;
+  background: var(--app-surface);
+}
+
+.educationCard {
+  padding: 20px;
+}
+
+.experienceCard {
+  padding: 20px 22px;
+}
+
+.cardHeading {
+  margin: 0 0 20px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #262626 !important;
+  font-size: 19px !important;
+  font-weight: 500 !important;
+}
+
+.headingIcon {
+  color: #9d6d1d;
+  font-size: 14px;
+}
+
+.eduItem {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e8e3d8;
+}
+
+.eduItemLast {
+  padding-bottom: 0;
+}
+
+.itemTitle {
+  margin: 0 0 6px !important;
+  color: #333 !important;
+  font-size: 29px !important;
+  font-weight: 600 !important;
+  line-height: 1.04 !important;
+}
+
+.itemSubtitle {
+  margin: 0 0 8px !important;
+  color: #88857d;
+  font-size: 13px;
+}
+
+.itemPeriod {
+  color: #66625a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.experienceHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.watermarkIcon {
+  color: #d4d3ce;
+  font-size: 54px;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.experienceItem {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.periodDefault,
+.periodCurrent {
+  width: fit-content;
+  border-radius: 14px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.periodDefault {
+  background: #ecebea;
+  color: #65615a;
+}
+
+.periodCurrent {
+  background: #9d6d1d;
+  color: #f5e7cb;
+}
+
+.experienceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.experienceDescription {
+  margin: 0 !important;
+  color: #66625a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .experienceItem {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 8px 0 18px;
+  }
+
+  .educationCard,
+  .experienceCard {
+    padding: 16px;
+  }
+
+  .itemTitle {
+    font-size: 24px !important;
+  }
+
+  .watermarkIcon {
+    font-size: 42px;
+  }
+}
+

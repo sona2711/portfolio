@@ -1,0 +1,93 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.visualCard {
+  width: 100%;
+  height: 308px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #e7e1d2;
+}
+
+.visualBackdrop {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 16% 22%, rgb(167 239 233 / 90%), transparent 36%),
+    linear-gradient(140deg, #2e7b79 0%, #1f5f62 45%, #2f6f68 100%);
+}
+
+.availabilityBadge {
+  width: fit-content;
+  margin-top: -14px;
+  margin-left: 12px;
+  padding: 9px 12px;
+  border-radius: 2px;
+  border: 1px solid #ece8dd;
+  background: #f7f7f5;
+  color: #946820;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.infoList {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.infoIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #efe8da;
+  color: #a57a2f;
+  font-size: 12px;
+}
+
+.infoLabel {
+  color: #807b72;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.infoValue {
+  margin: 1px 0 0 !important;
+  color: #3f3b34 !important;
+  font-size: 15px;
+}
+
+.socials {
+  margin-top: 8px;
+}
+
+.socialIcons {
+  margin-top: 7px;
+  display: flex;
+  gap: 12px;
+  color: #5a564d;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .visualCard {
+    height: 240px;
+  }
+
+  .availabilityBadge {
+    font-size: 22px;
+  }
+}

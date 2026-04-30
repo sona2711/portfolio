@@ -1,5 +1,5 @@
 .wrapper {
-  background: #faf9f6;
+  background: var(--app-surface);
   padding: 40px 0 48px;
 }
 

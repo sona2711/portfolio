@@ -1,0 +1,41 @@
+.card {
+  border-radius: 8px;
+  border: 1px solid #ece8dd;
+  background: #f7f7f5;
+  padding: 20px 18px;
+}
+
+.fieldLabel :global(.ant-form-item-label > label) {
+  color: #807b72 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em;
+  font-weight: 600 !important;
+}
+
+.input,
+.textArea {
+  border: none !important;
+  border-radius: 2px !important;
+  background: #e6e4e0 !important;
+  box-shadow: none !important;
+  color: #49463f !important;
+}
+
+.input::placeholder,
+.textArea::placeholder {
+  color: #9b968c !important;
+}
+
+.submitButton {
+  height: 42px !important;
+  padding-inline: 20px !important;
+  border-radius: 7px !important;
+  border: none !important;
+  background: #d7932a !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+.submitButton:hover {
+  background: #2f3032 !important;
+}

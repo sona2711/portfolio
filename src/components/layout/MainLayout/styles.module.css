@@ -1,9 +1,11 @@
 .layout {
   min-height: 100vh;
+  background: var(--app-bg) !important;
 }
 
 .content {
   padding: 30px 20px 56px;
+  background: var(--app-bg);
 }
 
 .contentContainer {

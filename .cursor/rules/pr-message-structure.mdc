@@ -1,0 +1,55 @@
+---
+alwaysApply: true
+---
+
+# PR Message Rules
+
+## Output Format (MANDATORY)
+- All PR messages MUST be written in Markdown
+- Must include these sections:
+    - Title
+    - Description
+    - Changes
+
+## Title Rules
+- Must be clear, short, and descriptive
+- Prefer Conventional Commits format:
+    - feat
+    - fix
+    - refactor
+    - style
+    - docs
+    - chore
+- Format:
+    - `<type>: <short description>`
+- If the project does not use Conventional Commits:
+    - Use a clean, descriptive title without prefix
+
+
+## Changes Section Rules
+- Must always be included
+- Must use bullet points only
+- One change per line
+- Must reflect only real changes from git history
+
+## Quality Rules
+- DO NOT invent or assume changes
+- DO NOT include raw code in PR messages
+- DO NOT use vague wording (e.g. "improved things", "fixed issues")
+- All descriptions must be specific and reviewable
+
+
+## Markdown Rules
+- Must use proper Markdown formatting:
+    - `##` headings
+    - bullet points (`-`)
+    - clean spacing between sections
+- Output must be directly usable in GitHub
+
+
+## Validation Rules
+- Before output, ensure: 
+    - All required sections exist
+    - No invented or missing changes
+    - Consistent formatting
+    - Compliance with project commit style

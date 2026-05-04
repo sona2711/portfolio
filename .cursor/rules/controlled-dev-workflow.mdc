@@ -1,0 +1,126 @@
+---
+alwaysApply: true
+description: Ensure safe, predictable, and high-quality AI-assisted code changes using Git and structured execution.
+---
+
+# Controlled Development Workflow Rules
+
+
+## Process
+
+### Mandatory sequence
+
+Follow this order. **Plan approval comes before the safe branch; the safe branch comes before any code changes.**
+
+1. **Understand Task** — clarify scope and risks; do not modify the repo.
+2. **Create Plan** — break work into steps (purpose, files, risk); **stop and get explicit user confirmation** of the plan.
+3. **Start Safe Branch** — run `safe-start-branch` **only after** the plan is confirmed, and **before** any file create/edit/delete in the repo.
+4. **Scoped Execution** (and the per-step **Show Changes** / **Await Approval** loop) — implement **one approved step at a time**.
+5. **Finalization** — after all steps are approved: stage, commit, run `generate-pr-message`, output the PR text.
+
+### Understand Task
+
+- Analyze the request carefully
+- Identify scope, constraints, and risks
+- DO NOT modify code
+
+
+### Create Plan
+
+- Break task into small steps
+
+- For each step include:
+
+  - purpose
+  - files affected
+  - risk level
+
+- Ask for user confirmation before proceeding
+
+
+### Start Safe Branch (MANDATORY)
+
+- Run skill: `safe-start-branch`
+- Must happen **after** the user confirms the plan from **Create Plan**, and **before** any code changes (no repo edits before this step)
+
+
+### Scoped Execution
+
+- Implement ONE step at a time
+- Only modify relevant files
+- Do NOT refactor unrelated code
+- Do NOT expand scope
+
+
+
+### Show Changes
+
+- After each step:
+
+    - Summarize what was done
+    - List modified files
+    - Explain reasoning
+
+
+### Await Approval
+
+- STOP after each step
+- Wait for explicit user approval
+
+
+### Finalization (MANDATORY)
+
+The task is NOT complete until this step is executed.
+
+#### Actions:
+
+1. Stage changes:
+
+```powershell
+git add .
+```
+
+2. Create commit (in PowerShell use a normal double-quoted string; avoid `<message>` placeholders because `<` and `>` are redirection operators):
+
+```powershell
+git commit -m "feat: concise description of the change"
+```
+
+3. Run skill:
+
+- `generate-pr-message`
+
+4. Output PR message to user
+
+
+
+## Constraints
+
+- Never modify more files than necessary
+- Never rename files unless required
+- Never introduce new dependencies without approval
+- Never change architecture without confirmation
+- Prefer minimal, incremental changes
+
+
+
+## Fail-Safe
+
+- If ANY of the following is unclear:
+
+    - scope
+    - affected files
+    - expected outcome
+
+- Ask for clarification
+- DO NOT proceed
+
+
+
+## Completion Condition
+
+- A task is considered COMPLETE only if:
+
+    - All steps are implemented and approved
+    - Changes are committed
+    - PR message is generated using the skill

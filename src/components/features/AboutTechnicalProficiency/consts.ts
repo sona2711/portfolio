@@ -1,5 +1,5 @@
 import type { LanguageLevelItem, SkillProgressItem } from "./types";
-
+import technicalProficiencyImage from "../../../assets/images/code.png";
 export const TECHNICAL_PROFICIENCY_TITLE = "Technical Proficiency";
 export const TECHNICAL_PROFICIENCY_DESCRIPTION =
   "My toolkit is curated for speed, scalability, and aesthetic precision. I focus on modern frameworks that empower creative freedom.";
@@ -18,3 +18,5 @@ export const LANGUAGE_LEVEL_ITEMS: LanguageLevelItem[] = [
   { language: "English", level: "Intermediate" },
   { language: "Russian", level: "Intermediate" },
 ];
+
+export const TECHNICAL_PROFICIENCY_IMAGE = technicalProficiencyImage;

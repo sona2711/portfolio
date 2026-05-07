@@ -26,22 +26,10 @@
   margin-top: 20px;
 }
 
-.codePreview {
-  min-height: 270px;
+.technicalProficiencyImage {
   width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #d8d2c3;
-  background:
-    linear-gradient(120deg, rgb(5 10 16 / 78%), rgb(18 25 36 / 72%)),
-    repeating-linear-gradient(
-      -12deg,
-      #6be3ff 0 3px,
-      #0f2e42 3px 8px,
-      #f3a13f 8px 10px,
-      #15222e 10px 16px
-    );
-  position: relative;
+  height: 100%;
+  object-fit: contain;
 }
 
 .codeGlow {

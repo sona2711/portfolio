@@ -1,7 +1,8 @@
-export type CVContentState = {
-  sections: Record<CVSectionKey, string>;
-};
+import type { CVSectionValue } from "./cvProfile";
 
+export type CVContentState = {
+  sections: Record<CVSectionKey, CVSectionValue>;
+};
 
 export type CVSectionKey =
   | "aboutMe"
@@ -15,17 +16,3 @@ export type CVSectionKey =
   | "interests"
   | "references"
   | "virtualSelf";
-
-  export type UserData = {
-    aboutMe?: string;
-    role?: string;
-    skills?: string;
-    experience?: string;
-    projects?: string;
-    education?: string;
-    certifications?: string;
-    languages?: string;
-    interests?: string;
-    references?: string;
-    virtualSelf?: string;
-  };

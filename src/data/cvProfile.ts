@@ -1,5 +1,5 @@
-import type { CVContentState } from "@/types/cvContent";
 import type { CVProfile } from "@/types/cvProfile";
+import type { CVContentState } from "@/types/cvContent";
 
 const normalizeSection = (value: string): string => value.trim();
 

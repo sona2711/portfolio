@@ -1,7 +1,13 @@
 import type { CVContentState } from "@/types/cvContent";
 
-const toSection = (title: string, content: string): string =>
-  `## ${title}\n${content.trim() || "_Not provided yet._"}`;
+const toSection = (title: string, content: string): string | null => {
+  const normalizedContent = content.trim();
+  if (!normalizedContent) {
+    return null;
+  }
+
+  return `## ${title}\n${normalizedContent}`;
+};
 
 export const buildCVProfileMarkdown = (
   sections: CVContentState["sections"],
@@ -19,4 +25,6 @@ export const buildCVProfileMarkdown = (
     toSection("Interests", sections.interests),
     toSection("References", sections.references),
     toSection("Virtual Self", sections.virtualSelf),
-  ].join("\n\n");
+  ]
+    .filter((section): section is string => Boolean(section))
+    .join("\n\n");

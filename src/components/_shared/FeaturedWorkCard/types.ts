@@ -6,6 +6,7 @@ export type FeaturedWorkItem = {
   previewVariant: "dark" | "accent";
   meta: string;
   tags: string[];
+  url: string;
 };
 
 export type FeaturedWorkCardProps = {

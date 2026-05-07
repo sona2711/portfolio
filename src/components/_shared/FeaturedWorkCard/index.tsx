@@ -36,7 +36,7 @@ export const FeaturedWorkCard = ({
                 </Tag>
               ))}
             </Space>
-            <Button type="link" className={styles.linkButton}>
+            <Button type="link" className={styles.linkButton} href={item.url} target="_blank">
               {item.ctaLabel} <ArrowRightOutlined />
             </Button>
           </Space>

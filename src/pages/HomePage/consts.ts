@@ -34,6 +34,7 @@ export const FEATURED_WORK_ITEMS: FeaturedWorkItem[] = [
     image: KassamanShopImage,
     meta: 'E-COMMERCE • 2026',
     tags: ['React', 'TypeScript'],
+    url: 'https://jewellery-shop-eta.vercel.app/',
   },
   {
     title: 'Led On',
@@ -43,5 +44,6 @@ export const FEATURED_WORK_ITEMS: FeaturedWorkItem[] = [
     image: LedOnImage,
     meta: 'FOOD SCANNER • 2024',
     tags: ['UI/UX Design'],
+    url: 'https://www.figma.com/design/uSsDXw91tKubTJs3p4diYh/LEDon?node-id=0-1&t=0RQChInxTfCDG7B3-1',
   },
 ]

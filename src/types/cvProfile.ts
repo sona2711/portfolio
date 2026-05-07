@@ -11,3 +11,5 @@ export type CVProfile = {
   references: string;
   virtualSelf: string;
 };
+
+export type CVSectionValue = string;

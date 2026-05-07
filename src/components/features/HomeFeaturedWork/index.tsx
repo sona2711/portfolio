@@ -2,8 +2,8 @@ import { Space, Typography } from "antd";
 import { FeaturedWorkCard } from "../../_shared/FeaturedWorkCard";
 import { SectionHeader } from "../../_shared/SectionHeader";
 import { FEATURED_WORK_LINK_LABEL, FEATURED_WORK_SUBTITLE } from "./consts";
-import styles from "./styles.module.css";
 import type { HomeFeaturedWorkProps } from "./types";
+import styles from "./styles.module.css";
 
 export const HomeFeaturedWork = ({ items }: HomeFeaturedWorkProps) => {
   return (

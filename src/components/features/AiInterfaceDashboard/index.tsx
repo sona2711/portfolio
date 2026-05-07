@@ -1,18 +1,20 @@
 import { SendOutlined } from "@ant-design/icons";
-import { Button, Flex, Input, Switch, Typography } from "antd";
+import { Button, Input, Typography } from "antd";
 import { useState } from "react";
 import {
+  COPY_CV_MARKDOWN_LABEL,
+  COPY_ERROR_MESSAGE,
+  COPY_SUCCESS_MESSAGE,
   DASHBOARD_TITLE,
-  MARKDOWN_OPTION_LABEL,
   PROMPT_PLACEHOLDER,
   RESPONSE_PLACEHOLDER,
 } from "./consts";
 import { generateText } from "@/api/googleGenAI";
 import { MarkdownBody } from "@/components/_shared/MarkdownBody";
 import { setCVContent } from "@/data/CVContent";
-import { buildPrompt } from "@/data/promptBuilder";
+import { buildCVProfileMarkdown } from "@/data/cvProfileMarkdown";
 import { Select } from "antd";
-import type { CVSectionKey, UserData } from "@/types/cvContent";
+import type { CVSectionKey } from "@/types/cvContent";
 import { useCVContent } from "@/hooks/useCVContent";
 import styles from "./styles.module.css";
 
@@ -21,35 +23,19 @@ const PROMPT_INPUT_ID = "ai-interface-dashboard-prompt";
 export const AiInterfaceDashboard = () => {
   const [prompt, setPrompt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [asMarkdown, setAsMarkdown] = useState(false);
+  const [copyStatus, setCopyStatus] = useState("");
   const [section, setSection] = useState<CVSectionKey>("summary");
-  const [mode, setMode] = useState<"manual" | "auto">("manual");
   const { sections } = useCVContent();
-
-  const userData: UserData = {
-    aboutMe: sections.summary,
-    role: sections.summary,
-    skills: sections.skills,
-    experience: sections.experience,
-    projects: sections.projects,
-    education: sections.education,
-    certifications: sections.certifications,
-    languages: sections.languages,
-    interests: sections.interests,
-    references: sections.references,
-    virtualSelf: sections.virtualSelf,
-  };
-  const effectivePrompt =
-    mode === "auto" ? buildPrompt(section, userData) : prompt;
+  const cvProfileMarkdown = buildCVProfileMarkdown(sections);
 
   const handleClick = async () => {
-    if (!effectivePrompt.trim() || isLoading) {
+    if (!prompt.trim() || isLoading) {
       return;
     }
 
     setIsLoading(true);
     try {
-      const res = await generateText(effectivePrompt, { asMarkdown });
+      const res = await generateText(prompt, { asMarkdown: true });
       setCVContent({
         sections: {
           ...sections,
@@ -67,8 +53,16 @@ export const AiInterfaceDashboard = () => {
 
   const handleReset = () => {
     setPrompt("");
-    setAsMarkdown(false);
-    setMode("manual");
+    setCopyStatus("");
+  };
+
+  const handleCopyCVMarkdown = async () => {
+    try {
+      await navigator.clipboard.writeText(cvProfileMarkdown);
+      setCopyStatus(COPY_SUCCESS_MESSAGE);
+    } catch {
+      setCopyStatus(COPY_ERROR_MESSAGE);
+    }
   };
 
   return (
@@ -76,7 +70,7 @@ export const AiInterfaceDashboard = () => {
       <Typography.Title level={4} className={styles.title}>
         {DASHBOARD_TITLE}
       </Typography.Title>
-      <Flex justify="space-between" align="center">
+      <div>
         <Select
           value={section}
           onChange={setSection}
@@ -95,17 +89,7 @@ export const AiInterfaceDashboard = () => {
             { value: "virtualSelf", label: "Virtual Self" },
           ]}
         />
-        <Flex justify="center" align="center" gap="8px">
-          <Switch
-            checked={mode === "auto"}
-            onChange={(checked) => setMode(checked ? "auto" : "manual")}
-          />
-
-          <Typography.Text>
-            {mode === "auto" ? "AI Assisted" : "Manual Prompt"}
-          </Typography.Text>
-        </Flex>
-      </Flex>
+      </div>
       <section className={styles.shell}>
         <div className={styles.main}>
           <div className={styles.fieldGroup}>
@@ -114,23 +98,12 @@ export const AiInterfaceDashboard = () => {
             </label>
             <Input.TextArea
               id={PROMPT_INPUT_ID}
-              disabled={mode === "auto"}
-              value={effectivePrompt}
+              value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder={PROMPT_PLACEHOLDER}
               className={styles.promptField}
               autoSize={{ minRows: 5, maxRows: 12 }}
             />
-            <div className={styles.optionRow}>
-              <Switch
-                checked={asMarkdown}
-                onChange={setAsMarkdown}
-                disabled={isLoading}
-              />
-              <Typography.Text className={styles.optionLabel}>
-                {MARKDOWN_OPTION_LABEL}
-              </Typography.Text>
-            </div>
           </div>
 
           <div className={styles.actions}>
@@ -140,7 +113,7 @@ export const AiInterfaceDashboard = () => {
               className={styles.sendButton}
               onClick={handleClick}
               loading={isLoading}
-              disabled={!effectivePrompt.trim() || isLoading}
+              disabled={!prompt.trim() || isLoading}
             >
               Send
             </Button>
@@ -151,7 +124,19 @@ export const AiInterfaceDashboard = () => {
             >
               Reset
             </Button>
+            <Button
+              htmlType="button"
+              className={styles.resetButton}
+              onClick={handleCopyCVMarkdown}
+            >
+              {COPY_CV_MARKDOWN_LABEL}
+            </Button>
           </div>
+          {copyStatus ? (
+            <Typography.Text className={styles.optionLabel}>
+              {copyStatus}
+            </Typography.Text>
+          ) : null}
 
           <div className={styles.fieldGroup}>
             <Typography.Text strong className={styles.sectionLabel}>

@@ -6,6 +6,7 @@ import {
   SKILL_PROGRESS_ITEMS,
   TECHNICAL_PROFICIENCY_DESCRIPTION,
   TECHNICAL_PROFICIENCY_TITLE,
+  TECHNICAL_PROFICIENCY_IMAGE
 } from "./consts";
 import styles from "./styles.module.css";
 import type { AboutTechnicalProficiencyProps } from "./types";
@@ -24,9 +25,7 @@ export const AboutTechnicalProficiency = (props: AboutTechnicalProficiencyProps)
 
       <Row gutter={[28, 22]} align="middle" className={styles.contentGrid}>
         <Col xs={24} lg={11}>
-          <div className={styles.codePreview} aria-hidden="true">
-            <span className={styles.codeGlow} />
-          </div>
+          <img src={TECHNICAL_PROFICIENCY_IMAGE} alt="Technical Proficiency" className={styles.technicalProficiencyImage} />
         </Col>
 
         <Col xs={24} lg={13}>

@@ -10,3 +10,5 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const BRAND_NAME = 'Sona Mkrtchyan'
 export const HEADER_CTA_LABEL = 'Hire Me'
+
+export const LAYOUT_HEADER_MOBILE_DRAWER_DOM_ID = 'layout-header-mobile-nav-drawer'

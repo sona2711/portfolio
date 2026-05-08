@@ -1,0 +1,44 @@
+.drawerBody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.drawerMenu {
+  flex: 1 1 auto;
+  border-inline-end: none !important;
+  background: transparent !important;
+}
+
+.drawerMenu:global(.ant-menu-inline) {
+  border-inline-end: none !important;
+}
+
+.drawerMenu :global(.ant-menu-item) {
+  color: var(--app-text-muted) !important;
+  font-weight: 500;
+}
+
+.drawerMenu :global(.ant-menu-item-selected) {
+  color: var(--app-accent) !important;
+  background: transparent !important;
+}
+
+.drawerFooter {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--app-border);
+}
+
+.themeButton {
+  width: 100%;
+  justify-content: flex-start !important;
+  color: var(--app-text-muted) !important;
+  font-weight: 500;
+}
+
+.themeButton:hover {
+  color: var(--app-text) !important;
+}

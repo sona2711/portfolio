@@ -1,17 +1,68 @@
-import { MoonOutlined, SunOutlined } from "@ant-design/icons";
-import { Button, Layout, Menu, Typography } from "antd";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useThemeMode } from "@/context/useThemeMode";
-import { BRAND_NAME, HEADER_CTA_LABEL, NAV_ITEMS } from "./consts";
-import styles from "./styles.module.css";
-import { getSelectedNavKey } from "./utils";
+import { MenuOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons'
+import { Button, Grid, Layout, Menu, Typography } from 'antd'
+import { useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useThemeMode } from '@/context/useThemeMode'
+import { LayoutHeaderMobileDrawer } from '../LayoutHeaderMobileDrawer'
+import {
+  BRAND_NAME,
+  HEADER_CTA_LABEL,
+  LAYOUT_HEADER_MOBILE_DRAWER_DOM_ID,
+  NAV_ITEMS,
+} from './consts'
+import styles from './styles.module.css'
+import type { NavItem } from './types'
+import { getSelectedNavKey } from './utils'
+
+type LayoutHeaderMobileNavSectionProps = {
+  selectedKey: string
+  navItems: NavItem[]
+  isDarkMode: boolean
+  onToggleTheme: () => void
+  onNavigate: (path: string) => void
+}
+
+const LayoutHeaderMobileNavSection = (props: LayoutHeaderMobileNavSectionProps) => {
+  const { selectedKey, navItems, isDarkMode, onToggleTheme, onNavigate } = props
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false)
+
+  return (
+    <>
+      <div className={styles.mobileNavSlot}>
+        <Button
+          type="text"
+          className={styles.mobileMenuButton}
+          aria-label="Open navigation menu"
+          aria-expanded={mobileDrawerOpen}
+          aria-controls={LAYOUT_HEADER_MOBILE_DRAWER_DOM_ID}
+          onClick={() => setMobileDrawerOpen(true)}
+        >
+          <MenuOutlined />
+        </Button>
+      </div>
+      <LayoutHeaderMobileDrawer
+        open={mobileDrawerOpen}
+        onClose={() => setMobileDrawerOpen(false)}
+        selectedKey={selectedKey}
+        navItems={navItems}
+        onNavigate={onNavigate}
+        drawerId={LAYOUT_HEADER_MOBILE_DRAWER_DOM_ID}
+        drawerTitle={BRAND_NAME}
+        isDarkMode={isDarkMode}
+        onToggleTheme={onToggleTheme}
+      />
+    </>
+  )
+}
 
 export const LayoutHeader = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const selectedKey = getSelectedNavKey(location.pathname);
-  const { mode, toggleMode } = useThemeMode();
-  const isDarkMode = mode === "dark";
+  const location = useLocation()
+  const navigate = useNavigate()
+  const selectedKey = getSelectedNavKey(location.pathname)
+  const { mode, toggleMode } = useThemeMode()
+  const isDarkMode = mode === 'dark'
+  const screens = Grid.useBreakpoint()
+  const isMobileNav = screens.md === false
 
   return (
     <Layout.Header className={styles.header}>
@@ -22,25 +73,40 @@ export const LayoutHeader = () => {
           </Link>
         </Typography.Text>
       </div>
-      <Menu
-        mode="horizontal"
-        selectedKeys={[selectedKey]}
-        items={NAV_ITEMS}
-        onClick={({ key }) => navigate(String(key))}
-        className={styles.menu}
-      />
+      {isMobileNav ? (
+        <LayoutHeaderMobileNavSection
+          key={location.pathname}
+          selectedKey={selectedKey}
+          navItems={NAV_ITEMS}
+          isDarkMode={isDarkMode}
+          onToggleTheme={toggleMode}
+          onNavigate={(path) => {
+            navigate(path)
+          }}
+        />
+      ) : (
+        <Menu
+          mode="horizontal"
+          selectedKeys={[selectedKey]}
+          items={NAV_ITEMS}
+          onClick={({ key }) => navigate(String(key))}
+          className={styles.menu}
+        />
+      )}
       <div className={styles.actions}>
-        <Button
-          type="text"
-          className={styles.iconButton}
-          aria-label="Toggle dark mode"
-          aria-pressed={isDarkMode}
-          onClick={toggleMode}
-        >
-          {isDarkMode ? <MoonOutlined /> : <SunOutlined />}
-        </Button>
+        {!isMobileNav ? (
+          <Button
+            type="text"
+            className={styles.iconButton}
+            aria-label="Toggle dark mode"
+            aria-pressed={isDarkMode}
+            onClick={toggleMode}
+          >
+            {isDarkMode ? <MoonOutlined /> : <SunOutlined />}
+          </Button>
+        ) : null}
         <Button className={styles.ctaButton}>{HEADER_CTA_LABEL}</Button>
       </div>
     </Layout.Header>
-  );
-};
+  )
+}

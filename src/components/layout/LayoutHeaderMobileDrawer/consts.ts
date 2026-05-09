@@ -1,0 +1,1 @@
+export const MOBILE_NAV_DRAWER_WIDTH = 300

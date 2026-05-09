@@ -134,13 +134,13 @@
   }
 
   .description {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .darkButton,
   .lightButton {
-    height: 54px;
-    font-size: 22px;
+    height: 48px;
+    font-size: 14px;
   }
 
   .portraitCard {

@@ -7,6 +7,6 @@ export type ContactInfoItem = {
 
 export type ContactInfoCardProps = {
   cardTitle: string;
-  socialsLabel: string;
+  socialsLabel?: string;
   items: ContactInfoItem[];
 };

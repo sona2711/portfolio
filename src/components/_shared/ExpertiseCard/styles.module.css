@@ -2,9 +2,15 @@
   border-radius: 8px !important;
   height: 100%;
   min-height: 208px;
-  border-color: #e8e6df !important;
+  border:  0.2px solid var(--app-border) !important;
   background: #f8f8f6 !important;
   box-shadow: none !important;
+
+  &:hover {
+   transform: translateY(-4px);
+   box-shadow: var(--app-box-shadow-sm), var(--app-accent-contrast) !important;
+   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
 }
 
 .card :global(.ant-card-body) {

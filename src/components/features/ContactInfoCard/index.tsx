@@ -1,11 +1,9 @@
 import {
   EnvironmentOutlined,
-  GithubOutlined,
-  LinkOutlined,
   MailOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
-import { Typography } from "antd";
+import { Flex, Typography } from "antd";
 import styles from "./styles.module.css";
 import type { ContactInfoCardProps, ContactInfoLabel } from "./types";
 
@@ -15,7 +13,7 @@ const iconByLabel: Record<ContactInfoLabel, JSX.Element> = {
   LOCATION: <EnvironmentOutlined />,
 };
 
-export const ContactInfoCard = ({ cardTitle, socialsLabel, items }: ContactInfoCardProps) => {
+export const ContactInfoCard = ({ cardTitle, items }: ContactInfoCardProps) => {
   return (
     <div className={styles.aside}>
       <div className={styles.visualCard}>
@@ -23,8 +21,8 @@ export const ContactInfoCard = ({ cardTitle, socialsLabel, items }: ContactInfoC
       </div>
       <div className={styles.availabilityBadge}>{cardTitle}</div>
 
-      <div className={styles.infoList}>
-        {items.map((item) => (
+      <Flex className={styles.infoList}>
+      {items.map((item) => (
           <div key={item.label} className={styles.infoItem}>
             <span className={styles.infoIcon}>{iconByLabel[item.label]}</span>
             <div>
@@ -33,15 +31,7 @@ export const ContactInfoCard = ({ cardTitle, socialsLabel, items }: ContactInfoC
             </div>
           </div>
         ))}
-      </div>
-
-      <div className={styles.socials}>
-        <Typography.Text className={styles.infoLabel}>{socialsLabel}</Typography.Text>
-        <div className={styles.socialIcons}>
-          <LinkOutlined />
-          <GithubOutlined />
-        </div>
-      </div>
+      </Flex>
     </div>
   );
 };

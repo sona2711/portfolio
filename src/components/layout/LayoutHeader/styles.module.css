@@ -51,6 +51,24 @@
   white-space: nowrap;
 }
 
+.mobileNavSlot {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mobileMenuButton {
+  color: var(--app-text-muted) !important;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;
+}
+
 .menu {
   flex: 1 1 auto;
   min-width: 0;
@@ -132,7 +150,7 @@
   }
 
   .brandText {
-    font-size: 20px;
+    display: none;
   }
 
   .menu :global(.ant-menu-overflow) {
@@ -152,25 +170,11 @@
   }
 
   .brandBlock {
-    display: none;
+    max-width: min(160px, 42vw);
   }
 
-  .menu {
-    margin-right: 8px;
-    margin-left: 0;
-  }
-
-  .menu :global(.ant-menu-overflow) {
-    gap: 8px;
-  }
-
-  .menu :global(.ant-menu-item) {
-    font-size: 12px !important;
-    margin-inline: 4px !important;
-  }
-
-  .iconButton {
-    display: none;
+  .brandText {
+    font-size: 16px;
   }
 
   .ctaButton {
@@ -180,6 +184,14 @@
 }
 
 @media (max-width: 380px) {
+  .brandBlock {
+    max-width: min(120px, 38vw);
+  }
+
+  .brandText {
+    font-size: 14px;
+  }
+
   .ctaButton {
     padding-inline: 10px !important;
     font-size: 12px;

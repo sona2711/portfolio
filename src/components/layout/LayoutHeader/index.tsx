@@ -11,16 +11,10 @@ import {
   NAV_ITEMS,
 } from './consts'
 import styles from './styles.module.css'
-import type { NavItem } from './types'
+import type { LayoutHeaderMobileNavSectionProps} from './types'
 import { getSelectedNavKey } from './utils'
 
-type LayoutHeaderMobileNavSectionProps = {
-  selectedKey: string
-  navItems: NavItem[]
-  isDarkMode: boolean
-  onToggleTheme: () => void
-  onNavigate: (path: string) => void
-}
+
 
 const LayoutHeaderMobileNavSection = (props: LayoutHeaderMobileNavSectionProps) => {
   const { selectedKey, navItems, isDarkMode, onToggleTheme, onNavigate } = props

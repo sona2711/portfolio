@@ -150,7 +150,7 @@
   }
 
   .brandText {
-    font-size: 20px;
+    display: none;
   }
 
   .menu :global(.ant-menu-overflow) {

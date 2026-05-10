@@ -10,6 +10,11 @@ export const EDUCATION_ITEMS: EducationItem[] = [
     period: "Sep 2023 - Jul 2024",
   },
   {
+    title: "AGBU",
+    subtitle: "Frontend Development (Angular 2+)",
+    period: "Jan 2023 - Oct 2023",
+  },
+  {
     title: "Tumo Labs",
     subtitle: "Guided Self-Learning program (Javascript)",
     period: "Sep 2022 - Dec 2023",
@@ -25,9 +30,18 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     isCurrent: true,
   },
   {
-    period: "2023",
-    title: "Frontend Development (Angular 2+) - AGBU",
+    period: "Mar 2026",
+    title: "Frontend Developer Intern - AutoDream",
     description:
-      'Part of the "Women Coders" Program in partnership with e.uck Start. Focused on modern web architectures and reactive programming.',
+      "Fix bugs, learn and apply modern frontend development practices. Build and maintain user interfaces using React, TypeScript, and modern web technologies.",
+    isCurrent: false,
   },
+  {
+    period: "Oct 2024 - Apr 2025",
+    title: "UI/UX Designer - LEDon startup",
+    description:
+      "Design and implement user-friendly interfaces for web and mobile applications. Collaborate with developers to ensure seamless user experiences.",
+    isCurrent: false,
+  },
+  
 ];

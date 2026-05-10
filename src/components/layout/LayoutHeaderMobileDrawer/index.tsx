@@ -22,7 +22,7 @@ export const LayoutHeaderMobileDrawer = (props: LayoutHeaderMobileDrawerProps) =
       id={drawerId}
       title={drawerTitle}
       placement="left"
-      width={MOBILE_NAV_DRAWER_WIDTH}
+      size={MOBILE_NAV_DRAWER_WIDTH}
       onClose={onClose}
       open={open}
       destroyOnClose

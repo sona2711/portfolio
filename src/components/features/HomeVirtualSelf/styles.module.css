@@ -1,3 +1,21 @@
+body[data-theme="dark"] {
+  .chatTitle {
+    color: var(--app-accent-contrast) !important;
+  }
+  .chatStatus {
+    color: var(--app-accent) !important;
+  }
+  .chatBubble {
+    background: var(--app-bg) !important;
+    border: 1px solid var(--app-accent-border) !important;
+    color: var(--app-text) !important;
+  }
+  .chatBubbleAccent {
+    background: var(--app-accent) !important;
+    color: var(--app-bg) !important;
+  }
+}
+
 .section {
   display: flex;
   flex-direction: column;
@@ -12,7 +30,7 @@
 
 .videoWrap {
   position: relative;
-  border-radius: 8px;
+  border-radius: 10px !important;
   border: 1px solid #d6d4cd;
   overflow: hidden;
   background: #222;
@@ -20,7 +38,7 @@
 
 .video {
   width: 100%;
-  height: 320px;
+  height: 400px;
   object-fit: cover;
   display: block;
 }
@@ -34,10 +52,6 @@
   pointer-events: none;
 }
 
-.playIcon {
-  font-size: 42px;
-  color: #c18a30;
-}
 
 .videoFooter {
   position: absolute;
@@ -85,7 +99,7 @@
 }
 
 .chatCard {
-  border-radius: 8px !important;
+  border-radius: 10px !important;
   border-color: #e4e1d8 !important;
   background: #f8f8f5 !important;
   height: 100%;
@@ -105,6 +119,7 @@
   align-items: center;
   background: #efe2c6;
   padding: 12px 14px;
+  border-radius: 15px 15px 0 0 !important;
 }
 
 .chatIconWrap {
@@ -139,12 +154,12 @@
 }
 
 .chatBubble {
-  background: #ecece9;
+  background:var(--app-bg);
   border: 1px solid #e1ddd2;
+  border-radius: 15px 15px 15px 0  !important; 
   padding: 11px 12px;
-  color: #6e6657;
+  color:var(--app-text);
   font-size: 12px;
-  border-radius: 8px;
 }
 
 .chatBubbleAccent {
@@ -152,14 +167,14 @@
   color: #fff;
   padding: 11px 12px;
   font-size: 12px;
-  border-radius: 8px;
+  border-radius: 15px 15px 0 15px!important;
   margin-left: auto;
   max-width: 82%;
 }
 
 .chatInput {
-  border-top: 1px solid #e6e3db;
-  background: #fff;
+  border-top: 1px solid var(--app-accent-border);
+  background:var(--app-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;

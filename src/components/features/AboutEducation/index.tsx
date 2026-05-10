@@ -1,4 +1,4 @@
-import { ClockCircleOutlined, ReadOutlined, RocketOutlined } from "@ant-design/icons";
+import { ReadOutlined, RocketOutlined } from "@ant-design/icons";
 import { Col, Row, Typography } from "antd";
 import {
   EDUCATION_ITEMS,
@@ -46,7 +46,6 @@ export const AboutEducation = (props: AboutEducationProps) => {
                 <RocketOutlined className={styles.headingIcon} />
                 {EXPERIENCE_TITLE}
               </Typography.Title>
-              <ClockCircleOutlined className={styles.watermarkIcon} />
             </div>
 
             <div className={styles.experienceList}>

@@ -2,8 +2,6 @@
   position: relative;
   padding: 78px 20px 64px;
   min-height: 420px;
-  border-radius: 8px;
-  border: 1px solid #ece8dd;
   background: var(--app-surface);
   display: flex;
   align-items: flex-start;

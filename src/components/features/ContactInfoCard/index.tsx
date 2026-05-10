@@ -3,7 +3,7 @@ import {
   MailOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
-import { Flex, Typography } from "antd";
+import { Typography } from "antd";
 import styles from "./styles.module.css";
 import type { ContactInfoCardProps, ContactInfoLabel } from "./types";
 
@@ -13,16 +13,14 @@ const iconByLabel: Record<ContactInfoLabel, JSX.Element> = {
   LOCATION: <EnvironmentOutlined />,
 };
 
-export const ContactInfoCard = ({ cardTitle, items }: ContactInfoCardProps) => {
+export const ContactInfoCard = ({ items }: ContactInfoCardProps) => {
   return (
     <div className={styles.aside}>
       <div className={styles.visualCard}>
         <div className={styles.visualBackdrop} />
       </div>
-      <div className={styles.availabilityBadge}>{cardTitle}</div>
-
-      <Flex className={styles.infoList}>
-      {items.map((item) => (
+      <div className={styles.availabilityBadge}>
+        {items.map((item) => (
           <div key={item.label} className={styles.infoItem}>
             <span className={styles.infoIcon}>{iconByLabel[item.label]}</span>
             <div>
@@ -31,7 +29,7 @@ export const ContactInfoCard = ({ cardTitle, items }: ContactInfoCardProps) => {
             </div>
           </div>
         ))}
-      </Flex>
+      </div>
     </div>
   );
 };

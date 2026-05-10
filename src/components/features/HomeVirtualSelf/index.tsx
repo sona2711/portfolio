@@ -19,8 +19,8 @@ import {
   CHAT_STATUS,
   CHAT_TITLE,
   VIDEO_SOURCE,
-  VIDEO_SUBTITLE,
-  VIDEO_TITLE,
+  // VIDEO_SUBTITLE,
+  // VIDEO_TITLE,
 } from "./consts";
 import { clampAssistantAnswer, sanitizeAssistantVoice } from "./utils";
 import styles from "./styles.module.css";
@@ -96,22 +96,22 @@ ${question}`;
         An interactive way to explore my background through AI.
       </Typography.Paragraph>
       <Row gutter={[16, 16]}>
-        <Col xs={24} md={14}>
+        <Col xs={24} md={10}>
           <div className={styles.videoWrap}>
             <video className={styles.video} controls preload="metadata">
               <source src={VIDEO_SOURCE} type="video/mp4" />
             </video>
           </div>
-          <div className={styles.videoMeta}>
+          {/* <div className={styles.videoMeta}>
             <Typography.Paragraph className={styles.videoTitle}>
               {VIDEO_TITLE}
             </Typography.Paragraph>
             <Typography.Paragraph className={styles.videoSubtitle}>
               {VIDEO_SUBTITLE}
             </Typography.Paragraph>
-          </div>
+          </div> */}
         </Col>
-        <Col xs={24} md={10}>
+        <Col xs={24} md={14}>
           <Card className={styles.chatCard}>
             <div className={styles.chatHeader}>
               <div className={styles.chatIconWrap}>

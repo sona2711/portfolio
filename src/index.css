@@ -75,7 +75,7 @@ body[data-theme="dark"] :where([class*="description"], [class*="subtitle"], p, .
 }
 
 body[data-theme="dark"] :where(input, textarea, .ant-input, .ant-input-outlined) {
-  background: #1d222a !important;
+  background: var(--app-surface) !important;
   color: var(--app-text) !important;
   border-color: var(--app-border) !important;
 }
@@ -84,10 +84,22 @@ body[data-theme="dark"] :where(input::placeholder, textarea::placeholder) {
   color: #1c1c1d !important;
 }
 
+body[data-theme="dark"] :where(.ant-menu-item-selected) {
+  color: var(--app-accent) !important;
+
+}
+
+body[data-theme="dark"] :where(.ant-select-css-var) {
+  background: var(--app-surface) !important;
+  color: red !important;
+  border-color: var(--app-border) !important;
+}
+
+
 body[data-theme="dark"] :where(.ant-card){
   color: var(--app-text) !important;
-  background: var(--app-surface) !important;
-  border-color: var(--app-accent-border) !important;
+  background: var(--app-bg) !important;
+  /* border-color: var(--app-accent-border) !important; */
 }
 
 body[data-theme="dark"] :where(.ant-card-body){

@@ -1,3 +1,10 @@
+body[data-theme="dark"] {
+  .lightButton {
+    color: #f2f2f2 !important;
+  }
+}
+
+
 .section {
   padding: 10px 0 16px;
 }
@@ -81,9 +88,9 @@
   height: clamp(280px, 52vw, 450px);
   max-height: 520px;
   border: 1px solid #d8d2c3;
-  background: #111;
+  background: black;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 20px 30px rgb(0 0 0 / 13%);
   display: flex;
   align-items: center;

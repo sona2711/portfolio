@@ -99,7 +99,7 @@ export const LayoutHeader = () => {
             {isDarkMode ? <MoonOutlined /> : <SunOutlined />}
           </Button>
         ) : null}
-        <Button className={styles.ctaButton}>{HEADER_CTA_LABEL}</Button>
+        <Button className={styles.ctaButton} onClick ={() => navigate('/contact')}>{HEADER_CTA_LABEL}</Button>
       </div>
     </Layout.Header>
   )

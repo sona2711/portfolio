@@ -22,10 +22,76 @@
   color: #9d6d1d !important;
   font-weight: 600;
   text-transform: none;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.projectStack {
+.allProjectsLink:hover {
+  color: #7a5517 !important;
+  text-decoration: underline;
+}
+
+.carouselWrap {
   width: 100%;
+  position: relative;
+  padding-inline: 40px;
+  box-sizing: border-box;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.slide {
+  padding-block: 4px 8px;
+}
+
+.carousel :global(.slick-list) {
+  margin: 0 -4px;
+}
+
+.carousel :global(.slick-slide > div) {
+  outline: none;
+}
+
+.carousel :global(.slick-dots) {
+  position: static;
+  margin-top: 12px;
+}
+
+.carousel :global(.slick-dots li) {
+  margin-inline: 5px;
+}
+
+.carousel :global(.slick-dots li button) {
+  background: var(--app-text-muted) !important;
+  opacity: 0.35;
+}
+
+.carousel :global(.slick-dots li.slick-active button) {
+  background: var(--app-accent) !important;
+  opacity: 1;
+}
+
+.carousel :global(.slick-prev),
+.carousel :global(.slick-next) {
+  color: var(--app-accent);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+}
+
+.carousel :global(.slick-prev:hover),
+.carousel :global(.slick-next:hover),
+.carousel :global(.slick-prev:focus),
+.carousel :global(.slick-next:focus) {
+  color: var(--app-accent-border);
+}
+
+.carousel :global(.slick-prev::before),
+.carousel :global(.slick-next::before) {
+  font-size: 22px;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -36,5 +102,20 @@
 
   .allProjectsLink {
     margin-top: 0;
+  }
+
+  .carouselWrap {
+    padding-inline: 0;
+  }
+
+  .carousel :global(.slick-prev),
+  .carousel :global(.slick-next) {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel :global(.slick-slide) {
+    transition: none;
   }
 }

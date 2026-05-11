@@ -2,6 +2,14 @@
   border-radius: 8px !important;
   border-color: transparent !important;
   background: transparent !important;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgb(0 0 0 / 9%);
 }
 
 .card :global(.ant-card-body) {
@@ -47,6 +55,8 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .previewImage {
@@ -57,6 +67,12 @@
   object-fit: contain;
   object-position: center;
   display: block;
+  transition: transform 0.4s ease;
+  transform-origin: center;
+}
+
+.card:hover .previewImage {
+  transform: scale(1.03);
 }
 
 .previewPanel {
@@ -108,6 +124,16 @@
   letter-spacing: 0.06em;
 }
 
+.linkButton :global(.anticon) {
+  display: inline-block;
+  margin-inline-start: 4px;
+  transition: transform 0.25s ease;
+}
+
+.card:hover .linkButton :global(.anticon) {
+  transform: translateX(4px);
+}
+
 .textFirst {
   order: -1;
 }
@@ -139,5 +165,32 @@
 
   .textFirst {
     order: initial;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .previewImage {
+    transition: none;
+  }
+
+  .card:hover .previewImage {
+    transform: none;
+  }
+
+  .linkButton :global(.anticon) {
+    transition: none;
+  }
+
+  .card:hover .linkButton :global(.anticon) {
+    transform: none;
   }
 }

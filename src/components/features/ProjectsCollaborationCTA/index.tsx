@@ -5,6 +5,7 @@ import {
   PROJECTS_COLLABORATION_CTA_HEADING,
   PROJECTS_COLLABORATION_CTA_PRIMARY_LABEL,
   PROJECTS_COLLABORATION_CTA_SECONDARY_LABEL,
+  PROJECTS_COLLABORATION_CV_DOWNLOAD_FILENAME,
   PROJECTS_COLLABORATION_CV_PATH,
 } from './consts'
 import styles from './styles.module.css'
@@ -29,7 +30,11 @@ export const ProjectsCollaborationCTA = () => {
           >
             {PROJECTS_COLLABORATION_CTA_PRIMARY_LABEL}
           </Button>
-          <Button className={styles.secondaryButton} href={PROJECTS_COLLABORATION_CV_PATH} download>
+          <Button
+            className={styles.secondaryButton}
+            href={PROJECTS_COLLABORATION_CV_PATH}
+            download={PROJECTS_COLLABORATION_CV_DOWNLOAD_FILENAME}
+          >
             {PROJECTS_COLLABORATION_CTA_SECONDARY_LABEL}
           </Button>
         </div>

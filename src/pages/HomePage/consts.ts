@@ -1,6 +1,6 @@
 import type { ExpertiseItem } from './types'
 import type { FeaturedWorkItem } from '../../components/_shared/FeaturedWorkCard/types'
-import LedOnImage from '../../assets/images/LedOn.png'
+import LedOnImage from '../../assets/images/projectLedOn.png'
 import KassamanShopImage from '../../assets/images/Kassaman.png'
 
 export const EXPERTISE_ITEMS: ExpertiseItem[] = [

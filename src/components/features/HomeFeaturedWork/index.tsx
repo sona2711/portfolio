@@ -7,6 +7,7 @@ import type { HomeFeaturedWorkProps } from "./types";
 import styles from "./styles.module.css";
 
 export const HomeFeaturedWork = ({ items }: HomeFeaturedWorkProps) => {
+  const isMobile = screen.width < 768;
   if (items.length === 0) {
     return null;
   }
@@ -29,7 +30,7 @@ export const HomeFeaturedWork = ({ items }: HomeFeaturedWorkProps) => {
       <div className={styles.carouselWrap}>
         <Carousel
           className={styles.carousel}
-          dots={showControls}
+          dots={isMobile? true: false}
           arrows={showControls}
           infinite={showControls}
           draggable={showControls}

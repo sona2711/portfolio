@@ -1,4 +1,4 @@
-import type { ProjectGalleryItem } from '@/components/_shared/ProjectGalleryCard/types'
+import type { ProjectGalleryItem } from '@/components/features/ProjectsGallery/types'
 import KassamanShopImage from '@/assets/images/Kassaman.png'
 import LedOnImage from '@/assets/images/projectLedOn.png'
 

@@ -1,4 +1,4 @@
-import type { ProjectGalleryFilter } from '@/components/_shared/ProjectGalleryCard/types'
+import type { ProjectGalleryFilter } from '@/components/features/ProjectsGallery/types'
 
 export type ProjectsGalleryHeroProps = {
   activeFilter: ProjectGalleryFilter

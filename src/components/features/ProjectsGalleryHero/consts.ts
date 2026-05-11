@@ -1,4 +1,4 @@
-import type { ProjectGalleryFilter } from '@/components/_shared/ProjectGalleryCard/types'
+import type { ProjectGalleryFilter } from '@/components/features/ProjectsGallery/types'
 
 export const PROJECTS_GALLERY_HERO_EYEBROW = 'Selected works'
 

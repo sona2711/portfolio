@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import type { ProjectGalleryFilter } from '@/components/_shared/ProjectGalleryCard/types'
+import type { ProjectGalleryFilter } from '@/components/features/ProjectsGallery/types'
 import { ProjectsCollaborationCTA } from '@/components/features/ProjectsCollaborationCTA'
 import { ProjectsGallery } from '@/components/features/ProjectsGallery'
 import { ProjectsGalleryHero } from '@/components/features/ProjectsGalleryHero'

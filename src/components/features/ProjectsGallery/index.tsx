@@ -1,5 +1,5 @@
 import { Typography } from 'antd'
-import { ProjectGalleryCard } from '@/components/_shared/ProjectGalleryCard'
+import { ProjectGalleryCard } from '@/components/features/ProjectGalleryCard'
 import { PROJECTS_GALLERY_EMPTY_MESSAGE, PROJECTS_GALLERY_SECTION_LABEL } from './consts'
 import styles from './styles.module.css'
 import type { ProjectsGalleryProps } from './types'

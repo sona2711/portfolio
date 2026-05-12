@@ -3,7 +3,7 @@ import { HomeExpertise } from "../../components/features/HomeExpertise";
 import { HomeFeaturedWork } from "../../components/features/HomeFeaturedWork";
 import { HomeHero } from "../../components/features/HomeHero";
 import { HomeVirtualSelf } from "../../components/features/HomeVirtualSelf";
-import { EXPERTISE_ITEMS, FEATURED_WORK_ITEMS } from "./consts";
+import { AI_VIDEO, EXPERTISE_ITEMS, FEATURED_WORK_ITEMS } from "./consts";
 import styles from "./styles.module.css";
 
 export const HomePage = () => {
@@ -11,7 +11,7 @@ export const HomePage = () => {
     <div className={styles.wrapper}>
       <HomeHero />
       <HomeExpertise items={EXPERTISE_ITEMS} />
-      <HomeVirtualSelf />
+      <HomeVirtualSelf video={AI_VIDEO} />
       <HomeFeaturedWork items={FEATURED_WORK_ITEMS} />
       <HomeCTA />
     </div>

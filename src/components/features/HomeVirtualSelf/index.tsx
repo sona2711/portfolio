@@ -18,14 +18,14 @@ import {
   CHAT_SYSTEM_PROMPT,
   CHAT_STATUS,
   CHAT_TITLE,
-  VIDEO_SOURCE,
+  // VIDEO_SOURCE,
   // VIDEO_SUBTITLE,
   // VIDEO_TITLE,
 } from "./consts";
 import { clampAssistantAnswer, sanitizeAssistantVoice } from "./utils";
 import styles from "./styles.module.css";
 
-export const HomeVirtualSelf = () => {
+export const HomeVirtualSelf = ({ video }: { video: string }) => {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState(CHAT_MESSAGES);
@@ -99,7 +99,7 @@ ${question}`;
         <Col xs={24} md={10}>
           <div className={styles.videoWrap}>
             <video className={styles.video} controls preload="metadata">
-              <source src={VIDEO_SOURCE} type="video/mp4" />
+              <source src={video} type="video/mp4" />
             </video>
           </div>
           {/* <div className={styles.videoMeta}>

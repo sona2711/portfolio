@@ -1,9 +1,12 @@
 import { Button, Form, Input, Typography } from 'antd'
-import { useCallback, useEffect, useId, useRef, useState } from 'react'
+import { useCallback, useId, useState } from 'react'
+import { createTalk, pollTalkUntilTerminal } from '@/api/generateVideo'
 import type { AiInterfaceAvatarVideoFormValues } from './types'
 import {
   CREATE_VIDEO_LABEL,
   DEMO_VIDEO_URL,
+  GENERATION_STATUS_PREFIX,
+  MISSING_DID_CONFIG_MESSAGE,
   OPEN_VIDEO_LINK_LABEL,
   PREVIEW_LABEL,
   PREVIEW_PLACEHOLDER_ALT,
@@ -15,11 +18,10 @@ import {
   SOURCE_URL_LABEL,
   SOURCE_URL_PLACEHOLDER,
   STATUS_HELPER,
-  UI_ONLY_COMPLETE_MESSAGE,
   VIDEO_PANEL_TITLE,
 } from './consts'
 import styles from './styles.module.css'
-import { UI_SUBMIT_DELAY_MS, getSourceImageUrlFieldError } from './utils'
+import { getSourceImageUrlFieldError } from './utils'
 
 const initialValues: AiInterfaceAvatarVideoFormValues = {
   sourceUrl: '',
@@ -33,9 +35,10 @@ export const AiInterfaceAvatarVideo = () => {
   const [form] = Form.useForm<AiInterfaceAvatarVideoFormValues>()
   const [previewSrc, setPreviewSrc] = useState<string | null>(null)
   const [previewBroken, setPreviewBroken] = useState(false)
-  const [isUiSubmitting, setIsUiSubmitting] = useState(false)
-  const [uiCompleteMessage, setUiCompleteMessage] = useState<string | null>(null)
-  const submitTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [resultVideoUrl, setResultVideoUrl] = useState<string | null>(null)
+  const [generationError, setGenerationError] = useState<string | null>(null)
+  const [pollStatus, setPollStatus] = useState<string | null>(null)
 
   const syncPreviewFromUrl = useCallback((raw: string) => {
     const err = getSourceImageUrlFieldError(raw)
@@ -48,24 +51,17 @@ export const AiInterfaceAvatarVideo = () => {
     setPreviewBroken(false)
   }, [])
 
-  useEffect(() => {
-    return () => {
-      if (submitTimerRef.current !== null) {
-        window.clearTimeout(submitTimerRef.current)
-      }
-    }
-  }, [])
-
   const handleValuesChange = (
     changed: Partial<AiInterfaceAvatarVideoFormValues>,
     all: AiInterfaceAvatarVideoFormValues,
   ) => {
+    if ('sourceUrl' in changed || 'script' in changed) {
+      setGenerationError(null)
+      setPollStatus(null)
+      setResultVideoUrl(null)
+    }
     if ('sourceUrl' in changed) {
       syncPreviewFromUrl(all.sourceUrl ?? '')
-      setUiCompleteMessage(null)
-    }
-    if ('script' in changed) {
-      setUiCompleteMessage(null)
     }
   }
 
@@ -76,33 +72,55 @@ export const AiInterfaceAvatarVideo = () => {
       return
     }
 
-    if (submitTimerRef.current !== null) {
-      window.clearTimeout(submitTimerRef.current)
+    const apiKey = import.meta.env.VITE_DID_API_KEY
+    if (typeof apiKey !== 'string' || !apiKey.trim()) {
+      setGenerationError(MISSING_DID_CONFIG_MESSAGE)
+      setPollStatus(null)
+      setResultVideoUrl(null)
+      return
     }
 
-    setUiCompleteMessage(null)
-    setIsUiSubmitting(true)
-    submitTimerRef.current = window.setTimeout(() => {
-      setIsUiSubmitting(false)
-      setUiCompleteMessage(UI_ONLY_COMPLETE_MESSAGE)
-      submitTimerRef.current = null
-    }, UI_SUBMIT_DELAY_MS)
+    const { sourceUrl, script } = form.getFieldsValue()
+    const trimmedSource = sourceUrl.trim()
+    const trimmedScript = script.trim()
+
+    setGenerationError(null)
+    setPollStatus(null)
+    setResultVideoUrl(null)
+    setIsSubmitting(true)
+
+    try {
+      const created = await createTalk(trimmedSource, trimmedScript)
+      if (!created.ok) {
+        setGenerationError(created.error)
+        return
+      }
+
+      const finished = await pollTalkUntilTerminal(created.id, (status) => {
+        setPollStatus(status)
+      })
+      setResultVideoUrl(finished.videoUrl)
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Video generation failed.'
+      setGenerationError(message)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleReset = () => {
-    if (submitTimerRef.current !== null) {
-      window.clearTimeout(submitTimerRef.current)
-      submitTimerRef.current = null
-    }
     form.resetFields()
     setPreviewSrc(null)
     setPreviewBroken(false)
-    setIsUiSubmitting(false)
-    setUiCompleteMessage(null)
+    setIsSubmitting(false)
+    setResultVideoUrl(null)
+    setGenerationError(null)
+    setPollStatus(null)
   }
 
   const demoVideoSrc = DEMO_VIDEO_URL.trim()
-  const hasDemoVideo = demoVideoSrc.length > 0
+  const resolvedVideoUrl = (resultVideoUrl ?? '').trim() || demoVideoSrc
+  const hasVideo = resolvedVideoUrl.length > 0
   const showPreviewImage = Boolean(previewSrc) && !previewBroken
 
   return (
@@ -201,7 +219,7 @@ export const AiInterfaceAvatarVideo = () => {
               type="primary"
               className={styles.primaryButton}
               onClick={handleCreateVideo}
-              loading={isUiSubmitting}
+              loading={isSubmitting}
             >
               {CREATE_VIDEO_LABEL}
             </Button>
@@ -212,34 +230,49 @@ export const AiInterfaceAvatarVideo = () => {
         </Form>
 
         <p className={styles.statusLine}>{STATUS_HELPER}</p>
+        {pollStatus ? (
+          <p className={styles.pollStatus}>
+            {GENERATION_STATUS_PREFIX} {pollStatus}
+          </p>
+        ) : null}
       </div>
 
       <div className={styles.resultCard}>
         <Typography.Text strong className={styles.resultTitle}>
           {RESULT_TITLE}
         </Typography.Text>
+        {generationError ? (
+          <p className={styles.resultError} role="alert">
+            {generationError}
+          </p>
+        ) : null}
         <div className={styles.videoShell}>
-          {hasDemoVideo ? (
-            <video className={styles.video} controls src={demoVideoSrc} preload="metadata" />
+          {hasVideo ? (
+            <video
+              className={styles.video}
+              controls
+              src={resolvedVideoUrl}
+              preload="metadata"
+              key={resolvedVideoUrl}
+            />
           ) : (
             <div className={styles.videoPlaceholder} role="status" aria-live="polite">
-              {isUiSubmitting ? (
+              {isSubmitting ? (
                 <>
                   <div className={styles.spinner} aria-hidden />
-                  <span>Preparing preview…</span>
+                  <span>Generating video…</span>
                 </>
               ) : null}
-              {!isUiSubmitting && uiCompleteMessage ? <span>{uiCompleteMessage}</span> : null}
-              {!isUiSubmitting && !uiCompleteMessage ? (
+              {!isSubmitting && !generationError ? (
                 <span>The rendered video appears here when ready.</span>
               ) : null}
             </div>
           )}
         </div>
-        {hasDemoVideo ? (
+        {hasVideo ? (
           <a
             className={styles.resultLink}
-            href={demoVideoSrc}
+            href={resolvedVideoUrl}
             target="_blank"
             rel="noopener noreferrer"
           >

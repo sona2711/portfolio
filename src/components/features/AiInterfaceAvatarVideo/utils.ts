@@ -32,5 +32,3 @@ export const getSourceImageUrlFieldError = (raw: string): string | undefined => 
 
   return undefined
 }
-
-export const UI_SUBMIT_DELAY_MS = 1400

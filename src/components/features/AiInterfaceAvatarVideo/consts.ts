@@ -24,11 +24,13 @@ export const RESET_LABEL = 'Reset'
 
 export const STATUS_HELPER = 'The rendered video appears here when ready.'
 
+export const GENERATION_STATUS_PREFIX = 'Status:'
+
+export const MISSING_DID_CONFIG_MESSAGE =
+  'Set VITE_DID_API_KEY (and optionally VITE_DID_API_URL) in your environment to generate video.'
+
 export const RESULT_TITLE = 'Result'
 
 export const OPEN_VIDEO_LINK_LABEL = 'Open video in a new tab'
 
 export const PREVIEW_PLACEHOLDER_ALT = 'Image preview will appear when the URL is valid.'
-
-export const UI_ONLY_COMPLETE_MESSAGE =
-  'Preview mode: connect a backend API to render a real avatar video. No video was generated.'

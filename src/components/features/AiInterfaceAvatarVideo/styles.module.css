@@ -213,6 +213,20 @@
   color: #3a3834;
 }
 
+.resultError {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #c45c48;
+}
+
+.pollStatus {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #5f5a52;
+}
+
 .videoShell {
   position: relative;
   width: 100%;

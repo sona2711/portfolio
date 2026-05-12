@@ -3,7 +3,7 @@ import type { FeaturedWorkItem } from '../../components/_shared/FeaturedWorkCard
 import LedOnImage from '../../assets/images/projectLedOn.png'
 import KassamanShopImage from '../../assets/images/Kassaman.png'
 
-/** Served from `public/sona.mp4` at site root (`/sona.mp4`). */
+
 export const AI_VIDEO = '/sona.mp4'
 export const EXPERTISE_ITEMS: ExpertiseItem[] = [
   {

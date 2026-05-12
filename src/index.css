@@ -74,7 +74,7 @@ body[data-theme="dark"] :where([class*="description"], [class*="subtitle"], p, .
   color: var(--app-text-muted) !important;
 }
 
-body[data-theme="dark"] :where(input, textarea, .ant-input, .ant-input-outlined) {
+body[data-theme="dark"] :where(input, textarea, .ant-input) {
   background: var(--app-surface) !important;
   color: var(--app-text) !important;
   border-color: var(--app-border) !important;
@@ -89,11 +89,15 @@ body[data-theme="dark"] :where(.ant-menu-item-selected) {
 
 }
 
-body[data-theme="dark"] :where(.ant-select) {
+body[data-theme="dark"] :where(.ant-select ) {
   background: color-mix(in srgb, var(--app-text-muted) 35%, var(--app-bg)) !important;
   color: var(--app-text) !important;
 }
 
+body[data-theme="dark"] :where(.ant-select-content){
+  background: var(--app-bg) !important;
+  color: var(--app-text) !important;
+}
 
 body[data-theme="dark"] :where(.ant-card){
   color: var(--app-text) !important;

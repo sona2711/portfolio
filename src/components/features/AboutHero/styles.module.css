@@ -92,7 +92,7 @@
   color: #3f3321 !important;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 998px) {
   .heading {
     font-size: 62px !important;
   }
@@ -119,6 +119,7 @@
   .imageFrame,
   .image {
     min-height: 300px;
+    object-fit: cover;
   }
 
   .actions {

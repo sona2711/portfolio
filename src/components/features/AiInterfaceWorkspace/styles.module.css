@@ -1,0 +1,15 @@
+.workspace {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.tabs :global(.ant-tabs-nav) {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 480px) {
+  .tabs :global(.ant-tabs-nav) {
+    margin-bottom: 12px;
+  }
+}

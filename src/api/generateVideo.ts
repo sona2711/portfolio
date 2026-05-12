@@ -48,7 +48,7 @@ const formatRequestError = (error: unknown): string => {
 export const createTalk = async (sourceUrl: string, script: string): Promise<CreateTalkResult> => {
   const apiKey = getApiKey()
   if (!apiKey) {
-    return { ok: false, error: 'Missing VITE_DID_API_KEY in environment.' }
+    return { ok: false as const, error: 'Missing VITE_DID_API_KEY in environment.' }
   }
 
   const baseUrl = getDidBaseUrl()
@@ -72,16 +72,16 @@ export const createTalk = async (sourceUrl: string, script: string): Promise<Cre
         timeout: 30_000,
       },
     )
-    return { ok: true, id: data.id, status: data.status }
+    return { ok: true as const, id: data.id, status: data.status }
   } catch (error) {
-    return { ok: false, error: formatRequestError(error) }
+    return { ok: false as const, error: formatRequestError(error) }
   }
 }
 
 export const getTalk = async (talkId: string): Promise<GetTalkResult> => {
   const apiKey = getApiKey()
   if (!apiKey) {
-    return { ok: false, error: 'Missing VITE_DID_API_KEY in environment.' }
+    return { ok: false as const, error: 'Missing VITE_DID_API_KEY in environment.' }
   }
 
   const baseUrl = getDidBaseUrl()
@@ -97,9 +97,13 @@ export const getTalk = async (talkId: string): Promise<GetTalkResult> => {
         timeout: 15_000,
       },
     )
-    return { ok: true, status: data.status, resultUrl: data.result_url }
+    return {
+      ok: true as const,
+      status: data.status,
+      resultUrl: data.result_url,
+    }
   } catch (error) {
-    return { ok: false, error: formatRequestError(error) }
+    return { ok: false as const, error: formatRequestError(error) }
   }
 }
 
@@ -113,7 +117,7 @@ export const pollTalkUntilTerminal = async (
   for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
     const result = await getTalk(talkId)
 
-    if (!result.ok) {
+    if (result.ok === false) {
       throw new Error(result.error)
     }
 

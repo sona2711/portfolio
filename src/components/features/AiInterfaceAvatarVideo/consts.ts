@@ -1,6 +1,8 @@
 /** Optional static demo MP4/WebM URL for local preview only; leave empty for placeholder UI. */
 export const DEMO_VIDEO_URL = ''
 
+export const VIDEO_PANEL_TITLE = 'Avatar video'
+
 export const SOURCE_URL_LABEL = 'Source image URL'
 
 export const SOURCE_URL_HELPER =

@@ -1,4 +1,4 @@
-import { Button, Form, Input } from 'antd'
+import { Button, Form, Input, Typography } from 'antd'
 import { useCallback, useEffect, useId, useRef, useState } from 'react'
 import type { AiInterfaceAvatarVideoFormValues } from './types'
 import {
@@ -16,6 +16,7 @@ import {
   SOURCE_URL_PLACEHOLDER,
   STATUS_HELPER,
   UI_ONLY_COMPLETE_MESSAGE,
+  VIDEO_PANEL_TITLE,
 } from './consts'
 import styles from './styles.module.css'
 import { UI_SUBMIT_DELAY_MS, getSourceImageUrlFieldError } from './utils'
@@ -106,6 +107,9 @@ export const AiInterfaceAvatarVideo = () => {
 
   return (
     <div className={styles.page}>
+      <Typography.Title level={4} className={styles.pageTitle}>
+        {VIDEO_PANEL_TITLE}
+      </Typography.Title>
       <div className={styles.card}>
         <Form<AiInterfaceAvatarVideoFormValues>
           form={form}
@@ -211,7 +215,9 @@ export const AiInterfaceAvatarVideo = () => {
       </div>
 
       <div className={styles.resultCard}>
-        <h2 className={styles.resultTitle}>{RESULT_TITLE}</h2>
+        <Typography.Text strong className={styles.resultTitle}>
+          {RESULT_TITLE}
+        </Typography.Text>
         <div className={styles.videoShell}>
           {hasDemoVideo ? (
             <video className={styles.video} controls src={demoVideoSrc} preload="metadata" />

@@ -1,26 +1,35 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
   min-width: 0;
-  max-width: 640px;
+  max-width: 100%;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a2824;
+  line-height: 1.3;
 }
 
 .card {
-  padding: 24px 24px 28px;
-  background: #0f1117;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
+  padding: 28px 28px 32px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 22px;
+  min-width: 0;
 }
 
 .fieldBlock {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   min-width: 0;
 }
 
@@ -29,28 +38,28 @@
   align-items: baseline;
   gap: 6px;
   font-size: 14px;
-  font-weight: 600;
-  color: #f5f5f7;
+  font-weight: 700;
+  color: #3a3834;
   line-height: 1.35;
 }
 
 .requiredMark {
-  color: #e85d8a;
+  color: #c45c48;
   font-weight: 700;
 }
 
 .helper {
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.45;
-  color: rgba(245, 245, 247, 0.55);
+  color: #5f5a52;
 }
 
 .previewLabel {
   margin: 0;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(245, 245, 247, 0.55);
+  font-size: 14px;
+  font-weight: 700;
+  color: #3a3834;
 }
 
 .previewFrame {
@@ -61,10 +70,10 @@
   width: 100%;
   max-width: 280px;
   aspect-ratio: 1 / 1;
-  border-radius: 12px;
+  border-radius: 9px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
 }
 
 .previewImage {
@@ -86,42 +95,46 @@
   text-align: center;
   font-size: 13px;
   line-height: 1.45;
-  color: rgba(245, 245, 247, 0.45);
+  color: #a8a29a;
 }
 
 .input :global(.ant-input),
 .textarea :global(textarea.ant-input) {
-  background: rgba(0, 0, 0, 0.25) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: #f5f5f7 !important;
-  border-radius: 10px !important;
+  border-radius: 9px !important;
+  border-color: #e0e0e0 !important;
   font-size: 14px;
+  background: #fff !important;
+  color: #2a2824 !important;
+}
+
+.textarea :global(textarea.ant-input) {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .input :global(.ant-input::placeholder),
 .textarea :global(textarea.ant-input::placeholder) {
-  color: rgba(245, 245, 247, 0.35) !important;
+  color: #a8a29a !important;
 }
 
 .input :global(.ant-input:hover),
 .textarea :global(textarea.ant-input:hover) {
-  border-color: rgba(255, 255, 255, 0.28) !important;
+  border-color: #d5d3cd !important;
 }
 
 .input :global(.ant-input:focus),
 .textarea :global(textarea.ant-input:focus) {
-  border-color: #9d88d2 !important;
-  box-shadow: 0 0 0 2px rgba(157, 136, 210, 0.2) !important;
+  border-color: #e8a038 !important;
+  box-shadow: 0 0 0 2px rgba(232, 160, 56, 0.18) !important;
 }
 
 .input :global(.ant-input-status-error),
 .textarea :global(textarea.ant-input-status-error) {
-  border-color: #e85d8a !important;
+  border-color: #c45c48 !important;
 }
 
 .formItem :global(.ant-form-item-explain-error) {
   font-size: 12px;
-  color: #ff9db5 !important;
 }
 
 .formItem :global(.ant-form-item-margin-offset) {
@@ -133,75 +146,80 @@
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .primaryButton {
-  height: 42px !important;
-  padding-inline: 20px !important;
-  border-radius: 10px !important;
+  flex: 0 0 120px;
+  min-width: 120px;
+  height: 44px !important;
+  border-radius: 9px !important;
   font-weight: 600 !important;
   font-size: 14px !important;
-  background: #9d88d2 !important;
-  border-color: #9d88d2 !important;
+  background: #e8a038 !important;
+  border-color: #e8a038 !important;
   color: #fff !important;
 }
 
 .primaryButton:hover {
-  background: #b09fe0 !important;
-  border-color: #b09fe0 !important;
+  background: #d8942a !important;
+  border-color: #d8942a !important;
   color: #fff !important;
 }
 
 .secondaryButton {
-  height: 42px !important;
-  padding-inline: 20px !important;
-  border-radius: 10px !important;
+  flex: 0 0 120px;
+  min-width: min-content;
+  width: 100%;
+  height: 44px !important;
+  border-radius: 9px !important;
   font-weight: 600 !important;
   font-size: 14px !important;
-  background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.22) !important;
-  color: #f5f5f7 !important;
+  background: #ecebe8 !important;
+  border-color: #e0e0e0 !important;
+  color: #3a3834 !important;
 }
 
 .secondaryButton:hover {
-  border-color: rgba(255, 255, 255, 0.4) !important;
-  color: #fff !important;
-  background: rgba(255, 255, 255, 0.06) !important;
+  background: #e2e0dc !important;
+  border-color: #d5d3cd !important;
+  color: #2a2824 !important;
 }
 
 .statusLine {
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.45;
-  color: rgba(245, 245, 247, 0.45);
+  color: #5f5a52;
 }
 
 .resultCard {
-  padding: 20px 20px 22px;
-  background: #0f1117;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
+  padding: 28px 28px 32px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 22px;
   min-width: 0;
 }
 
 .resultTitle {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 600;
-  color: #f5f5f7;
-  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3a3834;
 }
 
 .videoShell {
   position: relative;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 9px;
   overflow: hidden;
-  background: linear-gradient(180deg, #2a2d36 0%, #0a0b0e 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
   min-height: 200px;
 }
 
@@ -223,15 +241,15 @@
   text-align: center;
   font-size: 13px;
   line-height: 1.5;
-  color: rgba(245, 245, 247, 0.5);
+  color: #5f5a52;
 }
 
 .spinner {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  border-top-color: rgba(245, 245, 247, 0.65);
+  border: 2px solid #e8e8e8;
+  border-top-color: #e8a038;
   animation: spin 0.85s linear infinite;
 }
 
@@ -243,29 +261,41 @@
 
 .resultLink {
   font-size: 14px;
-  font-weight: 500;
-  color: #9d88d2;
+  font-weight: 600;
+  color: #b8761a;
   text-decoration: none;
   align-self: flex-start;
 }
 
 .resultLink:hover {
-  color: #b09fe0;
+  color: #9a6315;
   text-decoration: underline;
 }
 
 .resultLinkDisabled {
   font-size: 14px;
-  font-weight: 500;
-  color: rgba(157, 136, 210, 0.45);
+  font-weight: 600;
+  color: #a8a29a;
   align-self: flex-start;
   cursor: not-allowed;
 }
 
-@media (max-width: 480px) {
-  .card {
-    padding: 18px 16px 22px;
+@media (max-width: 991px) {
+  .pageTitle {
+    font-size: 18px;
+  }
+
+  .card,
+  .resultCard {
+    padding: 20px 16px 24px;
     gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card,
+  .resultCard {
+    border-radius: 8px;
   }
 
   .previewFrame {
@@ -274,15 +304,19 @@
 
   .actions {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .primaryButton,
   .secondaryButton {
-    width: 100% !important;
+    flex: 1 1 auto;
+    width: 100%;
   }
 
   .videoShell {
     min-height: 180px;
+  }
+
+  .textarea :global(textarea.ant-input) {
+    min-height: 100px;
   }
 }

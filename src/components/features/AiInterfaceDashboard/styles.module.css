@@ -1,3 +1,15 @@
+body[data-theme="dark"] {
+  .responseBox {
+    background: var(--app-bg);
+    color: var(--app-text);
+  }
+  
+  .responsePlaceholder {
+    color: var(--app-text);
+  }
+}
+
+
 .page {
   display: flex;
   flex-direction: column;

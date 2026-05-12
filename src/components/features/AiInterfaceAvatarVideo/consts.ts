@@ -6,7 +6,7 @@ export const VIDEO_PANEL_TITLE = 'Avatar video'
 export const SOURCE_URL_LABEL = 'Source image URL'
 
 export const SOURCE_URL_HELPER =
-  'Must be a reachable https (or s3) URL ending in .jpg, .jpeg, or .png.'
+  'Must be a reachable https (or s3) URL. You can use any image URL.'
 
 export const SOURCE_URL_PLACEHOLDER =
   'https://d-id-public-bucket.s3.us-west-2.amazonaws.com/alice.jpg'

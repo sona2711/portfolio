@@ -9,7 +9,7 @@ export const getSourceImageUrlFieldError = (raw: string): string | undefined => 
   const lower = value.toLowerCase()
   if (lower.startsWith('s3://')) {
     if (!IMAGE_EXT_PATTERN.test(value)) {
-      return 'Must end with .jpg, .jpeg, or .png'
+      return 'Must be a valid image URL'
     }
     return undefined
   }

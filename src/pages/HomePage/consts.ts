@@ -2,8 +2,9 @@ import type { ExpertiseItem } from './types'
 import type { FeaturedWorkItem } from '../../components/_shared/FeaturedWorkCard/types'
 import LedOnImage from '../../assets/images/projectLedOn.png'
 import KassamanShopImage from '../../assets/images/Kassaman.png'
-import AIVideo from '../../public/sona.mp4'
 
+/** Served from `public/sona.mp4` at site root (`/sona.mp4`). */
+export const AI_VIDEO = '/sona.mp4'
 export const EXPERTISE_ITEMS: ExpertiseItem[] = [
   {
     title: 'UATE-Armath EL',
@@ -48,6 +49,3 @@ export const FEATURED_WORK_ITEMS: FeaturedWorkItem[] = [
     url: 'https://www.figma.com/design/uSsDXw91tKubTJs3p4diYh/LEDon?node-id=0-1&t=0RQChInxTfCDG7B3-1',
   },
 ]
-
-
-export const AI_VIDEO=  AIVideo

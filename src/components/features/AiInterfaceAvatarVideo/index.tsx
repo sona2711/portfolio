@@ -91,7 +91,7 @@ export const AiInterfaceAvatarVideo = () => {
 
     try {
       const created = await createTalk(trimmedSource, trimmedScript)
-      if (!created.ok) {
+      if (created.ok === false) {
         setGenerationError(created.error)
         return
       }

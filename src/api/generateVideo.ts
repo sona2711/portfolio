@@ -1,4 +1,12 @@
 import axios from 'axios'
+import type {
+  CreateTalkResult,
+  DidCreateTalkHttpResponse,
+  DidGetTalkHttpResponse,
+  GetTalkResult,
+  PollTalkProgress,
+  PollTalkSuccess,
+} from '@/types/didTalkApi'
 
 const DEFAULT_DID_BASE = 'https://api.d-id.com'
 
@@ -37,15 +45,6 @@ const formatRequestError = (error: unknown): string => {
   return 'Request failed'
 }
 
-type CreateTalkResponse = {
-  id: string
-  status: string
-}
-
-export type CreateTalkResult =
-  | { ok: true; id: string; status: string }
-  | { ok: false; error: string }
-
 export const createTalk = async (sourceUrl: string, script: string): Promise<CreateTalkResult> => {
   const apiKey = getApiKey()
   if (!apiKey) {
@@ -55,7 +54,7 @@ export const createTalk = async (sourceUrl: string, script: string): Promise<Cre
   const baseUrl = getDidBaseUrl()
 
   try {
-    const { data } = await axios.post<CreateTalkResponse>(
+    const { data } = await axios.post<DidCreateTalkHttpResponse>(
       `${baseUrl}/talks`,
       {
         source_url: sourceUrl,
@@ -79,16 +78,6 @@ export const createTalk = async (sourceUrl: string, script: string): Promise<Cre
   }
 }
 
-type GetTalkResponse = {
-  id: string
-  status: string
-  result_url?: string
-}
-
-export type GetTalkResult =
-  | { ok: true; status: string; resultUrl: string | undefined }
-  | { ok: false; error: string }
-
 export const getTalk = async (talkId: string): Promise<GetTalkResult> => {
   const apiKey = getApiKey()
   if (!apiKey) {
@@ -98,7 +87,7 @@ export const getTalk = async (talkId: string): Promise<GetTalkResult> => {
   const baseUrl = getDidBaseUrl()
 
   try {
-    const { data } = await axios.get<GetTalkResponse>(
+    const { data } = await axios.get<DidGetTalkHttpResponse>(
       `${baseUrl}/talks/${encodeURIComponent(talkId)}`,
       {
         auth: {
@@ -113,10 +102,6 @@ export const getTalk = async (talkId: string): Promise<GetTalkResult> => {
     return { ok: false, error: formatRequestError(error) }
   }
 }
-
-export type PollTalkProgress = (status: string, attempt: number) => void
-
-export type PollTalkSuccess = { success: true; videoUrl: string }
 
 export const pollTalkUntilTerminal = async (
   talkId: string,

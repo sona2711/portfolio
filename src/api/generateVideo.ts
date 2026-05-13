@@ -32,6 +32,9 @@ const getApiKey = (): string | undefined => {
   return trimmed.length > 0 ? trimmed : undefined
 }
 
+/** True when a non-empty D-ID API key is set; UI can gate without reading `import.meta.env` directly. */
+export const isDidApiClientConfigured = (): boolean => Boolean(getApiKey())
+
 /** Turns axios/network errors into a single message suitable for UI display. */
 const formatRequestError = (error: unknown): string => {
   if (axios.isAxiosError(error)) {

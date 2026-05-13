@@ -1,6 +1,6 @@
 import { Alert, Button, Form, Input, Select, Typography } from 'antd'
 import { useCallback, useEffect, useId, useState } from 'react'
-import { createTalk, fetchTtsVoices, pollTalkUntilTerminal } from '@/api/generateVideo'
+import { createTalk, fetchTtsVoices, isDidApiClientConfigured, pollTalkUntilTerminal } from '@/api/generateVideo'
 import type { AiInterfaceAvatarVideoFormValues, AvatarVoiceOption } from './types'
 import {
   CREATE_VIDEO_LABEL,
@@ -80,8 +80,7 @@ export const AiInterfaceAvatarVideo = () => {
   useEffect(() => {
     let cancelled = false
     const run = async () => {
-      const apiKey = import.meta.env.VITE_DID_API_KEY
-      if (typeof apiKey !== 'string' || !apiKey.trim()) {
+      if (!isDidApiClientConfigured()) {
         setVoicesLoadError(null)
         return
       }
@@ -137,8 +136,7 @@ export const AiInterfaceAvatarVideo = () => {
       return
     }
 
-    const apiKey = import.meta.env.VITE_DID_API_KEY
-    if (typeof apiKey !== 'string' || !apiKey.trim()) {
+    if (!isDidApiClientConfigured()) {
       setGenerationError(MISSING_DID_CONFIG_MESSAGE)
       setPollStatus(null)
       setResultVideoUrl(null)

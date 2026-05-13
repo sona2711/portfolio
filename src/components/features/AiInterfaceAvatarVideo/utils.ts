@@ -1,4 +1,33 @@
+import type { DidTtsVoice } from '@/types/didTalkApi'
+import type { AvatarVoiceOption } from './types'
+
 const IMAGE_EXT_PATTERN = /\.(jpe?g|png)$/i
+
+export const buildVoiceOptionKey = (provider: string, voiceId: string): string =>
+  `${provider.trim()}:${voiceId.trim()}`
+
+export const buildVoiceLabel = (voice: DidTtsVoice): string => {
+  const first = voice.languages[0]
+  const localeBit = first
+    ? `${first.language} (${first.locale})`
+    : voice.language?.trim() || 'Voice'
+  return `${localeBit} — ${voice.name} (${voice.provider})`
+}
+
+export const didVoiceToAvatarOption = (voice: DidTtsVoice): AvatarVoiceOption => ({
+  optionKey: buildVoiceOptionKey(voice.provider, voice.id),
+  label: buildVoiceLabel(voice),
+  provider: {
+    type: voice.provider,
+    voice_id: voice.id,
+  },
+})
+
+export const findProviderForVoiceOptionKey = (
+  optionKey: string,
+  options: AvatarVoiceOption[],
+): AvatarVoiceOption['provider'] | undefined =>
+  options.find((o) => o.optionKey === optionKey)?.provider
 
 export const getSourceImageUrlFieldError = (raw: string): string | undefined => {
   const value = raw.trim()

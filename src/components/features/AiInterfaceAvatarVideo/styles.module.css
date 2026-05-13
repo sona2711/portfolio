@@ -141,6 +141,42 @@
   margin-bottom: 0 !important;
 }
 
+.voiceSelect {
+  width: 100%;
+  min-width: 0;
+}
+
+.voiceSelect :global(.ant-select-selector) {
+  border-radius: 9px !important;
+  border-color: #e0e0e0 !important;
+  font-size: 14px !important;
+  min-height: 40px !important;
+  padding-inline: 11px !important;
+  align-items: center;
+}
+
+.voiceSelect :global(.ant-select-selection-item),
+.voiceSelect :global(.ant-select-selection-placeholder) {
+  line-height: 38px !important;
+}
+
+.voiceSelect :global(.ant-select:hover .ant-select-selector) {
+  border-color: #d5d3cd !important;
+}
+
+.voiceSelect :global(.ant-select-focused .ant-select-selector) {
+  border-color: #e8a038 !important;
+  box-shadow: 0 0 0 2px rgba(232, 160, 56, 0.18) !important;
+}
+
+.voiceSelect :global(.ant-select-status-error .ant-select-selector) {
+  border-color: #c45c48 !important;
+}
+
+.voiceAlert {
+  margin: 0;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -229,7 +265,7 @@
 
 .videoShell {
   position: relative;
-  width: 100%;
+  width: 50% !important;
   border-radius: 9px;
   overflow: hidden;
   background: #f9f9f9;
@@ -239,8 +275,9 @@
 
 .video {
   display: block;
-  width: 100%;
-  vertical-align: middle;
+  width: 100% !important;
+  object-fit: contain;
+  /* vertical-align: middle; */
   background: #000;
 }
 
@@ -328,6 +365,7 @@
 
   .videoShell {
     min-height: 180px;
+    width: 100% !important;
   }
 
   .textarea :global(textarea.ant-input) {

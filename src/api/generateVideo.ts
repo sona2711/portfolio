@@ -13,6 +13,7 @@ import type {
 
 const DEFAULT_DID_BASE = 'https://api.d-id.com'
 
+/** Resolves `VITE_DID_API_URL` or falls back to `DEFAULT_DID_BASE`; trims trailing slashes. */
 const getDidBaseUrl = (): string => {
   const raw = import.meta.env.VITE_DID_API_URL
   if (typeof raw !== 'string' || !raw.trim()) {
@@ -21,6 +22,7 @@ const getDidBaseUrl = (): string => {
   return raw.trim().replace(/\/+$/, '')
 }
 
+/** Returns trimmed `VITE_DID_API_KEY`, or `undefined` if missing or blank. */
 const getApiKey = (): string | undefined => {
   const key = import.meta.env.VITE_DID_API_KEY
   if (typeof key !== 'string') {
@@ -30,6 +32,7 @@ const getApiKey = (): string | undefined => {
   return trimmed.length > 0 ? trimmed : undefined
 }
 
+/** Turns axios/network errors into a single message suitable for UI display. */
 const formatRequestError = (error: unknown): string => {
   if (axios.isAxiosError(error)) {
     const status = error.response?.status
@@ -48,9 +51,11 @@ const formatRequestError = (error: unknown): string => {
   return 'Request failed'
 }
 
+/** Narrowing helper for JSON parsing without trusting incoming shapes. */
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value)
 
+/** Parses D-ID `GET /tts/voices` JSON into `DidTtsVoice[]`; drops malformed rows. */
 const parseTtsVoicesPayload = (data: unknown): DidTtsVoice[] => {
   if (!Array.isArray(data)) {
     return []
@@ -127,6 +132,7 @@ const parseTtsVoicesPayload = (data: unknown): DidTtsVoice[] => {
   return voices
 }
 
+/** Lists TTS voices (`GET /tts/voices`). Optional `provider` filters by vendor per D-ID docs. */
 export const fetchTtsVoices = async (params?: {
   provider?: string
 }): Promise<FetchTtsVoicesResult> => {
@@ -156,6 +162,10 @@ export const fetchTtsVoices = async (params?: {
   }
 }
 
+/**
+ * Starts a talking-head render (`POST /talks`). Pass `options.provider` to pick TTS voice;
+ * omitted provider uses D-ID default behavior.
+ */
 export const createTalk = async (
   sourceUrl: string,
   script: string,
@@ -203,6 +213,7 @@ export const createTalk = async (
   }
 }
 
+/** Fetches one talk job (`GET /talks/:id`) for status and `result_url` when complete. */
 export const getTalk = async (talkId: string): Promise<GetTalkResult> => {
   const apiKey = getApiKey()
   if (!apiKey) {
@@ -232,6 +243,10 @@ export const getTalk = async (talkId: string): Promise<GetTalkResult> => {
   }
 }
 
+/**
+ * Polls `getTalk` until status is terminal (`done`, `error`, `rejected`) or attempts/timeouts.
+ * Calls `onProgress` with each non-terminal status; resolves with the finished video URL on success.
+ */
 export const pollTalkUntilTerminal = async (
   talkId: string,
   onProgress?: PollTalkProgress,

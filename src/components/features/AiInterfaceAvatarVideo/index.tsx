@@ -1,7 +1,7 @@
 import { Alert, Button, Form, Input, Select, Typography } from 'antd'
 import { useCallback, useEffect, useId, useState } from 'react'
 import { createTalk, fetchTtsVoices, isDidApiClientConfigured, pollTalkUntilTerminal } from '@/api/generateVideo'
-import type { AiInterfaceAvatarVideoFormValues, AvatarVoiceOption } from './types'
+import type { VideoFormValues, AvatarVoiceOption } from './types'
 import {
   CREATE_VIDEO_LABEL,
   DEFAULT_VOICE_OPTION_KEY,
@@ -31,7 +31,7 @@ import {
   getSourceImageUrlFieldError,
 } from './utils'
 
-const initialValues: AiInterfaceAvatarVideoFormValues = {
+const initialValues: VideoFormValues = {
   sourceUrl: '',
   script: '',
   voiceOptionKey: DEFAULT_VOICE_OPTION_KEY,
@@ -55,7 +55,7 @@ export const AiInterfaceAvatarVideo = () => {
   const sourceFieldId = `${formId}-source-url`
   const scriptFieldId = `${formId}-script`
   const voiceFieldId = `${formId}-voice`
-  const [form] = Form.useForm<AiInterfaceAvatarVideoFormValues>()
+  const [form] = Form.useForm<VideoFormValues>()
   const [voiceOptions, setVoiceOptions] = useState<AvatarVoiceOption[]>(VOICE_FALLBACK_PRESETS)
   const [voicesLoading, setVoicesLoading] = useState(false)
   const [voicesLoadError, setVoicesLoadError] = useState<string | null>(null)
@@ -116,8 +116,8 @@ export const AiInterfaceAvatarVideo = () => {
   }, [form])
 
   const handleValuesChange = (
-    changed: Partial<AiInterfaceAvatarVideoFormValues>,
-    all: AiInterfaceAvatarVideoFormValues,
+    changed: Partial<VideoFormValues>,
+    all: VideoFormValues,
   ) => {
     if ('sourceUrl' in changed || 'script' in changed || 'voiceOptionKey' in changed) {
       setGenerationError(null)
@@ -210,7 +210,7 @@ export const AiInterfaceAvatarVideo = () => {
             message={`${VOICE_LOAD_FAILED_PREFIX} ${voicesLoadError}`}
           />
         ) : null}
-        <Form<AiInterfaceAvatarVideoFormValues>
+        <Form<VideoFormValues>
           form={form}
           layout="vertical"
           requiredMark={false}

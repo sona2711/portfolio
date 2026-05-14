@@ -18,7 +18,7 @@ export const PREVIEW_LABEL = 'Preview'
 export const SCRIPT_LABEL = 'What should the avatar say?'
 
 export const SCRIPT_PLACEHOLDER =
-  'Hello — this is a quick test of animating a photo with D-ID.'
+  'Enter the text you want the avatar to say.'
 
 export const CREATE_VIDEO_LABEL = 'Create video'
 

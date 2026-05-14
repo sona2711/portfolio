@@ -142,12 +142,12 @@
 }
 
 .voiceSelect {
-  width: 100%;
+  width: 50%;
   min-width: 0;
 }
 
 .voiceSelect :global(.ant-select-selector) {
-  border-radius: 9px !important;
+  border-radius: 8px !important;
   border-color: #e0e0e0 !important;
   font-size: 14px !important;
   min-height: 40px !important;

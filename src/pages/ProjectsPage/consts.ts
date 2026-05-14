@@ -2,6 +2,7 @@ import type { ProjectGalleryItem } from '@/components/features/ProjectsGallery/t
 import KassamanShopImage from '@/assets/images/Kassaman.png'
 import LedOnImage from '@/assets/images/projectLedOn.png'
 import Yassaman from '@/assets/images/Yassaman.png'
+import Arahet from '@/assets/images/Arahet.png'
 
 export const PROJECT_GALLERY_ITEMS: ProjectGalleryItem[] = [
   {
@@ -24,13 +25,13 @@ export const PROJECT_GALLERY_ITEMS: ProjectGalleryItem[] = [
       'https://www.figma.com/design/uSsDXw91tKubTJs3p4diYh/LEDon?node-id=0-1&t=0RQChInxTfCDG7B3-1',
   },
   {
-    title: 'Commerce landing study',
+    title: 'ARAHET',
     description:
-      'Exploration of editorial-style storytelling for a product launch page, balancing typography, imagery, and conversion cues.',
-    image: KassamanShopImage,
+      'A booking platform for a hotel, focused on a clean and user-friendly interface.',
+    image: Arahet,
     tags: ['Angular', 'Typescript'],
     category: 'web',
-    liveUrl: 'https://jewellery-shop-eta.vercel.app/',
+    liveUrl: 'https://booking-app-rho-three.vercel.app/home',
   },
   {
     title: 'Yassaman Online Shop',

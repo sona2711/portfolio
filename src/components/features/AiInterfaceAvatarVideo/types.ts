@@ -6,7 +6,7 @@ export type AvatarVoiceOption = {
   provider: DidTalkScriptProvider
 }
 
-export type AiInterfaceAvatarVideoFormValues = {
+export type VideoFormValues = {
   sourceUrl: string
   script: string
   voiceOptionKey: string

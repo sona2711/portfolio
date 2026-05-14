@@ -42,7 +42,7 @@ export const AboutTechnicalProficiency = (props: AboutTechnicalProficiencyProps)
                   percent={skill.percent}
                   showInfo={false}
                   strokeColor="#ae7416"
-                  trailColor="#e5e1d8"
+                  railColor="#e5e1d8"
                   size={["100%", 4]}
                   className={styles.skillProgress}
                 />

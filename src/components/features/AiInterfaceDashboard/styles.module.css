@@ -1,15 +1,3 @@
-body[data-theme="dark"] {
-  .responseBox {
-    background: var(--app-bg);
-    color: var(--app-text);
-  }
-  
-  .responsePlaceholder {
-    color: var(--app-text);
-  }
-}
-
-
 .page {
   display: flex;
   flex-direction: column;
@@ -23,14 +11,14 @@ body[data-theme="dark"] {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
-  color: #2a2824;
+  color: var(--app-text);
   line-height: 1.3;
 }
 
 .shell {
   min-height: 420px;
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: var(--app-elevated-surface);
+  border: 1px solid var(--app-border);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -40,7 +28,7 @@ body[data-theme="dark"] {
   display: flex;
   flex-direction: column;
   gap: 22px;
-  background: #fff;
+  background: var(--app-elevated-surface);
   min-width: 0;
   flex: 1 1 auto;
 }
@@ -54,12 +42,12 @@ body[data-theme="dark"] {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: 700;
-  color: #3a3834;
+  color: var(--app-text);
 }
 
 .promptField {
   border-radius: 9px !important;
-  border-color: #e0e0e0 !important;
+  border-color: var(--app-border) !important;
   font-size: 14px;
   resize: vertical;
   min-height: 140px !important;
@@ -80,7 +68,7 @@ body[data-theme="dark"] {
 
 .optionLabel {
   font-size: 13px;
-  color: #5f5a52;
+  color: var(--app-text-muted);
 }
 
 .actions {
@@ -96,17 +84,17 @@ body[data-theme="dark"] {
   min-width: 120px;
   height: 44px !important;
   border-radius: 9px !important;
-  background: #e8a038 !important;
-  border-color: #e8a038 !important;
-  color: #fff !important;
+  background: var(--app-accent) !important;
+  border-color: var(--app-accent) !important;
+  color: var(--app-accent-contrast) !important;
   font-weight: 600;
   font-size: 14px;
 }
 
 .sendButton:hover {
-  background: #d8942a !important;
-  border-color: #d8942a !important;
-  color: #fff !important;
+  background: var(--app-accent-border) !important;
+  border-color: var(--app-accent-border) !important;
+  color: var(--app-accent-contrast) !important;
 }
 
 .resetButton {
@@ -115,34 +103,35 @@ body[data-theme="dark"] {
   width: 100%;
   height: 44px !important;
   border-radius: 9px !important;
-  background: #ecebe8 !important;
-  border-color: #e0e0e0 !important;
-  color: #3a3834 !important;
+  background: var(--app-footer-bg) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
   font-weight: 600;
   font-size: 14px;
 }
 
 .resetButton:hover {
-  background: #e2e0dc !important;
-  border-color: #d5d3cd !important;
-  color: #2a2824 !important;
+  background: var(--app-border) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
 }
 
 .responseBox {
   min-height: 160px;
   padding: 16px 18px;
-  background: #f9f9f9;
-  border: 1px solid #e8e8e8;
+  background: var(--app-input-bg);
+  border: 1px solid var(--app-border);
   border-radius: 9px;
   max-width: 100%;
   overflow-x: auto;
+  color: var(--app-text);
 }
 
 .responsePlaceholder {
-  color: #a8a29a;
+  color: var(--app-text-muted);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .shell {
     min-height: 360px;
   }
@@ -159,7 +148,7 @@ body[data-theme="dark"] {
 
 @media (max-width: 480px) {
   .shell {
-    border-radius: 8px;
+    border-radius: var(--app-button-radius);
     min-height: 0;
   }
 

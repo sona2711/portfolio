@@ -13,13 +13,13 @@
 
 .subtitle {
   margin: 4px 0 0 !important;
-  color: #66635c;
+  color: var(--app-text-muted);
   font-size: 14px;
 }
 
 .allProjectsLink {
   margin-top: 12px;
-  color: #9d6d1d !important;
+  color: var(--app-accent-muted) !important;
   font-weight: 600;
   text-transform: none;
   text-decoration: none;
@@ -27,19 +27,26 @@
 }
 
 .allProjectsLink:hover {
-  color: #7a5517 !important;
+  color: var(--app-accent-border) !important;
   text-decoration: underline;
 }
 
 .carouselWrap {
   width: 100%;
+  max-width: 100%;
   position: relative;
   padding-inline: 40px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .carousel {
   width: 100%;
+  max-width: 100%;
+}
+
+.carousel :global(.slick-slider) {
+  max-width: 100%;
 }
 
 .slide {

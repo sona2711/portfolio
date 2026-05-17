@@ -4,11 +4,11 @@
 }
 
 .box {
-  max-width: 1100px;
+  max-width: var(--app-content-max-width);
   margin: 0 auto;
   padding: 48px 40px;
   border-radius: 10px;
-  background: linear-gradient(160deg, #f57b2b 0%, #f0aa3a 80%);
+  background: var(--app-cta-banner-gradient);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,13 +28,13 @@
 }
 
 .button {
-  border-radius: 8px !important;
+  border-radius: var(--app-button-radius) !important;
   background: #332200 !important;
   border-color: #332200 !important;
   color: #f2a73b !important;
   font-weight: 700 !important;
   font-size: 15px !important;
-  height: 48px !important;
+  height: var(--app-button-height) !important;
   padding-inline: 28px !important;
   box-shadow: none !important;
 }

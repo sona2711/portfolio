@@ -87,34 +87,17 @@ body[data-theme="dark"] {
   position: relative;
   height: clamp(280px, 52vw, 450px);
   max-height: 520px;
-  border: 1px solid #d8d2c3;
-  background: black;
+  border: none;
+  background: white;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 20px 30px rgb(0 0 0 / 13%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portraitImageWrap {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  box-sizing: border-box;
+  box-shadow: 0 10px 30px var(--app-accent-border);
 }
 
 .portraitImage {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  object-position: center center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
   display: block;
 }
 
@@ -154,8 +137,8 @@ body[data-theme="dark"] {
     height: clamp(260px, 70vw, 340px);
   }
 
-  .portraitImageWrap {
-    padding: 10px;
+  .portraitImage {
+    object-fit: contain !important;
   }
 
   .floatingAction {

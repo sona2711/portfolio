@@ -119,15 +119,15 @@ body[data-theme="dark"] {
   align-items: center;
   background: #efe2c6;
   padding: 12px 14px;
-  border-radius: 15px 15px 0 0 !important;
+  border-radius: 8px 8px 0 0 !important;
 }
 
 .chatIconWrap {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: #e2a53f;
-  color: #503a15;
+  background: var(--app-accent);
+  color: var(--app-accent-border);
   display: inline-flex;
   align-items: center;
   justify-content: center;

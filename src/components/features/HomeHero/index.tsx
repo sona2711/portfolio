@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { CodeOutlined } from "@ant-design/icons";
 import { Button, Col, Flex, Row, Space, Tag, Typography } from "antd";
-import sonaImage from "../../../assets/images/Sona.png";
+import sonaImage from "../../../assets/images/R.jpg";
 import { HERO_DESCRIPTION, HERO_LABEL, HERO_NAME } from "./consts";
 import styles from "./styles.module.css";
 
@@ -42,15 +42,13 @@ export const HomeHero = () => {
           </Space>
         </Col>
         <Col xs={24} md={10} lg={8}>
-          <div className={styles.portraitCard}>
-            <div className={styles.portraitImageWrap}>
+          <Flex justify="center" align="center" className={styles.portraitCard}>
               <img
                 src={sonaImage}
                 alt={HERO_NAME}
                 className={styles.portraitImage}
               />
-            </div>
-          </div>
+          </Flex>
           <Flex
             align="center"
             justify="center"

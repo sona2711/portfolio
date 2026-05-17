@@ -1,14 +1,14 @@
 .section {
   padding: 26px 8px 28px;
-  border: 1px solid #ece8dd;
-  border-radius: 8px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-button-radius);
   background: var(--app-accent-contrast);
 }
 
 .title {
   margin: 0 !important;
   text-align: center;
-  color: #2f2f2f !important;
+  color: var(--app-text) !important;
   font-size: 52px !important;
   line-height: 1.04 !important;
 }
@@ -17,7 +17,7 @@
   margin: 12px auto 0 !important;
   max-width: 720px;
   text-align: center;
-  color: #66625a;
+  color: var(--app-text-muted);
   font-size: 20px;
   line-height: 1.5;
 }
@@ -104,7 +104,7 @@
 }
 
 .primaryTag {
-  background: #e2a53f !important;
+  background: var(--app-accent) !important;
   color: #3b2e1c !important;
 }
 
@@ -116,12 +116,12 @@
 .languagesWrap {
   margin-top: 2px;
   padding-top: 14px;
-  border-top: 1px solid #e4dfd3;
+  border-top: 1px solid var(--app-border);
 }
 
 .languageTitle {
   margin: 0 0 8px !important;
-  color: #9d6d1d !important;
+  color: var(--app-accent-muted) !important;
   font-size: 14px !important;
   letter-spacing: 0.12em;
 }
@@ -138,7 +138,7 @@
 }
 
 .languageName {
-  color: #2f2f2f;
+  color: var(--app-text);
   font-weight: 700;
 }
 

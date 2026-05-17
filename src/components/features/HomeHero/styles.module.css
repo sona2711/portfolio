@@ -7,13 +7,21 @@ body[data-theme="dark"] {
 
 .section {
   padding: 10px 0 16px;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.portraitColumn {
+  position: relative;
+  width: 100%;
+  min-width: 0;
 }
 
 .tag {
   margin-bottom: 14px;
   border-radius: 0;
   background: transparent;
-  color: #9d6d1d;
+  color: var(--app-accent-muted);
   letter-spacing: 0.14em;
   padding: 0;
   font-size: 12px;
@@ -29,46 +37,48 @@ body[data-theme="dark"] {
   font-size: 98px !important;
   line-height: 0.96 !important;
   letter-spacing: -0.02em;
-  color: #2c2f31 !important;
+  color: var(--app-text) !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .description {
   margin: 0 !important;
   max-width: 500px;
-  color: #55524a;
+  color: var(--app-text-muted);
   font-size: 24px;
   line-height: 1.25;
 }
 
 .darkButton {
-  background: #2f3032 !important;
+  background: var(--app-button-dark-bg) !important;
   border: none !important;
-  border-radius: 8px !important;
+  border-radius: var(--app-button-radius) !important;
   color: #f2f2f2 !important;
   font-size: 18px;
   font-weight: 600;
-  height: 48px;
+  height: var(--app-button-height);
   padding-inline: 42px !important;
 
   &:hover {
     outline: none !important;
-    background: #e2a53f !important;
+    background: var(--app-accent) !important;
     transition: background 0.3s ease-in-out;
   }
 }
 
 .lightButton {
   border: none;
-  color: #2c2f31 !important;
+  color: var(--app-text) !important;
   font-size: 18px;
   font-weight: 600;
-  height: 48px;
+  height: var(--app-button-height);
   padding-inline: 42px !important;
   background: transparent !important;
 
   &:hover {
     outline: none !important;
-    background: #e2a53f !important;
+    background: var(--app-accent) !important;
     transition: background 0.3s ease-in-out;
   }
 }
@@ -78,19 +88,20 @@ body[data-theme="dark"] {
   display: inline-block;
   width: 38px;
   height: 2px;
-  background: #b78632;
+  background: var(--app-accent-border);
   margin-left: 14px;
   vertical-align: middle;
 }
 
 .portraitCard {
+  width: 100%;
   position: relative;
   height: clamp(280px, 52vw, 450px);
   max-height: 520px;
   border: none;
-  background: white;
+  background: var(--app-elevated-surface);
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--app-button-radius);
   box-shadow: 0 10px 30px var(--app-accent-border);
 }
 
@@ -99,6 +110,7 @@ body[data-theme="dark"] {
   height: 100%;
   object-fit: cover !important;
   display: block;
+  border-radius: var(--app-button-radius);
 }
 
 .floatingAction {
@@ -107,9 +119,9 @@ body[data-theme="dark"] {
   bottom: -20px;
   width: 68px;
   height: 68px;
-  border-radius: 8px;
+  border-radius: var(--app-button-radius);
   border: none;
-  background: #e2a53f;
+  background: var(--app-accent);
   color: #3f3321;
   font-size: 20px;
 }
@@ -129,7 +141,7 @@ body[data-theme="dark"] {
 
   .darkButton,
   .lightButton {
-    height: 48px;
+    height: var(--app-button-height);
     font-size: 14px;
   }
 

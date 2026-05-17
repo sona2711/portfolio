@@ -1,5 +1,5 @@
 .card {
-  border-radius: 8px !important;
+  border-radius: var(--app-button-radius) !important;
   height: 100%;
   min-height: 208px;
   border:  0.2px solid var(--app-border) !important;
@@ -8,7 +8,7 @@
 
   &:hover {
    transform: translateY(-4px);
-   box-shadow: 0 4px 6px -1px#e3a740, 0 2px 4px -1px var(--app-accent-contrast) !important;
+   box-shadow: 0 4px 6px -1px var(--app-accent), 0 2px 4px -1px var(--app-accent-contrast) !important;
    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 }
@@ -21,7 +21,7 @@
   width: 32px;
   height: 32px;
   border-radius: 4px;
-  background: #e3a740;
+  background: var(--app-accent);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -34,14 +34,14 @@
   margin: 0 !important;
   font-size: 15px !important;
   line-height: 1.35 !important;
-  color: #2d2f31 !important;
+  color: var(--app-text) !important;
   letter-spacing: 0;
   margin-bottom: 14px !important;
 }
 
 .description {
   margin: 0 !important;
-  color: #66645d;
+  color: var(--app-text-muted);
   font-size: 12px;
   line-height: 1.42;
 }

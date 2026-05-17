@@ -18,7 +18,7 @@
 
 .title {
   margin: 0 !important;
-  color: #2f2f2f !important;
+  color: var(--app-text) !important;
   font-size: 52px !important;
   line-height: 1.1 !important;
 }
@@ -26,16 +26,16 @@
 .description {
   margin: 16px 0 28px !important;
   max-width: 640px;
-  color: #66625a;
+  color: var(--app-text-muted);
   font-size: 23px;
   line-height: 1.5;
 }
 
 .ctaButton {
   height: 50px !important;
-  border-radius: 8px !important;
+  border-radius: var(--app-button-radius) !important;
   border: none !important;
-  background: #2f3032 !important;
+  background: var(--app-button-dark-bg) !important;
   color: #fff !important;
   font-size: 18px !important;
   font-weight: 600 !important;
@@ -43,7 +43,7 @@
 }
 
 .ctaButton:hover {
-  background: #e2a53f !important;
+  background: var(--app-accent) !important;
   color: #3b2e1c !important;
 }
 

@@ -1,6 +1,6 @@
 .card {
-  border-radius: 8px;
-  border: 1px solid #ece8dd;
+  border-radius: var(--app-button-radius);
+  border: 1px solid var(--app-border);
   background: #f7f7f5;
   padding: 20px 18px;
 }
@@ -31,11 +31,11 @@
   padding-inline: 20px !important;
   border-radius: 7px !important;
   border: none !important;
-  background: #d7932a !important;
+  background: var(--app-accent) !important;
   color: #fff !important;
   font-weight: 700 !important;
 }
 
 .submitButton:hover {
-  background: #2f3032 !important;
+  background: var(--app-button-dark-bg) !important;
 }

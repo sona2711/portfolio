@@ -42,20 +42,22 @@ export const HomeHero = () => {
           </Space>
         </Col>
         <Col xs={24} md={10} lg={8}>
-          <Flex justify="center" align="center" className={styles.portraitCard}>
+          <div className={styles.portraitColumn}>
+            <Flex justify="center" align="center" className={styles.portraitCard}>
               <img
                 src={sonaImage}
                 alt={HERO_NAME}
                 className={styles.portraitImage}
               />
-          </Flex>
-          <Flex
-            align="center"
-            justify="center"
-            className={styles.floatingAction}
-          >
-            <CodeOutlined />
-          </Flex>
+            </Flex>
+            <Flex
+              align="center"
+              justify="center"
+              className={styles.floatingAction}
+            >
+              <CodeOutlined />
+            </Flex>
+          </div>
         </Col>
       </Row>
     </section>

@@ -14,8 +14,20 @@
   --app-text-muted: #6f6a60;
   --app-accent: #e2a53f;
   --app-accent-border: #b78632;
+  --app-accent-muted: #9d6d1d;
   --app-accent-gradient: linear-gradient(180deg, #dba84d 0%, #bb8127 100%);
   --app-accent-contrast: #fff;
+  --app-content-max-width: 1100px;
+  --app-elevated-surface: #fff;
+  --app-input-bg: #fff;
+  --app-button-dark-bg: #2f3032;
+  --app-button-radius: 8px;
+  --app-button-height: 48px;
+  --app-error: #c45c48;
+  --app-focus-ring: 0 0 0 2px color-mix(in srgb, var(--app-accent) 18%, transparent);
+  --app-cta-banner-gradient: linear-gradient(160deg, #f57b2b 0%, #f0aa3a 80%);
+  --bp-md: 768px;
+  --bp-lg: 992px;
 }
 
 html,
@@ -28,6 +40,7 @@ body {
   margin: 0;
   background: var(--app-bg);
   color: var(--app-text);
+  overflow-x: clip;
 }
 
 body[data-theme="dark"] {
@@ -39,8 +52,14 @@ body[data-theme="dark"] {
   --app-text-muted: #fafcff;
   --app-accent: #f0b249;
   --app-accent-border: #b8862f;
+  --app-accent-muted: #c9a04a;
   --app-accent-gradient: linear-gradient(180deg, #e3af4b 0%, #bd8128 100%);
   --app-accent-contrast: #111418;
+  --app-elevated-surface: #1c2128;
+  --app-input-bg: #1c2128;
+  --app-button-dark-bg: #2a2e35;
+  --app-error: #e07060;
+  --app-cta-banner-gradient: linear-gradient(160deg, #c96a28 0%, #d49530 80%);
 }
 
 body[data-theme="dark"] #root {

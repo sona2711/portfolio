@@ -24,14 +24,14 @@ body[data-theme="dark"] {
 
 .sectionSubtitle {
   margin: 0 0 14px !important;
-  color: #66635c;
+  color: var(--app-text-muted);
   font-size: 13px;
 }
 
 .videoWrap {
   position: relative;
   border-radius: 10px !important;
-  border: 1px solid #d6d4cd;
+  border: 1px solid var(--app-border);
   overflow: hidden;
   background: #222;
 }
@@ -94,13 +94,13 @@ body[data-theme="dark"] {
 
 .videoSubtitle {
   margin: 4px 0 0 !important;
-  color: #5f5b52;
+  color: var(--app-text-muted);
   font-size: 14px;
 }
 
 .chatCard {
   border-radius: 10px !important;
-  border-color: #e4e1d8 !important;
+  border-color: var(--app-border) !important;
   background: #f8f8f5 !important;
   height: 100%;
   max-height: 474px;
@@ -135,7 +135,7 @@ body[data-theme="dark"] {
 
 .chatTitle {
   display: block;
-  color: #2d2d2b !important;
+  color: var(--app-text) !important;
 }
 
 .chatStatus {
@@ -155,7 +155,7 @@ body[data-theme="dark"] {
 
 .chatBubble {
   background:var(--app-bg);
-  border: 1px solid #e1ddd2;
+  border: 1px solid var(--app-border);
   border-radius: 15px 15px 15px 0  !important; 
   padding: 11px 12px;
   color:var(--app-text);
@@ -163,7 +163,7 @@ body[data-theme="dark"] {
 }
 
 .chatBubbleAccent {
-  background: #b27a1d;
+  background: var(--app-accent-border);
   color: #fff;
   padding: 11px 12px;
   font-size: 12px;
@@ -191,7 +191,7 @@ body[data-theme="dark"] {
 .chatInputField :global(.ant-input) {
   background: #f3f2ee;
   border-radius: 6px;
-  color: #2d2d2b;
+  color: var(--app-text);
   font-size: 13px;
   padding: 6px 10px;
 }
@@ -205,7 +205,7 @@ body[data-theme="dark"] {
   height: 30px;
   border: none;
   border-radius: 6px;
-  background: #b27a1d;
+  background: var(--app-accent-border);
   color: #fff;
   cursor: pointer;
 }

@@ -40,7 +40,7 @@ body[data-theme="dark"] {
 }
 
 .headingIcon {
-  color: #9d6d1d;
+  color: var(--app-accent-muted);
   font-size: 14px;
 }
 
@@ -69,7 +69,7 @@ body[data-theme="dark"] {
 }
 
 .itemPeriod {
-  color: #66625a;
+  color: var(--app-text-muted);
   font-size: 13px;
   font-weight: 600;
 }
@@ -114,7 +114,7 @@ body[data-theme="dark"] {
 }
 
 .periodCurrent {
-  background: #9d6d1d;
+  background: var(--app-accent-muted);
   color: #f5e7cb;
 }
 
@@ -126,7 +126,7 @@ body[data-theme="dark"] {
 
 .experienceDescription {
   margin: 0 !important;
-  color: #66625a;
+  color: var(--app-text-muted);
   font-size: 14px;
   line-height: 1.5;
 }

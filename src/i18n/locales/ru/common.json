@@ -1,0 +1,21 @@
+{
+  "brand": {
+    "name": "Sona Mkrtchyan"
+  },
+  "aria": {
+    "toggleDarkMode": "Переключить тёмную тему",
+    "message": "Сообщение",
+    "sendMessage": "Отправить сообщение",
+    "openNavigationMenu": "Открыть меню навигации"
+  },
+  "theme": {
+    "darkMode": "Тёмная тема",
+    "lightMode": "Светлая тема"
+  },
+  "language": {
+    "label": "Язык",
+    "en": "EN",
+    "ru": "RU",
+    "hy": "HY"
+  }
+}

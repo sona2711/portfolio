@@ -1,0 +1,33 @@
+{
+  "title": "Get in touch",
+  "description": "Whether you have a specific project in mind or just want to chat about design systems and frontend craft, I'm always open to new connections.",
+  "cardTitle": "Available for freelance opportunities and full-time positions where design matters.",
+  "socialsLabel": "SOCIALS",
+  "submitLabel": "Send Message",
+  "form": {
+    "labels": {
+      "name": "NAME",
+      "email": "EMAIL",
+      "subject": "SUBJECT",
+      "message": "MESSAGE"
+    },
+    "placeholders": {
+      "name": "Sona Mkrtchyan",
+      "email": "hello@example.com",
+      "subject": "Project inquiry / General Chat",
+      "message": "Tell me about your vision..."
+    }
+  },
+  "info": {
+    "labels": {
+      "email": "EMAIL",
+      "phone": "PHONE",
+      "location": "LOCATION"
+    },
+    "values": {
+      "email": "mkrtchyansona77@gmail.com",
+      "phone": "+3745504542",
+      "location": "Armenia"
+    }
+  }
+}

@@ -1,11 +1,8 @@
-export type SkillProgressItem = {
-  label: string;
-  percent: number;
-};
+export type SkillProgressDef = {
+  skillKey: 'javascript' | 'angular' | 'react'
+  percent: number
+}
 
-export type LanguageLevelItem = {
-  language: string;
-  level: string;
-};
+export type LanguageLevelKey = 'armenian' | 'english' | 'russian'
 
-export type AboutTechnicalProficiencyProps = Record<string, never>;
+export type AboutTechnicalProficiencyProps = Record<string, never>

@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "label": "AVAILABLE FOR NEW PROJECTS",
+    "name": "Sona Mkrtchyan",
+    "description": "Enthusiastic Frontend Developer passionate about creating high-quality, user-friendly applications.",
+    "viewWork": "View Work",
+    "hireMe": "Hire Me"
+  },
+  "expertise": {
+    "sectionTitle": "Experience & Expertise",
+    "description": "Bridging the gap between aesthetic design and functional code.",
+    "items": {
+      "uateArmath": {
+        "title": "UATE-Armath EL",
+        "description": "Junior Frontend Developer & Coach. Delivering programming, robotics, and engineering lessons while developing interactive learning tools."
+      },
+      "autoDream": {
+        "title": "AutoDream",
+        "description": "Frontend Intern. Gained hands-on experience in web development workflows and contributed to automotive digital solutions."
+      },
+      "techStack": {
+        "title": "Tech Stack",
+        "description": "Proficient in HTML5, CSS3, JavaScript (ES6+), React.js, and TypeScript, with a focus on building responsive and accessible interfaces."
+      }
+    }
+  },
+  "virtualSelf": {
+    "sectionTitle": "Meet My Virtual Self",
+    "sectionSubtitle": "An interactive way to explore my background through AI.",
+    "chat": {
+      "title": "Meet My Virtual Self",
+      "status": "ONLINE & RESPONSIVE",
+      "inputPlaceholder": "Type a message...",
+      "loading": "Thinking...",
+      "error": "I could not process that request right now. Please try again.",
+      "welcome": "Hi, I am Sona. Ask me anything about my skills, projects, and experience."
+    }
+  },
+  "featuredWork": {
+    "sectionTitle": "Featured Work",
+    "subtitle": "Selected projects that define my craft.",
+    "linkLabel": "All Projects",
+    "ariaLabel": "Featured work projects",
+    "items": {
+      "kassamanShop": {
+        "description": "A high-end minimal e-commerce platform built for a jewelry store.",
+        "ctaLabel": "View case study",
+        "meta": "E-COMMERCE • 2026"
+      },
+      "ledOn": {
+        "description": "A food scanner app that allows you to scan the barcode of a food item and get the nutritional information.",
+        "ctaLabel": "Explore project",
+        "meta": "FOOD SCANNER • 2024"
+      }
+    }
+  },
+  "cta": {
+    "heading": "Let's build something remarkable together.",
+    "button": "Start a Conversation"
+  }
+}

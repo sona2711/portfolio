@@ -1,5 +1,5 @@
 export type FooterLink = {
   href: string
-  label: string
+  labelKey: string
   isExternal?: boolean
 }

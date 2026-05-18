@@ -1,0 +1,68 @@
+{
+  "workspace": {
+    "tabs": {
+      "text": "Տեքստ",
+      "video": "Տեսանյութ",
+      "audio": "Աուդիո"
+    }
+  },
+  "dashboard": {
+    "title": "AI ինտերֆեյսի վահանակ",
+    "promptPlaceholder": "Մուտքագրեք ստեղծագործական ուղղությունը...",
+    "responsePlaceholder": "Պատասխանը կհայտնվի այստեղ։",
+    "copyCvMarkdown": "Պատճենել CV Markdown",
+    "copySuccess": "CV markdown-ը պատճենված է chatbot-ի համար։",
+    "copyError": "Չհաջողվեց պատճենել CV markdown-ը։ Պատճենեք ձեռքով պատասխանից։",
+    "sections": {
+      "aboutMe": "Իմ մասին",
+      "summary": "Ամփոփում",
+      "experience": "Փորձ",
+      "projects": "Նախագծեր",
+      "skills": "Հմտություններ",
+      "education": "Կրթություն",
+      "certifications": "Վկայականներ",
+      "languages": "Լեզուներ",
+      "interests": "Հետաքրքրություններ",
+      "references": "Հղումներ",
+      "virtualSelf": "Վիրտուալական ես"
+    },
+    "labels": {
+      "prompt": "Հարցում",
+      "response": "Պատասխան"
+    },
+    "buttons": {
+      "send": "Ուղարկել",
+      "reset": "Մաքրել"
+    },
+    "errors": {
+      "generateFailed": "Չհաջողվեց ստեղծել տեքստ"
+    }
+  },
+  "avatarVideo": {
+    "panelTitle": "Ավատարի տեսանյութ",
+    "sourceUrlLabel": "Նկարի URL",
+    "sourceUrlHelper": "Պետք է հասանելի https (կամ s3) URL լինի։",
+    "previewLabel": "Նախադիտում",
+    "previewPlaceholderAlt": "Նախադիտումը կհայտնվի վավեր URL-ի դեպքում։",
+    "scriptLabel": "Ի՞նչ պետք է ասի ավատարը։",
+    "scriptPlaceholder": "Մուտքագրեք տեքստ, որը պետք է ասի ավատարը։",
+    "createVideo": "Ստեղծել տեսանյութ",
+    "reset": "Մաքրել",
+    "statusHelper": "Պատրաստ տեսանյութը կհայտնվի այստեղ։",
+    "statusPrefix": "Կարգավիճակ՝",
+    "missingConfig": "Սահմանեք VITE_DID_API_KEY (և ըստ անհրաժեշտության VITE_DID_API_URL) տեսանյութի համար։",
+    "resultTitle": "Արդյունք",
+    "openVideoLink": "Բացել տեսանյութը նոր ներդիրում",
+    "voiceLabel": "Ձայն / TTS",
+    "voiceLoadFailedPrefix": "Չհաջողվեց բեռնել D-ID ձայները։ Offline preset-ներ՝",
+    "voicePresets": {
+      "jenny": "English (US) — Jenny (microsoft)",
+      "sonia": "English (UK) — Sonia (microsoft)",
+      "natasha": "English (AU) — Natasha (microsoft)"
+    }
+  },
+  "audioStub": {
+    "title": "Աուդիո",
+    "description": "Աուդիո գործիքները դեռ չեն սահմանված։ Ներդիրը պահված է ապագայի համար։"
+  }
+}

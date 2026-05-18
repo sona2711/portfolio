@@ -1,5 +1,7 @@
 import { MoonOutlined, SunOutlined } from '@ant-design/icons'
 import { Button, Drawer, Menu } from 'antd'
+import { useTranslation } from 'react-i18next'
+import { LanguageSwitcher } from '@/components/_shared/LanguageSwitcher'
 import { MOBILE_NAV_DRAWER_WIDTH } from './consts'
 import styles from './styles.module.css'
 import type { LayoutHeaderMobileDrawerProps } from './types'
@@ -16,6 +18,7 @@ export const LayoutHeaderMobileDrawer = (props: LayoutHeaderMobileDrawerProps) =
     isDarkMode,
     onToggleTheme,
   } = props
+  const { t } = useTranslation('common')
 
   return (
     <Drawer
@@ -40,15 +43,16 @@ export const LayoutHeaderMobileDrawer = (props: LayoutHeaderMobileDrawerProps) =
           className={styles.drawerMenu}
         />
         <div className={styles.drawerFooter}>
+          <LanguageSwitcher variant="drawer" className={styles.themeButton} />
           <Button
             type="text"
             className={styles.themeButton}
-            aria-label="Toggle dark mode"
+            aria-label={t('aria.toggleDarkMode')}
             aria-pressed={isDarkMode}
             icon={isDarkMode ? <MoonOutlined /> : <SunOutlined />}
             onClick={onToggleTheme}
           >
-            {isDarkMode ? 'Dark mode' : 'Light mode'}
+            {isDarkMode ? t('theme.darkMode') : t('theme.lightMode')}
           </Button>
         </div>
       </div>

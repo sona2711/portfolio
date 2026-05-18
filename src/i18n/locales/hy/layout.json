@@ -1,0 +1,19 @@
+{
+  "header": {
+    "cta": "Համագործակցել",
+    "nav": {
+      "projects": "Նախագծեր",
+      "process": "Գործընթաց",
+      "about": "Իմ մասին",
+      "contact": "Կապ",
+      "admin": "Ադմին"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Sona Mkrtchyan. Ստեղծում եմ մանրուքների և կոդի հանդեպ ուշադրությամբ։",
+    "links": {
+      "linkedIn": "LinkedIn",
+      "gitHub": "GitHub"
+    }
+  }
+}

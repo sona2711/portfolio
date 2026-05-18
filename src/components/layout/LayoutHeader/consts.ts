@@ -1,14 +1,9 @@
-import type { NavItem } from './types'
-
-export const NAV_ITEMS: NavItem[] = [
-  { key: '/projects', label: 'Projects' },
-  { key: '/', label: 'Process' },
-  { key: '/about', label: 'About' },
-  { key: '/contact', label: 'Contact' },
-  { key: '/admin', label: 'Admin' },
-]
-
-export const BRAND_NAME = 'Sona Mkrtchyan'
-export const HEADER_CTA_LABEL = 'Hire Me'
+export const NAV_ITEM_DEFS = [
+  { key: '/projects', labelKey: 'header.nav.projects' },
+  { key: '/', labelKey: 'header.nav.process' },
+  { key: '/about', labelKey: 'header.nav.about' },
+  { key: '/contact', labelKey: 'header.nav.contact' },
+  { key: '/admin', labelKey: 'header.nav.admin' },
+] as const
 
 export const LAYOUT_HEADER_MOBILE_DRAWER_DOM_ID = 'layout-header-mobile-nav-drawer'

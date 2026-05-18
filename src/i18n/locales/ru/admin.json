@@ -1,0 +1,68 @@
+{
+  "workspace": {
+    "tabs": {
+      "text": "Текст",
+      "video": "Видео",
+      "audio": "Аудио"
+    }
+  },
+  "dashboard": {
+    "title": "Панель AI-интерфейса",
+    "promptPlaceholder": "Введите творческое направление...",
+    "responsePlaceholder": "Ответ появится здесь.",
+    "copyCvMarkdown": "Копировать CV Markdown",
+    "copySuccess": "CV markdown скопирован для контекста чат-бота.",
+    "copyError": "Не удалось скопировать CV markdown. Скопируйте вручную из ответа.",
+    "sections": {
+      "aboutMe": "Обо мне",
+      "summary": "Резюме",
+      "experience": "Опыт",
+      "projects": "Проекты",
+      "skills": "Навыки",
+      "education": "Образование",
+      "certifications": "Сертификаты",
+      "languages": "Языки",
+      "interests": "Интересы",
+      "references": "Рекомендации",
+      "virtualSelf": "Виртуальный образ"
+    },
+    "labels": {
+      "prompt": "Запрос",
+      "response": "Ответ"
+    },
+    "buttons": {
+      "send": "Отправить",
+      "reset": "Сбросить"
+    },
+    "errors": {
+      "generateFailed": "Не удалось сгенерировать текст"
+    }
+  },
+  "avatarVideo": {
+    "panelTitle": "Видео-аватар",
+    "sourceUrlLabel": "URL исходного изображения",
+    "sourceUrlHelper": "Должен быть доступный https (или s3) URL.",
+    "previewLabel": "Превью",
+    "previewPlaceholderAlt": "Превью появится при корректном URL.",
+    "scriptLabel": "Что должен сказать аватар?",
+    "scriptPlaceholder": "Введите текст для аватара.",
+    "createVideo": "Создать видео",
+    "reset": "Сбросить",
+    "statusHelper": "Готовое видео появится здесь.",
+    "statusPrefix": "Статус:",
+    "missingConfig": "Укажите VITE_DID_API_KEY (и при необходимости VITE_DID_API_URL) для генерации видео.",
+    "resultTitle": "Результат",
+    "openVideoLink": "Открыть видео в новой вкладке",
+    "voiceLabel": "Голос / TTS",
+    "voiceLoadFailedPrefix": "Не удалось загрузить голоса D-ID. Офлайн-пресеты:",
+    "voicePresets": {
+      "jenny": "English (US) — Jenny (microsoft)",
+      "sonia": "English (UK) — Sonia (microsoft)",
+      "natasha": "English (AU) — Natasha (microsoft)"
+    }
+  },
+  "audioStub": {
+    "title": "Аудио",
+    "description": "Аудио-инструменты пока не определены. Вкладка зарезервирована."
+  }
+}

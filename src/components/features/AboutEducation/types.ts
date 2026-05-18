@@ -1,14 +1,10 @@
-export type EducationItem = {
-  title: string;
-  subtitle: string;
-  period: string;
-};
+export type EducationItemKey = 'epic' | 'agbu' | 'tumo'
 
-export type ExperienceItem = {
-  period: string;
-  title: string;
-  description: string;
-  isCurrent?: boolean;
-};
+export type ExperienceItemKey = 'uateArmath' | 'autoDream' | 'ledOn'
 
-export type AboutEducationProps = Record<string, never>;
+export type ExperienceItemDef = {
+  key: ExperienceItemKey
+  isCurrent: boolean
+}
+
+export type AboutEducationProps = Record<string, never>

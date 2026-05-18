@@ -1,14 +1,12 @@
 import { GithubOutlined, LinkOutlined } from '@ant-design/icons'
 import { Button, Space, Tag, Typography } from 'antd'
-import {
-  PROJECT_GALLERY_CARD_EXTERNAL_LINK_REL,
-  PROJECT_GALLERY_CARD_LIVE_LABEL,
-  PROJECT_GALLERY_CARD_REPO_LABEL,
-} from './consts'
+import { useTranslation } from 'react-i18next'
+import { PROJECT_GALLERY_CARD_EXTERNAL_LINK_REL } from './consts'
 import styles from './styles.module.css'
 import type { ProjectGalleryCardProps } from './types'
 
 export const ProjectGalleryCard = ({ item, layoutIndex }: ProjectGalleryCardProps) => {
+  const { t } = useTranslation('projects')
   const cellClassName =
     layoutIndex % 2 === 1 ? `${styles.cell} ${styles.cellStagger}` : styles.cell
 
@@ -37,7 +35,7 @@ export const ProjectGalleryCard = ({ item, layoutIndex }: ProjectGalleryCardProp
             target="_blank"
             rel={PROJECT_GALLERY_CARD_EXTERNAL_LINK_REL}
             icon={<LinkOutlined />}
-            aria-label={PROJECT_GALLERY_CARD_LIVE_LABEL}
+            aria-label={t('gallery.card.liveAriaLabel')}
           />
           {item.repoUrl ? (
             <Button
@@ -47,7 +45,7 @@ export const ProjectGalleryCard = ({ item, layoutIndex }: ProjectGalleryCardProp
               target="_blank"
               rel={PROJECT_GALLERY_CARD_EXTERNAL_LINK_REL}
               icon={<GithubOutlined />}
-              aria-label={PROJECT_GALLERY_CARD_REPO_LABEL}
+              aria-label={t('gallery.card.repoAriaLabel')}
             />
           ) : null}
         </div>

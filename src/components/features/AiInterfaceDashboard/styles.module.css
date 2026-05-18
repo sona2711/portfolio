@@ -15,6 +15,10 @@
   line-height: 1.3;
 }
 
+.sectionSelect {
+  width: 200px;
+}
+
 .shell {
   min-height: 420px;
   background: var(--app-elevated-surface);

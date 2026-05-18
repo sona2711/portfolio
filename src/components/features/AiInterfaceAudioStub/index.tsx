@@ -1,15 +1,22 @@
-import type { AiInterfaceAudioStubProps } from './types'
-import { AUDIO_STUB_DESCRIPTION, AUDIO_STUB_TITLE , AUDIO_STUB_SECTION_ID } from './consts'
+import { useTranslation } from 'react-i18next'
+import { AUDIO_STUB_SECTION_ID } from './consts'
 import styles from './styles.module.css'
+import type { AiInterfaceAudioStubProps } from './types'
 
 export const AiInterfaceAudioStub = (props: AiInterfaceAudioStubProps) => {
   void props
+  const { t } = useTranslation('admin')
+
   return (
-    <section id={AUDIO_STUB_SECTION_ID} className={styles.shell} aria-labelledby={`${AUDIO_STUB_SECTION_ID}-title`}>
+    <section
+      id={AUDIO_STUB_SECTION_ID}
+      className={styles.shell}
+      aria-labelledby={`${AUDIO_STUB_SECTION_ID}-title`}
+    >
       <h2 id={`${AUDIO_STUB_SECTION_ID}-title`} className={styles.title}>
-        {AUDIO_STUB_TITLE}
+        {t('audioStub.title')}
       </h2>
-      <p className={styles.description}>{AUDIO_STUB_DESCRIPTION}</p>
+      <p className={styles.description}>{t('audioStub.description')}</p>
     </section>
   )
 }

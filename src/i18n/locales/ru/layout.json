@@ -1,0 +1,19 @@
+{
+  "header": {
+    "cta": "Нанять меня",
+    "nav": {
+      "projects": "Проекты",
+      "process": "Процесс",
+      "about": "Обо мне",
+      "contact": "Контакты",
+      "admin": "Админ"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Sona Mkrtchyan. Создано с вниманием к деталям и кодом.",
+    "links": {
+      "linkedIn": "LinkedIn",
+      "gitHub": "GitHub"
+    }
+  }
+}

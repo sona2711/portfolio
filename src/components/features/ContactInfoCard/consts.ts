@@ -1,7 +1,3 @@
-import type { ContactInfoItem } from "./types";
+import type { ContactInfoLabelKey } from './types'
 
-export const CONTACT_INFO_ITEMS: ContactInfoItem[] = [
-  { label: "EMAIL", value: "mkrtchyansona77@gmail.com" },
-  { label: "PHONE", value: "+3745504542" },
-  { label: "LOCATION", value: "Armenia" },
-];
+export const CONTACT_INFO_LABEL_KEYS: ContactInfoLabelKey[] = ['email', 'phone', 'location']

@@ -2,18 +2,21 @@ import {
   EnvironmentOutlined,
   MailOutlined,
   PhoneOutlined,
-} from "@ant-design/icons";
-import { Typography } from "antd";
-import styles from "./styles.module.css";
-import type { ContactInfoCardProps, ContactInfoLabel } from "./types";
+} from '@ant-design/icons'
+import { Typography } from 'antd'
+import { useTranslation } from 'react-i18next'
+import styles from './styles.module.css'
+import type { ContactInfoCardProps, ContactInfoLabelKey } from './types'
 
-const iconByLabel: Record<ContactInfoLabel, JSX.Element> = {
-  EMAIL: <MailOutlined />,
-  PHONE: <PhoneOutlined />,
-  LOCATION: <EnvironmentOutlined />,
-};
+const iconByLabelKey: Record<ContactInfoLabelKey, JSX.Element> = {
+  email: <MailOutlined />,
+  phone: <PhoneOutlined />,
+  location: <EnvironmentOutlined />,
+}
 
 export const ContactInfoCard = ({ items }: ContactInfoCardProps) => {
+  const { t } = useTranslation('contact')
+
   return (
     <div className={styles.aside}>
       <div className={styles.visualCard}>
@@ -21,15 +24,19 @@ export const ContactInfoCard = ({ items }: ContactInfoCardProps) => {
       </div>
       <div className={styles.availabilityBadge}>
         {items.map((item) => (
-          <div key={item.label} className={styles.infoItem}>
-            <span className={styles.infoIcon}>{iconByLabel[item.label]}</span>
+          <div key={item.labelKey} className={styles.infoItem}>
+            <span className={styles.infoIcon}>{iconByLabelKey[item.labelKey]}</span>
             <div>
-              <Typography.Text className={styles.infoLabel}>{item.label}</Typography.Text>
-              <Typography.Paragraph className={styles.infoValue}>{item.value}</Typography.Paragraph>
+              <Typography.Text className={styles.infoLabel}>
+                {t(`info.labels.${item.labelKey}`)}
+              </Typography.Text>
+              <Typography.Paragraph className={styles.infoValue}>
+                {t(`info.values.${item.labelKey}`)}
+              </Typography.Paragraph>
             </div>
           </div>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

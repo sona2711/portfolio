@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "label": "FRONTEND ԾՐԱԳՐԱՎՈՐՈՂ",
+    "heading": {
+      "primary": "Ստեղծում եմ",
+      "highlight": "թվային",
+      "suffix": "հավելվածներ։"
+    },
+    "description": "Բարև, ես Սոնան եմ։ Ոգեշնչված վեբ-ծրագրավորող՝ ստեղծում եմ որակյալ և հարմար հավելվածներ։ Սիրում եմ թիմային աշխատանքը, սիրում եմ նոր տեխնոլոգիաներ սովորել և պատրաստ եմ մարտահրավերների, որոնք զարգացնում են ինձ և թիմը։",
+    "imageAlt": "Սոնայի դիմանկար",
+    "aria": {
+      "openGallery": "Բացել պատկերասրահը",
+      "voiceIntro": "Սկսել ձայնային ներկայացումը"
+    }
+  },
+  "education": {
+    "title": "Կրթություն",
+    "items": {
+      "epic": {
+        "title": "EPIC Institute of Technology",
+        "subtitle": "Real-Time Frontend",
+        "period": "Սեպ 2023 — Հուլ 2024"
+      },
+      "agbu": {
+        "title": "AGBU",
+        "subtitle": "Frontend Development (Angular 2+)",
+        "period": "Հուն 2023 — Հոկ 2023"
+      },
+      "tumo": {
+        "title": "Tumo Labs",
+        "subtitle": "Guided Self-Learning program (Javascript)",
+        "period": "Սեպ 2022 — Դեկ 2023"
+      }
+    }
+  },
+  "experience": {
+    "title": "Փորձ",
+    "items": {
+      "uateArmath": {
+        "period": "Հուն 2024 — այժմ",
+        "title": "Coach (Part-time) - UATE-Armath EL",
+        "description": "Վարում եմ ծրագրավորման, ռոբոտատեխնիկայի և ինժեներական դասեր դպրոցականների համար։ Մշակում եմ ինտերակտիվ դասեր Kturtle, Scratch, Arduino և Raspberry Pi-ով։"
+      },
+      "autoDream": {
+        "period": "Մար 2026",
+        "title": "Frontend Developer Intern - AutoDream",
+        "description": "Շտկել եմ UI սխալներ, սովորել և կիրառել ժամանակակից frontend պրակտիկաներ։ Մշակել և պահպանել եմ React և TypeScript ինտերֆեյսներ։"
+      },
+      "ledOn": {
+        "period": "Հոկ 2024 — Ապր 2025",
+        "title": "UI/UX Designer - LEDon startup",
+        "description": "Նախագծել եմ հարմար ինտերֆեյսներ վեբ և մոբայլ հավելվածների համար։ Համագործակցել եմ ծրագրավորողների հետ անխափան UX-ի համար։"
+      }
+    }
+  },
+  "technicalProficiency": {
+    "title": "Տեխնիկական հմտություններ",
+    "description": "Իմ գործիքակազմը ընտրված է արագության, մասշտաբելիության և էսթետիկ ճշգրտության համար։ Կենտրոնանում եմ ժամանակակից framework-ների վրա։",
+    "skills": {
+      "javascript": "JavaScript (ES5/ES6)",
+      "angular": "Angular 2+",
+      "react": "React.js"
+    },
+    "languagesHeading": "ԼԵԶՈՒՆԵՐ",
+    "imageAlt": "Տեխնիկական հմտություններ",
+    "languageLevels": {
+      "armenian": { "language": "Հայերեն", "level": "Մայրենի" },
+      "english": { "language": "Անգլերեն", "level": "Միջին" },
+      "russian": { "language": "Ռուսերեն", "level": "Միջին" }
+    }
+  },
+  "cta": {
+    "title": "Պատրա՞ստ եք ստեղծել ինչ-որ օգտակար բան։",
+    "description": "Այժմ հասանելի եմ ֆրիլանսի և full-time հնարավորությունների համար, որտեղ դիզայնը կարևոր է։",
+    "button": "Գրել ինձ"
+  }
+}

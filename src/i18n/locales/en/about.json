@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "label": "FRONTEND DEVELOPER",
+    "heading": {
+      "primary": "Designing",
+      "highlight": "Digital",
+      "suffix": "Experiences."
+    },
+    "description": "Hello, I'm Sona. An enthusiastic Web Developer passionate about creating high-quality, user-friendly applications. I thrive in collaborative environments, eager to learn new technologies and always ready to take on challenges that drive both personal and team growth.",
+    "imageAlt": "Portrait of Sona",
+    "aria": {
+      "openGallery": "Open gallery",
+      "voiceIntro": "Start voice introduction"
+    }
+  },
+  "education": {
+    "title": "Education",
+    "items": {
+      "epic": {
+        "title": "EPIC Institute of Technology",
+        "subtitle": "Real-Time Frontend",
+        "period": "Sep 2023 - Jul 2024"
+      },
+      "agbu": {
+        "title": "AGBU",
+        "subtitle": "Frontend Development (Angular 2+)",
+        "period": "Jan 2023 - Oct 2023"
+      },
+      "tumo": {
+        "title": "Tumo Labs",
+        "subtitle": "Guided Self-Learning program (Javascript)",
+        "period": "Sep 2022 - Dec 2023"
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "items": {
+      "uateArmath": {
+        "period": "Jan 2024 - Present",
+        "title": "Coach (Part-time) - UATE-Armath EL",
+        "description": "Conduct lessons in programming, robotics, and engineering for school-aged students. Develop interactive lesson plans covering Kturtle, Scratch, Arduino, and Raspberry Pi."
+      },
+      "autoDream": {
+        "period": "Mar 2026",
+        "title": "Frontend Developer Intern - AutoDream",
+        "description": "Fix bugs, learn and apply modern frontend development practices. Build and maintain user interfaces using React, TypeScript, and modern web technologies."
+      },
+      "ledOn": {
+        "period": "Oct 2024 - Apr 2025",
+        "title": "UI/UX Designer - LEDon startup",
+        "description": "Design and implement user-friendly interfaces for web and mobile applications. Collaborate with developers to ensure seamless user experiences."
+      }
+    }
+  },
+  "technicalProficiency": {
+    "title": "Technical Proficiency",
+    "description": "My toolkit is curated for speed, scalability, and aesthetic precision. I focus on modern frameworks that empower creative freedom.",
+    "skills": {
+      "javascript": "JavaScript (ES5/ES6)",
+      "angular": "Angular 2+",
+      "react": "React.js"
+    },
+    "languagesHeading": "LANGUAGES",
+    "imageAlt": "Technical Proficiency",
+    "languageLevels": {
+      "armenian": { "language": "Armenian", "level": "Native" },
+      "english": { "language": "English", "level": "Intermediate" },
+      "russian": { "language": "Russian", "level": "Intermediate" }
+    }
+  },
+  "cta": {
+    "title": "Ready to build something luminous?",
+    "description": "Currently available for freelance opportunities and full-time positions where design matters.",
+    "button": "Let's Chat"
+  }
+}

@@ -1,14 +1,17 @@
-export type ExpertiseItem = {
-  title: string;
-  description: string;
-  icon: "education" | "project" | "code";
-};
-export type FeaturedWorkItem = {
-  title: string;
-  description: string;
-  ctaLabel: string;
-  previewVariant: "dark" | "accent";
-  imageDirection: "left" | "right";
-  meta: string;
-  tags: string[];
-};
+export type ExpertiseItemKey = 'uateArmath' | 'autoDream' | 'techStack'
+
+export type ExpertiseItemDef = {
+  key: ExpertiseItemKey
+  icon: 'education' | 'project' | 'code'
+}
+
+export type FeaturedWorkItemKey = 'kassamanShop' | 'ledOn'
+
+export type FeaturedWorkItemDef = {
+  itemKey: FeaturedWorkItemKey
+  title: string
+  previewVariant: 'dark' | 'accent'
+  image: string
+  tags: string[]
+  url: string
+}

@@ -1,24 +1,26 @@
-import { useNavigate } from "react-router-dom";
-import { Button, Typography } from "antd";
-import { CTA_BUTTON_LABEL, CTA_HEADING } from "./consts";
-import styles from "./styles.module.css";
+import { useNavigate } from 'react-router-dom'
+import { Button, Typography } from 'antd'
+import { useTranslation } from 'react-i18next'
+import styles from './styles.module.css'
 
 export const HomeCTA = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const { t } = useTranslation('home')
+
   return (
     <section className={styles.wrapper}>
       <div className={styles.box}>
         <Typography.Title level={2} className={styles.title}>
-          {CTA_HEADING}
+          {t('cta.heading')}
         </Typography.Title>
         <Button
           htmlType="button"
           className={styles.button}
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate('/contact')}
         >
-          {CTA_BUTTON_LABEL}
+          {t('cta.button')}
         </Button>
       </div>
     </section>
-  );
-};
+  )
+}

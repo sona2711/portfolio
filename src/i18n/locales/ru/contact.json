@@ -1,0 +1,33 @@
+{
+  "title": "Связаться",
+  "description": "Есть проект или просто хотите поговорить о дизайн-системах и frontend — я открыта для новых знакомств.",
+  "cardTitle": "Доступна для фриланса и full-time, где важен дизайн.",
+  "socialsLabel": "СОЦСЕТИ",
+  "submitLabel": "Отправить",
+  "form": {
+    "labels": {
+      "name": "ИМЯ",
+      "email": "EMAIL",
+      "subject": "ТЕМА",
+      "message": "СООБЩЕНИЕ"
+    },
+    "placeholders": {
+      "name": "Sona Mkrtchyan",
+      "email": "hello@example.com",
+      "subject": "Запрос по проекту / Общий вопрос",
+      "message": "Расскажите о вашей идее..."
+    }
+  },
+  "info": {
+    "labels": {
+      "email": "EMAIL",
+      "phone": "ТЕЛЕФОН",
+      "location": "ЛОКАЦИЯ"
+    },
+    "values": {
+      "email": "mkrtchyansona77@gmail.com",
+      "phone": "+3745504542",
+      "location": "Армения"
+    }
+  }
+}

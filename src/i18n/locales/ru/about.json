@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "label": "FRONTEND-РАЗРАБОТЧИК",
+    "heading": {
+      "primary": "Создаю",
+      "highlight": "цифровые",
+      "suffix": "опыты."
+    },
+    "description": "Здравствуйте, я Сона. Увлечённый веб-разработчик, создающий качественные и удобные приложения. Люблю командную работу, быстро осваиваю новые технологии и готова к задачам, которые развивают меня и команду.",
+    "imageAlt": "Портрет Соны",
+    "aria": {
+      "openGallery": "Открыть галерею",
+      "voiceIntro": "Запустить голосовое представление"
+    }
+  },
+  "education": {
+    "title": "Образование",
+    "items": {
+      "epic": {
+        "title": "EPIC Institute of Technology",
+        "subtitle": "Real-Time Frontend",
+        "period": "Сен 2023 — Июл 2024"
+      },
+      "agbu": {
+        "title": "AGBU",
+        "subtitle": "Frontend Development (Angular 2+)",
+        "period": "Янв 2023 — Окт 2023"
+      },
+      "tumo": {
+        "title": "Tumo Labs",
+        "subtitle": "Guided Self-Learning program (Javascript)",
+        "period": "Сен 2022 — Дек 2023"
+      }
+    }
+  },
+  "experience": {
+    "title": "Опыт",
+    "items": {
+      "uateArmath": {
+        "period": "Янв 2024 — наст. время",
+        "title": "Coach (Part-time) - UATE-Armath EL",
+        "description": "Провожу уроки по программированию, робототехнике и инженерии для школьников. Разрабатываю интерактивные планы занятий с Kturtle, Python,  Scratch, Arduino и Raspberry Pi."
+      },
+      "autoDream": {
+        "period": "Мар 2026",
+        "title": "Frontend Developer Intern - AutoDream",
+        "description": "Я исправлял ошибки пользовательского интерфейса, изучал и применял современные методы фронтенд-разработки. Разрабатывал интерфейсы с использованием React и TypeScript."
+      },
+      "ledOn": {
+        "period": "Окт 2024 — Апр 2025",
+        "title": "UI/UX Designer - LEDon startup",
+        "description": "Я разрабатывал удобные пользовательские интерфейсы для веб- и мобильных приложений. Сотрудничал с разработчиками для создания безупречного пользовательского опыта."
+      }
+    }
+  },
+  "technicalProficiency": {
+    "title": "Технические навыки",
+    "description": "Мой набор инструментов подобран для скорости, масштабируемости и точной эстетики. Фокус на современных фреймворках, дающих свободу для креатива.",
+    "skills": {
+      "javascript": "JavaScript (ES5/ES6)",
+      "angular": "Angular 2+",
+      "react": "React.js"
+    },
+    "languagesHeading": "ЯЗЫКИ",
+    "imageAlt": "Технические навыки",
+    "languageLevels": {
+      "armenian": { "language": "Армянский", "level": "Родной" },
+      "english": { "language": "Английский", "level": "Средний" },
+      "russian": { "language": "Русский", "level": "Средний" }
+    }
+  },
+  "cta": {
+    "title": "Готовы создать что-то яркое?",
+    "description": "Сейчас открыта для фриланса и full-time позиций, где важен дизайн.",
+    "button": "Написать мне"
+  }
+}

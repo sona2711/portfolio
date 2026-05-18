@@ -1,0 +1,42 @@
+{
+  "gallery": {
+    "hero": {
+      "eyebrow": "Selected works",
+      "titleLead": "My Portfolio",
+      "titleAccent": "Gallery.",
+      "subtitle": "A curated collection of digital interfaces and web experiences where performance meets intentional aesthetics.",
+      "filterGroupLabel": "Filter projects by category",
+      "filters": {
+        "all": "All",
+        "web": "Web",
+        "uiux": "UI/UX"
+      }
+    },
+    "sectionLabel": "Project gallery",
+    "emptyMessage": "No projects match this filter.",
+    "card": {
+      "liveAriaLabel": "Open live project",
+      "repoAriaLabel": "View source repository"
+    },
+    "items": {
+      "kassamanShop": {
+        "description": "A high-end minimal e-commerce platform built for a jewelry store, focused on clarity, trust, and a calm shopping flow."
+      },
+      "ledOn": {
+        "description": "A food scanner concept that reads product barcodes and surfaces nutritional context in a simple, scannable layout."
+      },
+      "arahet": {
+        "description": "A booking platform for a hotel, focused on a clean and user-friendly interface."
+      },
+      "yassaman": {
+        "description": "Eco-frinedly online shop for a clothing store, focused on sustainability and a clean shopping flow."
+      }
+    }
+  },
+  "collaborationCta": {
+    "heading": "Interested in collaborating?",
+    "body": "I'm currently available for freelance projects and full-time roles in front-end development and UI design.",
+    "primaryButton": "Start a Project",
+    "secondaryButton": "Download CV"
+  }
+}

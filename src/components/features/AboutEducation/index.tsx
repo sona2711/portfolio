@@ -1,16 +1,37 @@
-import { ReadOutlined, RocketOutlined } from "@ant-design/icons";
-import { Col, Row, Typography } from "antd";
-import {
-  EDUCATION_ITEMS,
-  EDUCATION_TITLE,
-  EXPERIENCE_ITEMS,
-  EXPERIENCE_TITLE,
-} from "./consts";
-import styles from "./styles.module.css";
-import type { AboutEducationProps } from "./types";
+import { ReadOutlined, RocketOutlined } from '@ant-design/icons'
+import { Col, Row, Typography } from 'antd'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { EDUCATION_ITEM_KEYS, EXPERIENCE_ITEM_DEFS } from './consts'
+import styles from './styles.module.css'
+import type { AboutEducationProps } from './types'
 
 export const AboutEducation = (props: AboutEducationProps) => {
-  void props;
+  void props
+  const { t } = useTranslation('about')
+
+  const educationItems = useMemo(
+    () =>
+      EDUCATION_ITEM_KEYS.map((key) => ({
+        key,
+        title: t(`education.items.${key}.title`),
+        subtitle: t(`education.items.${key}.subtitle`),
+        period: t(`education.items.${key}.period`),
+      })),
+    [t],
+  )
+
+  const experienceItems = useMemo(
+    () =>
+      EXPERIENCE_ITEM_DEFS.map((item) => ({
+        key: item.key,
+        period: t(`experience.items.${item.key}.period`),
+        title: t(`experience.items.${item.key}.title`),
+        description: t(`experience.items.${item.key}.description`),
+        isCurrent: item.isCurrent,
+      })),
+    [t],
+  )
 
   return (
     <section className={styles.section}>
@@ -19,13 +40,15 @@ export const AboutEducation = (props: AboutEducationProps) => {
           <article className={styles.educationCard}>
             <Typography.Title level={4} className={styles.cardHeading}>
               <ReadOutlined className={styles.headingIcon} />
-              {EDUCATION_TITLE}
+              {t('education.title')}
             </Typography.Title>
 
-            {EDUCATION_ITEMS.map((item, index) => (
+            {educationItems.map((item, index) => (
               <div
-                key={`${item.title}-${item.period}`}
-                className={index < EDUCATION_ITEMS.length - 1 ? styles.eduItem : styles.eduItemLast}
+                key={item.key}
+                className={
+                  index < educationItems.length - 1 ? styles.eduItem : styles.eduItemLast
+                }
               >
                 <Typography.Title level={5} className={styles.itemTitle}>
                   {item.title}
@@ -44,13 +67,13 @@ export const AboutEducation = (props: AboutEducationProps) => {
             <div className={styles.experienceHeader}>
               <Typography.Title level={4} className={styles.cardHeading}>
                 <RocketOutlined className={styles.headingIcon} />
-                {EXPERIENCE_TITLE}
+                {t('experience.title')}
               </Typography.Title>
             </div>
 
             <div className={styles.experienceList}>
-              {EXPERIENCE_ITEMS.map((item) => (
-                <div key={`${item.title}-${item.period}`} className={styles.experienceItem}>
+              {experienceItems.map((item) => (
+                <div key={item.key} className={styles.experienceItem}>
                   <Typography.Text
                     className={item.isCurrent ? styles.periodCurrent : styles.periodDefault}
                   >
@@ -71,5 +94,5 @@ export const AboutEducation = (props: AboutEducationProps) => {
         </Col>
       </Row>
     </section>
-  );
-};
+  )
+}

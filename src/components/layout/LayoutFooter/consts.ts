@@ -1,11 +1,15 @@
-import type { FooterLink } from './types'
+import type { FooterLink } from "./types"
 
-export const FOOTER_BRAND_NAME = 'Sona Mkrtchyan'
-
-export const FOOTER_COPYRIGHT_LINE =
-  '© 2026 Sona Mkrtchyan. Crafted with intentionality and code.'
-
-export const FOOTER_LINKS: FooterLink[] = [
-  { href: 'https://www.linkedin.com/in/sona-mkrtchyan/', label: 'LinkedIn', isExternal: true },
-  { href: 'https://github.com/sona2711', label: 'GitHub', isExternal: true },
-]
+export const FOOTER_LINKS: readonly FooterLink[] = [
+    {
+      href: 'https://www.linkedin.com/in/sona-mkrtchyan/',
+      labelKey: 'footer.links.linkedIn',
+      isExternal: true,
+    },
+    {
+      href: 'https://github.com/sona2711',
+      labelKey: 'footer.links.gitHub',
+      isExternal: true,
+    },
+  ]
+  

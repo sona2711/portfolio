@@ -1,0 +1,68 @@
+{
+  "workspace": {
+    "tabs": {
+      "text": "Text",
+      "video": "Video",
+      "audio": "Audio"
+    }
+  },
+  "dashboard": {
+    "title": "AI Interface Dashboard",
+    "promptPlaceholder": "Enter your creative direction here...",
+    "responsePlaceholder": "Response will appear here.",
+    "copyCvMarkdown": "Copy CV Markdown",
+    "copySuccess": "CV markdown copied for chatbot context.",
+    "copyError": "Unable to copy CV markdown. Please copy manually from response.",
+    "sections": {
+      "aboutMe": "About Me",
+      "summary": "Summary",
+      "experience": "Experience",
+      "projects": "Projects",
+      "skills": "Skills",
+      "education": "Education",
+      "certifications": "Certifications",
+      "languages": "Languages",
+      "interests": "Interests",
+      "references": "References",
+      "virtualSelf": "Virtual Self"
+    },
+    "labels": {
+      "prompt": "Prompt",
+      "response": "Response"
+    },
+    "buttons": {
+      "send": "Send",
+      "reset": "Reset"
+    },
+    "errors": {
+      "generateFailed": "Failed to generate text"
+    }
+  },
+  "avatarVideo": {
+    "panelTitle": "Avatar video",
+    "sourceUrlLabel": "Source image URL",
+    "sourceUrlHelper": "Must be a reachable https (or s3) URL. You can use any image URL.",
+    "previewLabel": "Preview",
+    "previewPlaceholderAlt": "Image preview will appear when the URL is valid.",
+    "scriptLabel": "What should the avatar say?",
+    "scriptPlaceholder": "Enter the text you want the avatar to say.",
+    "createVideo": "Create video",
+    "reset": "Reset",
+    "statusHelper": "The rendered video appears here when ready.",
+    "statusPrefix": "Status:",
+    "missingConfig": "Set VITE_DID_API_KEY (and optionally VITE_DID_API_URL) in your environment to generate video.",
+    "resultTitle": "Result",
+    "openVideoLink": "Open video in a new tab",
+    "voiceLabel": "Voice / TTS",
+    "voiceLoadFailedPrefix": "Could not load voices from D-ID. Using offline presets:",
+    "voicePresets": {
+      "jenny": "English (US) — Jenny (microsoft)",
+      "sonia": "English (UK) — Sonia (microsoft)",
+      "natasha": "English (AU) — Natasha (microsoft)"
+    }
+  },
+  "audioStub": {
+    "title": "Audio",
+    "description": "Audio tools are not specified yet. This tab is reserved for a future workflow."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "brand": {
+    "name": "Sona Mkrtchyan"
+  },
+  "aria": {
+    "toggleDarkMode": "Միացնել մուգ թեման",
+    "message": "Հաղորդագրություն",
+    "sendMessage": "Ուղարկել հաղորդագրությունը",
+    "openNavigationMenu": "Բացել նավիգացիոն մենյուն"
+  },
+  "theme": {
+    "darkMode": "Մուգ թեմա",
+    "lightMode": "Բաց թեմա"
+  },
+  "language": {
+    "label": "Լեզու",
+    "en": "EN",
+    "ru": "RU",
+    "hy": "HY"
+  }
+}

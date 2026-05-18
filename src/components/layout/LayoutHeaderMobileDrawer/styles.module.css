@@ -30,6 +30,15 @@
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--app-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.drawerFooter > :first-child {
+  border-bottom: 1px solid var(--app-border);
+  margin-bottom: 4px;
+  padding-bottom: 12px;
 }
 
 .themeButton {

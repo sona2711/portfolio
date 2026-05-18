@@ -1,23 +1,21 @@
-import type { ProjectGalleryItem } from '@/components/features/ProjectsGallery/types'
+import type { ProjectGalleryItemDef } from './types'
 import KassamanShopImage from '@/assets/images/Kassaman.png'
 import LedOnImage from '@/assets/images/projectLedOn.png'
 import Yassaman from '@/assets/images/Yassaman.png'
 import Arahet from '@/assets/images/Arahet.png'
 
-export const PROJECT_GALLERY_ITEMS: ProjectGalleryItem[] = [
+export const PROJECT_GALLERY_ITEM_DEFS: ProjectGalleryItemDef[] = [
   {
+    itemKey: 'kassamanShop',
     title: 'Kassaman Shop',
-    description:
-      'A high-end minimal e-commerce platform built for a jewelry store, focused on clarity, trust, and a calm shopping flow.',
     image: KassamanShopImage,
     tags: ['React', 'TypeScript'],
     category: 'web',
     liveUrl: 'https://jewellery-shop-eta.vercel.app/',
   },
   {
+    itemKey: 'ledOn',
     title: 'Led On',
-    description:
-      'A food scanner concept that reads product barcodes and surfaces nutritional context in a simple, scannable layout.',
     image: LedOnImage,
     tags: ['UI/UX', 'Figma'],
     category: 'uiux',
@@ -25,18 +23,16 @@ export const PROJECT_GALLERY_ITEMS: ProjectGalleryItem[] = [
       'https://www.figma.com/design/uSsDXw91tKubTJs3p4diYh/LEDon?node-id=0-1&t=0RQChInxTfCDG7B3-1',
   },
   {
+    itemKey: 'arahet',
     title: 'ARAHET',
-    description:
-      'A booking platform for a hotel, focused on a clean and user-friendly interface.',
     image: Arahet,
     tags: ['Angular', 'Typescript'],
     category: 'web',
     liveUrl: 'https://booking-app-rho-three.vercel.app/home',
   },
   {
+    itemKey: 'yassaman',
     title: 'Yassaman Online Shop',
-    description:
-      'Eco-frinedly online shop for a clothing store, focused on sustainability and a clean shopping flow.',
     image: Yassaman,
     tags: ['UI/UX', 'Figma'],
     category: 'uiux',

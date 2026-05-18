@@ -1,42 +1,42 @@
-import { useNavigate } from "react-router-dom";
-import { CodeOutlined } from "@ant-design/icons";
-import { Button, Col, Flex, Row, Space, Tag, Typography } from "antd";
-import sonaImage from "../../../assets/images/R.jpg";
-import { HERO_DESCRIPTION, HERO_LABEL, HERO_NAME } from "./consts";
-import styles from "./styles.module.css";
+import { useNavigate } from 'react-router-dom'
+import { CodeOutlined } from '@ant-design/icons'
+import { Button, Col, Flex, Row, Space, Tag, Typography } from 'antd'
+import { useTranslation } from 'react-i18next'
+import sonaImage from '../../../assets/images/R.jpg'
+import styles from './styles.module.css'
 
 export const HomeHero = () => {
-  const navigate = useNavigate();
-  const heroDescription = HERO_DESCRIPTION;
+  const navigate = useNavigate()
+  const { t } = useTranslation('home')
 
   return (
     <section className={styles.section}>
       <Tag variant="filled" className={styles.tag}>
-        {HERO_LABEL}
+        {t('hero.label')}
       </Tag>
       <Row gutter={[64, 64]} align="middle">
         <Col xs={24} md={14}>
           <Space orientation="vertical" size={40} className={styles.textBlock}>
             <Typography.Title level={1} className={styles.title}>
-              {HERO_NAME}
+              {t('hero.name')}
             </Typography.Title>
             <Typography.Paragraph className={styles.description}>
-              {heroDescription}
+              {t('hero.description')}
             </Typography.Paragraph>
             <Space size={24} wrap>
               <Button
                 type="primary"
                 className={styles.darkButton}
-                onClick={() => navigate("/projects")}
+                onClick={() => navigate('/projects')}
               >
-                View Work
+                {t('hero.viewWork')}
               </Button>
               <Button
                 type="text"
                 className={styles.lightButton}
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate('/contact')}
               >
-                Hire Me
+                {t('hero.hireMe')}
               </Button>
             </Space>
           </Space>
@@ -46,7 +46,7 @@ export const HomeHero = () => {
             <Flex justify="center" align="center" className={styles.portraitCard}>
               <img
                 src={sonaImage}
-                alt={HERO_NAME}
+                alt={t('hero.name')}
                 className={styles.portraitImage}
               />
             </Flex>
@@ -61,5 +61,5 @@ export const HomeHero = () => {
         </Col>
       </Row>
     </section>
-  );
-};
+  )
+}

@@ -1,28 +1,13 @@
 import { Alert, Button, Form, Input, Select, Typography } from 'antd'
-import { useCallback, useEffect, useId, useState } from 'react'
+import { useCallback, useEffect, useId, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { createTalk, fetchTtsVoices, isDidApiClientConfigured, pollTalkUntilTerminal } from '@/api/generateVideo'
 import type { VideoFormValues, AvatarVoiceOption } from './types'
 import {
-  CREATE_VIDEO_LABEL,
   DEFAULT_VOICE_OPTION_KEY,
   DEMO_VIDEO_URL,
-  GENERATION_STATUS_PREFIX,
-  MISSING_DID_CONFIG_MESSAGE,
-  OPEN_VIDEO_LINK_LABEL,
-  PREVIEW_LABEL,
-  PREVIEW_PLACEHOLDER_ALT,
-  RESET_LABEL,
-  RESULT_TITLE,
-  SCRIPT_LABEL,
-  SCRIPT_PLACEHOLDER,
-  SOURCE_URL_HELPER,
-  SOURCE_URL_LABEL,
   SOURCE_URL_PLACEHOLDER,
-  STATUS_HELPER,
-  VIDEO_PANEL_TITLE,
-  VOICE_FALLBACK_PRESETS,
-  VOICE_LABEL,
-  VOICE_LOAD_FAILED_PREFIX,
+  VOICE_FALLBACK_PRESET_DEFS,
 } from './consts'
 import styles from './styles.module.css'
 import {
@@ -40,23 +25,36 @@ const initialValues: VideoFormValues = {
 const dedupeAvatarVoiceOptions = (options: AvatarVoiceOption[]): AvatarVoiceOption[] => {
   const seen = new Set<string>()
   const out: AvatarVoiceOption[] = []
-  for (const o of options) {
-    if (seen.has(o.optionKey)) {
+  for (const option of options) {
+    if (seen.has(option.optionKey)) {
       continue
     }
-    seen.add(o.optionKey)
-    out.push(o)
+    seen.add(option.optionKey)
+    out.push(option)
   }
   return out
 }
 
 export const AiInterfaceAvatarVideo = () => {
+  const { t } = useTranslation('admin')
   const formId = useId()
   const sourceFieldId = `${formId}-source-url`
   const scriptFieldId = `${formId}-script`
   const voiceFieldId = `${formId}-voice`
   const [form] = Form.useForm<VideoFormValues>()
-  const [voiceOptions, setVoiceOptions] = useState<AvatarVoiceOption[]>(VOICE_FALLBACK_PRESETS)
+
+  const voiceFallbackPresets = useMemo<AvatarVoiceOption[]>(
+    () =>
+      VOICE_FALLBACK_PRESET_DEFS.map((preset) => ({
+        optionKey: preset.optionKey,
+        label: t(`avatarVideo.voicePresets.${preset.presetKey}`),
+        provider: preset.provider,
+      })),
+    [t],
+  )
+
+  const [apiVoiceOptions, setApiVoiceOptions] = useState<AvatarVoiceOption[] | null>(null)
+  const voiceOptions = apiVoiceOptions ?? voiceFallbackPresets
   const [voicesLoading, setVoicesLoading] = useState(false)
   const [voicesLoadError, setVoicesLoadError] = useState<string | null>(null)
   const [previewSrc, setPreviewSrc] = useState<string | null>(null)
@@ -95,13 +93,13 @@ export const AiInterfaceAvatarVideo = () => {
 
       if (result.ok && result.voices.length > 0) {
         const opts = dedupeAvatarVoiceOptions(result.voices.map(didVoiceToAvatarOption))
-        setVoiceOptions(opts)
+        setApiVoiceOptions(opts)
         form.setFieldsValue({ voiceOptionKey: opts[0]?.optionKey ?? DEFAULT_VOICE_OPTION_KEY })
         setVoicesLoadError(null)
       } else {
         const message = result.ok === false ? result.error : 'No voices returned.'
         setVoicesLoadError(message)
-        setVoiceOptions(VOICE_FALLBACK_PRESETS)
+        setApiVoiceOptions(null)
         form.setFieldsValue({ voiceOptionKey: DEFAULT_VOICE_OPTION_KEY })
       }
 
@@ -113,7 +111,7 @@ export const AiInterfaceAvatarVideo = () => {
     return () => {
       cancelled = true
     }
-  }, [form])
+  }, [form, voiceFallbackPresets])
 
   const handleValuesChange = (
     changed: Partial<VideoFormValues>,
@@ -137,7 +135,7 @@ export const AiInterfaceAvatarVideo = () => {
     }
 
     if (!isDidApiClientConfigured()) {
-      setGenerationError(MISSING_DID_CONFIG_MESSAGE)
+      setGenerationError(t('avatarVideo.missingConfig'))
       setPollStatus(null)
       setResultVideoUrl(null)
       return
@@ -199,7 +197,7 @@ export const AiInterfaceAvatarVideo = () => {
   return (
     <div className={styles.page}>
       <Typography.Title level={4} className={styles.pageTitle}>
-        {VIDEO_PANEL_TITLE}
+        {t('avatarVideo.panelTitle')}
       </Typography.Title>
       <div className={styles.card}>
         {voicesLoadError ? (
@@ -207,7 +205,7 @@ export const AiInterfaceAvatarVideo = () => {
             className={styles.voiceAlert}
             type="warning"
             showIcon
-            message={`${VOICE_LOAD_FAILED_PREFIX} ${voicesLoadError}`}
+            message={`${t('avatarVideo.voiceLoadFailedPrefix')} ${voicesLoadError}`}
           />
         ) : null}
         <Form<VideoFormValues>
@@ -226,7 +224,7 @@ export const AiInterfaceAvatarVideo = () => {
                 <span className={styles.requiredMark} aria-hidden>
                   *
                 </span>
-                <span>{SOURCE_URL_LABEL}</span>
+                <span>{t('avatarVideo.sourceUrlLabel')}</span>
               </span>
             }
             rules={[
@@ -239,7 +237,7 @@ export const AiInterfaceAvatarVideo = () => {
                 },
               },
             ]}
-            extra={<p className={styles.helper}>{SOURCE_URL_HELPER}</p>}
+            extra={<p className={styles.helper}>{t('avatarVideo.sourceUrlHelper')}</p>}
           >
             <Input
               id={sourceFieldId}
@@ -250,7 +248,7 @@ export const AiInterfaceAvatarVideo = () => {
           </Form.Item>
 
           <div className={styles.fieldBlock}>
-            <p className={styles.previewLabel}>{PREVIEW_LABEL}</p>
+            <p className={styles.previewLabel}>{t('avatarVideo.previewLabel')}</p>
             <div className={styles.previewFrame}>
               {showPreviewImage ? (
                 <img
@@ -266,7 +264,9 @@ export const AiInterfaceAvatarVideo = () => {
                 />
               ) : null}
               {!showPreviewImage ? (
-                <div className={styles.previewPlaceholder}>{PREVIEW_PLACEHOLDER_ALT}</div>
+                <div className={styles.previewPlaceholder}>
+                  {t('avatarVideo.previewPlaceholderAlt')}
+                </div>
               ) : null}
             </div>
           </div>
@@ -279,7 +279,7 @@ export const AiInterfaceAvatarVideo = () => {
                 <span className={styles.requiredMark} aria-hidden>
                   *
                 </span>
-                <span>{SCRIPT_LABEL}</span>
+                <span>{t('avatarVideo.scriptLabel')}</span>
               </span>
             }
             rules={[
@@ -290,7 +290,7 @@ export const AiInterfaceAvatarVideo = () => {
             <Input.TextArea
               id={scriptFieldId}
               className={styles.textarea}
-              placeholder={SCRIPT_PLACEHOLDER}
+              placeholder={t('avatarVideo.scriptPlaceholder')}
               autoSize={{ minRows: 4, maxRows: 10 }}
             />
           </Form.Item>
@@ -298,7 +298,7 @@ export const AiInterfaceAvatarVideo = () => {
           <Form.Item
             className={styles.formItem}
             name="voiceOptionKey"
-            label={<span className={styles.labelRow}>{VOICE_LABEL}</span>}
+            label={<span className={styles.labelRow}>{t('avatarVideo.voiceLabel')}</span>}
             rules={[{ required: true, message: 'Choose a voice' }]}
           >
             <Select
@@ -308,9 +308,9 @@ export const AiInterfaceAvatarVideo = () => {
               optionFilterProp="label"
               loading={voicesLoading}
               placeholder={voicesLoading ? 'Loading voices…' : 'Choose a voice'}
-              options={voiceOptions.map((o) => ({
-                value: o.optionKey,
-                label: o.label,
+              options={voiceOptions.map((option) => ({
+                value: option.optionKey,
+                label: option.label,
               }))}
             />
           </Form.Item>
@@ -322,25 +322,25 @@ export const AiInterfaceAvatarVideo = () => {
               onClick={handleCreateVideo}
               loading={isSubmitting}
             >
-              {CREATE_VIDEO_LABEL}
+              {t('avatarVideo.createVideo')}
             </Button>
             <Button htmlType="button" className={styles.secondaryButton} onClick={handleReset}>
-              {RESET_LABEL}
+              {t('avatarVideo.reset')}
             </Button>
           </div>
         </Form>
 
-        <p className={styles.statusLine}>{STATUS_HELPER}</p>
+        <p className={styles.statusLine}>{t('avatarVideo.statusHelper')}</p>
         {pollStatus ? (
           <p className={styles.pollStatus}>
-            {GENERATION_STATUS_PREFIX} {pollStatus}
+            {t('avatarVideo.statusPrefix')} {pollStatus}
           </p>
         ) : null}
       </div>
 
       <div className={styles.resultCard}>
         <Typography.Text strong className={styles.resultTitle}>
-          {RESULT_TITLE}
+          {t('avatarVideo.resultTitle')}
         </Typography.Text>
         {generationError ? (
           <p className={styles.resultError} role="alert">
@@ -365,7 +365,7 @@ export const AiInterfaceAvatarVideo = () => {
                 </>
               ) : null}
               {!isSubmitting && !generationError ? (
-                <span>The rendered video appears here when ready.</span>
+                <span>{t('avatarVideo.statusHelper')}</span>
               ) : null}
             </div>
           )}
@@ -377,11 +377,11 @@ export const AiInterfaceAvatarVideo = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {OPEN_VIDEO_LINK_LABEL}
+            {t('avatarVideo.openVideoLink')}
           </a>
         ) : (
           <span className={styles.resultLinkDisabled} aria-disabled="true">
-            {OPEN_VIDEO_LINK_LABEL}
+            {t('avatarVideo.openVideoLink')}
           </span>
         )}
       </div>

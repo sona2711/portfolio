@@ -1,12 +1,12 @@
-export type ContactInfoLabel = "EMAIL" | "PHONE" | "LOCATION";
+export type ContactInfoLabelKey = 'email' | 'phone' | 'location'
 
 export type ContactInfoItem = {
-  label: ContactInfoLabel;
-  value: string;
-};
+  labelKey: ContactInfoLabelKey
+  value: string
+}
 
 export type ContactInfoCardProps = {
-  cardTitle: string;
-  socialsLabel?: string;
-  items: ContactInfoItem[];
-};
+  cardTitle: string
+  socialsLabel?: string
+  items: ContactInfoItem[]
+}

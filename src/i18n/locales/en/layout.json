@@ -1,0 +1,19 @@
+{
+  "header": {
+    "cta": "Hire Me",
+    "nav": {
+      "projects": "Projects",
+      "process": "Process",
+      "about": "About",
+      "contact": "Contact",
+      "admin": "Admin"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Sona Mkrtchyan. Crafted with intentionality and code.",
+    "links": {
+      "linkedIn": "LinkedIn",
+      "gitHub": "GitHub"
+    }
+  }
+}

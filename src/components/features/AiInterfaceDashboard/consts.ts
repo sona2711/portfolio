@@ -1,9 +1,15 @@
-export const DASHBOARD_TITLE = 'AI Interface Dashboard'
+import type { CVSectionKey } from '@/types/cvContent'
 
-export const PROMPT_PLACEHOLDER = 'Enter your creative direction here...'
-
-export const RESPONSE_PLACEHOLDER = 'Response will appear here.'
-
-export const COPY_CV_MARKDOWN_LABEL = 'Copy CV Markdown'
-export const COPY_SUCCESS_MESSAGE = 'CV markdown copied for chatbot context.'
-export const COPY_ERROR_MESSAGE = 'Unable to copy CV markdown. Please copy manually from response.'
+export const CV_SECTION_KEYS: CVSectionKey[] = [
+  'aboutMe',
+  'summary',
+  'experience',
+  'projects',
+  'skills',
+  'education',
+  'certifications',
+  'languages',
+  'interests',
+  'references',
+  'virtualSelf',
+]

@@ -1,0 +1,33 @@
+{
+  "title": "Կապվել",
+  "description": "Նախագիծ ունեք, թե՞ ուղղակի ուզում եք խոսել դիզայն-համակարգերի և frontend-ի մասին — միշտ բաց եմ նոր կապերի համար։",
+  "cardTitle": "Հասանելի եմ ֆրիլանսի և full-time աշխատանքների համար, որտեղ դիզայնը կարևոր է։",
+  "socialsLabel": "ՍՈՑԿԱՆՑՈՒՅՆՆԵՐ",
+  "submitLabel": "Ուղարկել",
+  "form": {
+    "labels": {
+      "name": "ԱՆՈՒՆ",
+      "email": "EMAIL",
+      "subject": "ԹԵՄԱ",
+      "message": "ՀԱՂՈՐԴԱԳՐՈՒԹՅՈՒՆ"
+    },
+    "placeholders": {
+      "name": "Sona Mkrtchyan",
+      "email": "hello@example.com",
+      "subject": "Նախագծի հարցում / Ընդհանուր զրույց",
+      "message": "Պատմեք ձեր տեսլականի մասին..."
+    }
+  },
+  "info": {
+    "labels": {
+      "email": "EMAIL",
+      "phone": "ՀԵՌԱԽՈՍ",
+      "location": "ՏԵՂԱՆՔ"
+    },
+    "values": {
+      "email": "mkrtchyansona77@gmail.com",
+      "phone": "+3745504542",
+      "location": "Հայաստան"
+    }
+  }
+}

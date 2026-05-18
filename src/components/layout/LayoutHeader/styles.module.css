@@ -127,6 +127,10 @@
   min-width: 0;
 }
 
+.languageSwitcher {
+  flex-shrink: 0;
+}
+
 .iconButton {
   color: var(--app-text-muted) !important;
   font-size: 15px;

@@ -1,12 +1,7 @@
 import { Button, Typography } from 'antd'
-import {
-  PROJECT_GALLERY_FILTER_OPTIONS,
-  PROJECTS_GALLERY_FILTER_GROUP_LABEL,
-  PROJECTS_GALLERY_HERO_EYEBROW,
-  PROJECTS_GALLERY_HERO_SUBTITLE,
-  PROJECTS_GALLERY_HERO_TITLE_ACCENT,
-  PROJECTS_GALLERY_HERO_TITLE_LEAD,
-} from './consts'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { PROJECT_GALLERY_FILTER_OPTIONS } from './consts'
 import styles from './styles.module.css'
 import type { ProjectsGalleryHeroProps } from './types'
 
@@ -14,16 +9,27 @@ export const ProjectsGalleryHero = ({
   activeFilter,
   onFilterChange,
 }: ProjectsGalleryHeroProps) => {
+  const { t } = useTranslation('projects')
+
+  const filterOptions = useMemo(
+    () =>
+      PROJECT_GALLERY_FILTER_OPTIONS.map((option) => ({
+        key: option.key,
+        label: t(`gallery.hero.filters.${option.key}`),
+      })),
+    [t],
+  )
+
   return (
     <header className={styles.header}>
       <div className={styles.topRow}>
-        <span className={styles.eyebrow}>{PROJECTS_GALLERY_HERO_EYEBROW}</span>
+        <span className={styles.eyebrow}>{t('gallery.hero.eyebrow')}</span>
         <div
           className={styles.filterGroup}
           role="group"
-          aria-label={PROJECTS_GALLERY_FILTER_GROUP_LABEL}
+          aria-label={t('gallery.hero.filterGroupLabel')}
         >
-          {PROJECT_GALLERY_FILTER_OPTIONS.map((option) => {
+          {filterOptions.map((option) => {
             const isActive = activeFilter === option.key
             return (
               <Button
@@ -42,11 +48,11 @@ export const ProjectsGalleryHero = ({
         </div>
       </div>
       <Typography.Title level={1} className={styles.title}>
-        {PROJECTS_GALLERY_HERO_TITLE_LEAD}{' '}
-        <span className={styles.titleAccent}>{PROJECTS_GALLERY_HERO_TITLE_ACCENT}</span>
+        {t('gallery.hero.titleLead')}{' '}
+        <span className={styles.titleAccent}>{t('gallery.hero.titleAccent')}</span>
       </Typography.Title>
       <Typography.Paragraph className={styles.subtitle}>
-        {PROJECTS_GALLERY_HERO_SUBTITLE}
+        {t('gallery.hero.subtitle')}
       </Typography.Paragraph>
     </header>
   )
